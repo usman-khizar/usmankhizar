@@ -76,6 +76,9 @@ export default function ServicesPage() {
             <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.1rem', color: '#5C5248', lineHeight: 1.7, maxWidth: 600, margin: '0 auto' }}>
               I work with founders and businesses who want to rank on every modern search surface — not just Google, but ChatGPT, Perplexity, and AI Overviews too.
             </p>
+            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.75, maxWidth: 600, margin: '1.5rem auto 0' }}>
+              For modern search visibility, combine <Link href="/services/seo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>SEO consulting</Link>, <Link href="/services/aeo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>AEO consulting</Link>, and <Link href="/services/geo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>GEO services</Link>.
+            </p>
           </div>
           <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
         </section>

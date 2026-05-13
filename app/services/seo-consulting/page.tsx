@@ -118,6 +118,11 @@ export default function SEOConsultingPage() {
               </div>
             ))}
           </div>
+          <div className="max-w-5xl mx-auto mt-8">
+            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.75, marginBottom: '1.5rem', textAlign: 'center' }}>
+              If you also want to win featured snippets and AI answer traffic, see the <Link href="/services/aeo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>AEO consulting page</Link> for the next layer of modern search visibility.
+            </p>
+          </div>
           <div className="max-w-5xl mx-auto mt-10 text-center">
             <Link href="/contact" className="btn-primary">Work With Me →</Link>
           </div>

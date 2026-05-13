@@ -239,7 +239,11 @@ export default function HomePage() {
                   icon: <SearchIcon />,
                   label: 'SEO · GEO · AEO',
                   title: 'Full-Stack Search Visibility',
-                  body: "Get found on Google and get cited by AI. I build content and technical strategies that rank on every modern search surface — not just 2019 Google.",
+                  body: (
+                    <>
+                      Get found on Google and get cited by AI. I build content and technical strategies that rank on every modern search surface — not just 2019 Google. <Link href="/services/seo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>Explore SEO consulting</Link> or <Link href="/services/aeo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>AEO consulting</Link>.
+                    </>
+                  ),
                   link: 'Explore the approach →',
                   href: '/services',
                 },
