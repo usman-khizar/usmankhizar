@@ -79,10 +79,38 @@ export default function SEOConsultingPage() {
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: 'Technical SEO', desc: 'Full crawl analysis, Core Web Vitals optimisation, structured data, indexability — the foundations that unlock rankings.' },
-              { title: 'On-Page SEO', desc: 'Title tags, heading hierarchy, internal linking, content depth — turning decent pages into ranking pages.' },
-              { title: 'Content Strategy', desc: 'Keyword research grounded in commercial intent. A content plan that builds topical authority, not just traffic.' },
-              { title: 'Authority Building', desc: 'Backlink strategy through editorial outreach, digital PR, and parasite SEO on high-authority platforms.' },
+              {
+                title: 'Technical SEO',
+                desc: (
+                  <>
+                    Full crawl analysis, Core Web Vitals optimisation, structured data, indexability — the foundations that unlock rankings. <Link href="/services/seo-consulting/technical-seo" style={{ color: '#C4533A', textDecoration: 'none' }}>Explore the technical SEO process</Link>.
+                  </>
+                ),
+              },
+              {
+                title: 'On-Page SEO',
+                desc: (
+                  <>
+                    Title tags, heading hierarchy, internal linking, content depth — turning decent pages into ranking pages. <Link href="/services/seo-consulting/on-page-seo" style={{ color: '#C4533A', textDecoration: 'none' }}>See the on-page SEO framework</Link>.
+                  </>
+                ),
+              },
+              {
+                title: 'Content Strategy',
+                desc: (
+                  <>
+                    Keyword research grounded in commercial intent. A content plan that builds topical authority, not just traffic. <Link href="/services/seo-consulting/content-strategy" style={{ color: '#C4533A', textDecoration: 'none' }}>Read how content strategy supports search marketing</Link>.
+                  </>
+                ),
+              },
+              {
+                title: 'Authority Building',
+                desc: (
+                  <>
+                    Backlink strategy through editorial outreach, digital PR, and parasite SEO on high-authority platforms. <Link href="/services/seo-consulting/authority-building" style={{ color: '#C4533A', textDecoration: 'none' }}>Discover the authority-building approach</Link>.
+                  </>
+                ),
+              },
             ].map((item) => (
               <div key={item.title} className="card-base">
                 <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.05rem', color: '#1A1A1A', marginBottom: '0.5rem' }}>{item.title}</h3>
