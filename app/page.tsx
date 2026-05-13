@@ -126,6 +126,24 @@ export default function HomePage() {
                   <Link href="/contact" className="btn-primary">Work With Me</Link>
                   <Link href="/blog" className="btn-secondary">Read the Blog</Link>
                 </div>
+                <a
+                  href="https://www.upwork.com/freelancers/~01fad6eab5741b8ac8?mp_source=share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    marginTop: '1rem',
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontSize: '0.875rem',
+                    color: '#5C5248',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#6FDA44', flexShrink: 0 }} />
+                  Available on Upwork
+                </a>
               </div>
 
               {/* Right 45% */}

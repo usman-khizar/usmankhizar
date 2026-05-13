@@ -101,6 +101,14 @@ export default function Footer() {
                 <XIcon /> Twitter / X
               </a>
               <a
+                href="https://www.upwork.com/freelancers/~01fad6eab5741b8ac8?mp_source=share"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontFamily: 'var(--font-dm-sans)', color: '#C9BCA8', fontSize: '0.9rem', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}
+              >
+                <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#6FDA44', flexShrink: 0 }} /> Upwork
+              </a>
+              <a
                 href="mailto:enquiries@usmankhizar.com"
                 style={{ fontFamily: 'var(--font-dm-sans)', color: '#C9BCA8', fontSize: '0.9rem', textDecoration: 'none' }}
               >
