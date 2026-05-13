@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#141210', color: '#FAF8F4' }}>
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Col 1: Name + tagline */}
           <div>
             <div className="flex items-center gap-1 mb-3">
@@ -46,7 +46,39 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 3: Social + contact */}
+          {/* Col 3: Services sub-pages */}
+          <div>
+            <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.08em', color: '#C9BCA8', textTransform: 'uppercase', marginBottom: '1rem' }}>
+              Services
+            </p>
+            <div className="flex flex-col gap-3">
+              {[
+                { label: 'SEO Consulting', href: '/services/seo-consulting' },
+                { label: '— Technical SEO', href: '/services/seo-consulting/technical-seo' },
+                { label: '— On-Page SEO', href: '/services/seo-consulting/on-page-seo' },
+                { label: '— Content Strategy', href: '/services/seo-consulting/content-strategy' },
+                { label: '— Authority Building', href: '/services/seo-consulting/authority-building' },
+                { label: 'AEO Consulting', href: '/services/aeo-consulting' },
+                { label: '— Featured Snippets', href: '/services/aeo-consulting/featured-snippet-optimisation' },
+                { label: '— Schema Markup', href: '/services/aeo-consulting/schema-markup' },
+                { label: '— Question Content', href: '/services/aeo-consulting/question-based-content' },
+                { label: '— Voice Search', href: '/services/aeo-consulting/voice-and-conversational-search' },
+                { label: 'GEO Consulting', href: '/services/geo-consulting' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  style={{ fontFamily: 'var(--font-dm-sans)', color: '#C9BCA8', fontSize: '0.82rem', textDecoration: 'none', transition: 'color 0.2s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#C4533A')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#C9BCA8')}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Col 4: Social + contact */}
           <div>
             <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.08em', color: '#C9BCA8', textTransform: 'uppercase', marginBottom: '1rem' }}>
               Connect

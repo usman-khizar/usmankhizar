@@ -99,13 +99,13 @@ export default function ServicesPage() {
                 </p>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
                   {[
-                    'Rank on Google organically (on-page, technical, authority)',
-                    'Get cited by ChatGPT, Perplexity, and AI Overviews (GEO consulting services)',
-                    'Appear in featured snippets and zero-click results (AEO)',
-                    'Rank fast on high-authority third-party platforms (Parasite SEO)',
+                    { key: 'seo', body: <>Rank on Google organically — <Link href="/services/seo-consulting/technical-seo" style={{ color: '#C4533A', textDecoration: 'none' }}>technical SEO</Link>, <Link href="/services/seo-consulting/on-page-seo" style={{ color: '#C4533A', textDecoration: 'none' }}>on-page optimisation</Link>, and <Link href="/services/seo-consulting/authority-building" style={{ color: '#C4533A', textDecoration: 'none' }}>authority building</Link></> },
+                    { key: 'geo', body: 'Get cited by ChatGPT, Perplexity, and AI Overviews (GEO consulting services)' },
+                    { key: 'aeo', body: <>Appear in <Link href="/services/aeo-consulting/featured-snippet-optimisation" style={{ color: '#C4533A', textDecoration: 'none' }}>featured snippets</Link> and zero-click results (AEO)</> },
+                    { key: 'parasite', body: 'Rank fast on high-authority third-party platforms (Parasite SEO)' },
                   ].map((item) => (
-                    <li key={item} style={{ display: 'flex', gap: '0.75rem', fontFamily: 'var(--font-dm-sans)', color: '#5C5248', fontSize: '0.95rem' }}>
-                      <span style={{ color: '#C4533A', flexShrink: 0 }}>→</span> {item}
+                    <li key={item.key} style={{ display: 'flex', gap: '0.75rem', fontFamily: 'var(--font-dm-sans)', color: '#5C5248', fontSize: '0.95rem' }}>
+                      <span style={{ color: '#C4533A', flexShrink: 0 }}>→</span> {item.body}
                     </li>
                   ))}
                 </ul>
@@ -131,13 +131,15 @@ export default function ServicesPage() {
                   What you get
                 </p>
                 {[
-                  { label: 'Technical SEO Audit', desc: 'Full crawl, Core Web Vitals, indexability' },
-                  { label: 'Content Strategy', desc: 'Keyword map built around your business goals' },
-                  { label: 'GEO Optimisation', desc: 'Structured for AI citation and featured answers' },
-                  { label: 'Monthly Reporting', desc: 'Plain-English progress, not vanity metrics' },
+                  { label: 'Technical SEO Audit', href: '/services/seo-consulting/technical-seo', desc: 'Full crawl, Core Web Vitals, indexability' },
+                  { label: 'Content Strategy', href: '/services/seo-consulting/content-strategy', desc: 'Keyword map built around your business goals' },
+                  { label: 'GEO Optimisation', href: null, desc: 'Structured for AI citation and featured answers' },
+                  { label: 'Monthly Reporting', href: null, desc: 'Plain-English progress, not vanity metrics' },
                 ].map((item) => (
                   <div key={item.label} style={{ marginBottom: '1rem', paddingBottom: '1rem', borderBottom: '1px solid #F5F0E8' }}>
-                    <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.9rem', color: '#1A1A1A', marginBottom: '0.2rem' }}>{item.label}</p>
+                    <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.9rem', color: '#1A1A1A', marginBottom: '0.2rem' }}>
+                      {item.href ? <Link href={item.href} style={{ color: '#1A1A1A', textDecoration: 'none' }}>{item.label}</Link> : item.label}
+                    </p>
                     <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.85rem', color: '#5C5248' }}>{item.desc}</p>
                   </div>
                 ))}
@@ -257,7 +259,7 @@ export default function ServicesPage() {
                 { n: '02', label: 'Strategy', desc: 'A focused plan across the search surfaces that matter most for you.' },
                 { n: '03', label: 'Execution', desc: 'I build or guide the implementation — content, technical, and structure.' },
                 { n: '04', label: 'Measure + Iterate', desc: 'Real data, plain-English reporting, and continuous refinement.' },
-              ].map((step, i) => (
+              ].map((step) => (
                 <div key={step.n} className="text-center">
                   <div
                     style={{

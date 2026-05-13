@@ -149,7 +149,7 @@ export default function HomePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Visit Usman Khizar on LinkedIn"
-                    style={{ display: 'block', width: '100%', height: '100%' }}
+                    style={{ display: 'block', width: '100%', height: '100%', position: 'relative' }}
                   >
                     <Image
                       src="/usman-photo.png"
@@ -241,7 +241,7 @@ export default function HomePage() {
                   title: 'Full-Stack Search Visibility',
                   body: (
                     <>
-                      Get found on Google and get cited by AI. I build content and technical strategies that rank on every modern search surface — not just 2019 Google. <Link href="/services/seo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>Explore SEO consulting</Link> or <Link href="/services/aeo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>AEO consulting</Link>.
+                      Get found on Google and get cited by AI. I build <Link href="/services/seo-consulting/content-strategy" style={{ color: '#C4533A', textDecoration: 'none' }}>content strategies</Link> and <Link href="/services/seo-consulting/technical-seo" style={{ color: '#C4533A', textDecoration: 'none' }}>technical SEO foundations</Link> that rank on every modern search surface — not just 2019 Google. <Link href="/services/seo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>Explore SEO consulting</Link> or <Link href="/services/aeo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>AEO consulting</Link>.
                     </>
                   ),
                   link: 'Explore the approach →',
