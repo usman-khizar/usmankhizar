@@ -38,6 +38,13 @@ export const metadata: Metadata = {
     template: '%s | Usman Khizar',
   },
   description: 'Usman Khizar is a search marketer specialising in SEO, Generative Engine Optimisation (GEO), and Answer Engine Optimisation (AEO) for founders and businesses.',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.svg', sizes: '32x32', type: 'image/svg+xml' },
+    ],
+    apple: { url: '/apple-touch-icon.svg', type: 'image/svg+xml' },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
