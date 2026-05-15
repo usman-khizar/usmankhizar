@@ -13,3 +13,9 @@ Allow: /
 
 User-agent: ClaudeBot
 Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
