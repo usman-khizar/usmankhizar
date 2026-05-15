@@ -133,7 +133,7 @@ export default function HomePage() {
                   <div className="hero-llm-logos">
                     {[
                       { src: '/claud.png', alt: 'Claude' },
-                      { src: '/ChatGPT-Logo_svg.png', alt: 'ChatGPT' },
+                      { src: '/ChatGPT-Logo.svg.png', alt: 'ChatGPT' },
                       { src: '/perplexity.png', alt: 'Perplexity' },
                       { src: '/gamini.jpg', alt: 'Gemini' },
                     ].map((logo, index) => (

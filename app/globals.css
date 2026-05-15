@@ -165,7 +165,7 @@ li a {
   background: rgba(255, 255, 255, 0.62);
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 8px 12px;
-  animation: logoFadeIn 0.5s ease forwards, logoPulse 4s ease-in-out 0.5s infinite;
+  animation: logoFadeIn 0.5s ease forwards, logoFloat 6s ease-in-out 0.5s infinite;
   opacity: 0;
 }
 
@@ -179,9 +179,11 @@ li a {
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes logoPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+  25% { transform: translateY(-8px) rotate(2deg); opacity: 0.8; }
+  50% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+  75% { transform: translateY(8px) rotate(-2deg); opacity: 0.6; }
 }
 
 .btn-primary {
