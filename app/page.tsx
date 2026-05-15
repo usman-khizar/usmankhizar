@@ -122,7 +122,7 @@ export default function HomePage() {
                 >
                   I help founders and businesses build search visibility that compounds — across Google, ChatGPT, Perplexity, and AI Overviews.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <Link href="/contact" className="btn-primary">Work With Me</Link>
                   <Link href="/blog" className="btn-secondary">Read the Blog</Link>
                 </div>
@@ -130,19 +130,15 @@ export default function HomePage() {
                   href="https://www.upwork.com/freelancers/~01fad6eab5741b8ac8?mp_source=share"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="upwork-logo-link"
                   style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 8,
                     marginTop: '1rem',
-                    fontFamily: 'var(--font-dm-sans)',
-                    fontSize: '0.875rem',
                     color: '#5C5248',
                     textDecoration: 'none',
                   }}
                 >
-                  <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#6FDA44', flexShrink: 0 }} />
-                  Available on Upwork
+                  <Image src="/upwork-logo-png-transparent.png" alt="Upwork logo" width={24} height={24} style={{ width: 24, height: 24, objectFit: 'contain' }} />
+                  <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '0.875rem', color: '#5C5248' }}>Hire me on Upwork</span>
                 </a>
               </div>
 
@@ -296,6 +292,18 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── What This Covers ── */}
+        <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(40px, 6vw, 80px) 24px' }}>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="section-title text-center mb-6" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)' }}>
+              What This Covers
+            </h2>
+            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.85, maxWidth: 860, margin: '0 auto' }}>
+              Full-stack search marketing covers four interconnected layers. <Link href="/services/seo-consulting/technical-seo" style={{ color: '#C4533A', textDecoration: 'none' }}>Technical SEO</Link> ensures search engines can crawl and index your site. <Link href="/services/seo-consulting/on-page-seo" style={{ color: '#C4533A', textDecoration: 'none' }}>On-page SEO</Link> structures every page for maximum relevance. <Link href="/services/seo-consulting/content-strategy" style={{ color: '#C4533A', textDecoration: 'none' }}>Content strategy</Link> builds topical authority that compounds over time. And <Link href="/services/seo-consulting/authority-building" style={{ color: '#C4533A', textDecoration: 'none' }}>authority building</Link> earns the backlinks and trust signals that push pages to the top. For AI search surfaces, <Link href="/services/aeo-consulting/featured-snippet-optimisation" style={{ color: '#C4533A', textDecoration: 'none' }}>featured snippet optimisation</Link>, <Link href="/services/aeo-consulting/schema-markup" style={{ color: '#C4533A', textDecoration: 'none' }}>schema markup</Link>, and <Link href="/services/aeo-consulting/question-based-content" style={{ color: '#C4533A', textDecoration: 'none' }}>question-based content</Link> determine whether your pages get cited by ChatGPT, Perplexity, and Google AI Overviews.
+            </p>
           </div>
         </section>
 

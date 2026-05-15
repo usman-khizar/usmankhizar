@@ -163,11 +163,11 @@ export default function SEOConsultingPage() {
           </div>
 
           {/* Sub-page navigation buttons */}
-          <div className="max-w-5xl mx-auto mt-8 flex flex-wrap gap-3 justify-center">
-            <Link href="/services/seo-consulting/technical-seo" className="btn-secondary">Technical SEO</Link>
-            <Link href="/services/seo-consulting/on-page-seo" className="btn-secondary">On-Page SEO</Link>
-            <Link href="/services/seo-consulting/content-strategy" className="btn-secondary">Content Strategy</Link>
-            <Link href="/services/seo-consulting/authority-building" className="btn-secondary">Authority Building</Link>
+          <div className="max-w-5xl mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <Link href="/services/seo-consulting/technical-seo" className="btn-secondary w-full justify-center">Technical SEO</Link>
+            <Link href="/services/seo-consulting/on-page-seo" className="btn-secondary w-full justify-center">On-Page SEO</Link>
+            <Link href="/services/seo-consulting/content-strategy" className="btn-secondary w-full justify-center">Content Strategy</Link>
+            <Link href="/services/seo-consulting/authority-building" className="btn-secondary w-full justify-center">Authority Building</Link>
           </div>
 
           <div className="max-w-5xl mx-auto mt-8">

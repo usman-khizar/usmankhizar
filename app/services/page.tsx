@@ -109,10 +109,10 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-wrap gap-3">
-                  <Link href="/services/seo-consulting" className="btn-primary">SEO Consulting</Link>
-                  <Link href="/services/geo-consulting" className="btn-secondary">GEO Consulting</Link>
-                  <Link href="/services/aeo-consulting" className="btn-secondary">AEO Consulting</Link>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link href="/services/seo-consulting" className="btn-primary w-full sm:w-auto">SEO Consulting</Link>
+                  <Link href="/services/geo-consulting" className="btn-secondary w-full sm:w-auto">GEO Consulting</Link>
+                  <Link href="/services/aeo-consulting" className="btn-secondary w-full sm:w-auto">AEO Consulting</Link>
                 </div>
               </div>
               <div

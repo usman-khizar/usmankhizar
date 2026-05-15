@@ -141,11 +141,11 @@ export default function GEOConsultingPage() {
             </div>
 
             {/* Sub-page navigation buttons */}
-            <div className="flex flex-wrap gap-3 justify-center mt-6">
-              <Link href="/services/geo-consulting/geo-readiness-audit" className="btn-secondary">GEO Readiness Audit</Link>
-              <Link href="/services/geo-consulting/content-restructuring" className="btn-secondary">Content Restructuring</Link>
-              <Link href="/services/geo-consulting/citation-monitoring" className="btn-secondary">Citation Monitoring</Link>
-              <Link href="/services/geo-consulting/entity-building" className="btn-secondary">Entity Building</Link>
+            <div className="max-w-5xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <Link href="/services/geo-consulting/geo-readiness-audit" className="btn-secondary w-full justify-center">GEO Readiness Audit</Link>
+              <Link href="/services/geo-consulting/content-restructuring" className="btn-secondary w-full justify-center">Content Restructuring</Link>
+              <Link href="/services/geo-consulting/citation-monitoring" className="btn-secondary w-full justify-center">Citation Monitoring</Link>
+              <Link href="/services/geo-consulting/entity-building" className="btn-secondary w-full justify-center">Entity Building</Link>
             </div>
           </div>
         </section>

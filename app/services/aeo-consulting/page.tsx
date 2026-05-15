@@ -172,11 +172,11 @@ export default function AEOConsultingPage() {
           </div>
 
           {/* Sub-page navigation buttons */}
-          <div className="max-w-5xl mx-auto mt-6 flex flex-wrap gap-3 justify-center">
-            <Link href="/services/aeo-consulting/featured-snippet-optimisation" className="btn-secondary">Featured Snippets</Link>
-            <Link href="/services/aeo-consulting/schema-markup" className="btn-secondary">Schema Markup</Link>
-            <Link href="/services/aeo-consulting/question-based-content" className="btn-secondary">Question-Based Content</Link>
-            <Link href="/services/aeo-consulting/voice-and-conversational-search" className="btn-secondary">Voice Search</Link>
+          <div className="max-w-5xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <Link href="/services/aeo-consulting/featured-snippet-optimisation" className="btn-secondary w-full justify-center">Featured Snippets</Link>
+            <Link href="/services/aeo-consulting/schema-markup" className="btn-secondary w-full justify-center">Schema Markup</Link>
+            <Link href="/services/aeo-consulting/question-based-content" className="btn-secondary w-full justify-center">Question-Based Content</Link>
+            <Link href="/services/aeo-consulting/voice-and-conversational-search" className="btn-secondary w-full justify-center">Voice Search</Link>
           </div>
         </section>
 

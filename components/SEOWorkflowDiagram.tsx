@@ -6,7 +6,7 @@ import {
   FileText, Tags, Brain, LayoutTemplate, Link2, AlignLeft, TrendingUp, Braces,
   Star, CheckSquare, MessageSquare, ClipboardCheck, Map, CalendarDays, Globe,
   BarChart3, Type, Send, ExternalLink, PieChart, LineChart, Users,
-  ChevronDown, Zap,
+  ChevronDown, Zap, Bug, Compass,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -117,6 +117,9 @@ const AI_TOOLS: AITool[] = [
   { id: 'clickup', label: 'ClickUp AI', icon: CheckSquare, dot: '#DB2777', tooltip: 'Sprint task management, deadline tracking, and deliverable organisation.' },
   { id: 'gsc-api', label: 'GSC API', icon: TrendingUp, dot: '#C4522A', tooltip: 'Automated data pulls for quick-win keyword segmentation and CTR trend analysis.' },
   { id: 'agency', label: 'Agency Analytics', icon: PieChart, dot: '#0D9488', tooltip: 'Client-facing monthly reporting dashboard with white-label branded exports.' },
+  { id: 'screaming-frog', label: 'Screaming Frog', icon: Bug, dot: '#F59E0B', tooltip: 'Deep technical crawl audits with Screaming Frog to find indexability, redirect, and schema issues.' },
+  { id: 'data-for-seo', label: 'Data for SEO', icon: BarChart3, dot: '#0EA5E9', tooltip: 'API-driven keyword, SERP, and rankings data from Data for SEO for faster decision-making.' },
+  { id: 'search-atlas', label: 'Search Atlas', icon: Compass, dot: '#8B5CF6', tooltip: 'Competitive research and local search analysis built from Search Atlas for entity distribution and keyword maps.' },
 ]
 
 const FILTER_OPTIONS = ['All Sprints', 'Sprint 1–2', 'Sprint 3–4', 'Sprint 3', 'Sprint 5–6']

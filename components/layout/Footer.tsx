@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -104,9 +105,12 @@ export default function Footer() {
                 href="https://www.upwork.com/freelancers/~01fad6eab5741b8ac8?mp_source=share"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontFamily: 'var(--font-dm-sans)', color: '#C9BCA8', fontSize: '0.9rem', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}
+                style={{ fontFamily: 'var(--font-dm-sans)', color: '#C9BCA8', fontSize: '0.9rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8, transition: 'opacity 0.2s ease' }}
+                onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.8')}
+                onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
               >
-                <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#6FDA44', flexShrink: 0 }} /> Upwork
+                <Image src="/upwork-logo-png-transparent.png" alt="Upwork logo" width={24} height={24} style={{ width: 24, height: 24, objectFit: 'contain' }} />
+                <span>Upwork</span>
               </a>
               <a
                 href="mailto:enquiries@usmankhizar.com"
