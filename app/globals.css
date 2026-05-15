@@ -76,6 +76,114 @@ li a {
   font-family: var(--font-dm-sans), system-ui, sans-serif;
 }
 
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(56px);
+  opacity: 0.55;
+  will-change: transform, opacity;
+}
+
+.hero-blob-1 {
+  width: 420px;
+  height: 420px;
+  background: rgba(196, 83, 58, 0.24);
+  top: -100px;
+  left: -80px;
+  animation: blobFloat1 18s ease-in-out infinite;
+}
+
+.hero-blob-2 {
+  width: 360px;
+  height: 360px;
+  background: rgba(212, 98, 42, 0.2);
+  top: 80px;
+  right: -140px;
+  animation: blobFloat2 20s ease-in-out infinite;
+}
+
+.hero-blob-3 {
+  width: 340px;
+  height: 340px;
+  background: rgba(245, 240, 232, 0.95);
+  bottom: -120px;
+  left: 18%;
+  animation: blobFloat3 22s ease-in-out infinite;
+}
+
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(28px, 24px) scale(1.05); }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-22px, -18px) scale(1.04); }
+}
+
+@keyframes blobFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(16px, -26px) scale(1.03); }
+}
+
+.hero-llm-section {
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-llm-label {
+  font-family: var(--font-dm-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5C5248;
+  margin-bottom: 0.75rem;
+}
+
+.hero-llm-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+}
+
+.hero-llm-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 8px 12px;
+  animation: logoFadeIn 0.5s ease forwards, logoPulse 4s ease-in-out 0.5s infinite;
+  opacity: 0;
+}
+
+.hero-llm-pill img,
+.hero-llm-pill svg {
+  display: block;
+}
+
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;

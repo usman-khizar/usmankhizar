@@ -86,6 +86,7 @@ export default function HomePage() {
       <main style={{ paddingTop: 64 }}>
         {/* ── Hero ── */}
         <section
+          className="hero-animated-section"
           style={{
             backgroundColor: '#F5F0E8',
             padding: 'clamp(60px, 10vw, 120px) 24px clamp(50px, 6vw, 80px)',
@@ -93,7 +94,12 @@ export default function HomePage() {
             overflow: 'hidden',
           }}
         >
-          <div className="max-w-6xl mx-auto">
+          <div className="hero-background" aria-hidden="true">
+            <div className="hero-blob hero-blob-1" />
+            <div className="hero-blob hero-blob-2" />
+            <div className="hero-blob hero-blob-3" />
+          </div>
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="flex flex-col md:flex-row gap-12 items-center">
               {/* Left 55% */}
               <div style={{ flex: '0 0 55%' }}>
@@ -116,12 +122,27 @@ export default function HomePage() {
                     fontSize: '1.1rem',
                     color: '#5C5248',
                     lineHeight: 1.7,
-                    marginBottom: '2rem',
+                    marginBottom: '1.5rem',
                     maxWidth: 520,
                   }}
                 >
                   I help founders and businesses build search visibility that compounds — across Google, ChatGPT, Perplexity, and AI Overviews.
                 </p>
+                <div className="hero-llm-section">
+                  <p className="hero-llm-label">Optimised for every AI search surface</p>
+                  <div className="hero-llm-logos">
+                    {[
+                      { src: '/claud.png', alt: 'Claude' },
+                      { src: '/ChatGPT-Logo_svg.png', alt: 'ChatGPT' },
+                      { src: '/perplexity.png', alt: 'Perplexity' },
+                      { src: '/gamini.jpg', alt: 'Gemini' },
+                    ].map((logo, index) => (
+                      <div key={logo.alt} className="hero-llm-pill" style={{ animationDelay: `${index * 0.15}s` }}>
+                        <Image src={logo.src} alt={logo.alt} width={32} height={32} style={{ width: 32, height: 32, objectFit: 'contain' }} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link href="/contact" className="btn-primary">Work With Me</Link>
                   <Link href="/blog" className="btn-secondary">Read the Blog</Link>
