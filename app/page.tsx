@@ -9,18 +9,18 @@ import PostCard, { Post } from '@/components/blog/PostCard'
 import SEOWorkflowDiagram from '@/components/SEOWorkflowDiagram'
 
 export const metadata: Metadata = {
-  title: 'Search Marketer | Usman Khizar',
-  description: 'A search marketer helping founders and businesses build search visibility across Google, ChatGPT, Perplexity, and AI Overviews. SEO, GEO & AEO specialist.',
+  title: 'SEO Specialist & GEO Consultant | Usman Khizar',
+  description: 'SEO specialist and GEO consultant for founders, agencies, and local businesses. I optimise websites, GMB, content and SearchAtlas campaigns using GSC, Analytics, Ahrefs, Screaming Frog and modern SEO systems.',
   openGraph: {
-    title: 'Search Marketer | Usman Khizar',
-    description: 'A search marketer helping founders and businesses build search visibility across Google, ChatGPT, Perplexity, and AI Overviews.',
+    title: 'SEO Specialist & GEO Consultant | Usman Khizar',
+    description: 'SEO specialist and GEO consultant for founders, agencies, and local businesses. I optimise websites, GMB, content and SearchAtlas campaigns using GSC, Analytics, Ahrefs, Screaming Frog and modern SEO systems.',
     url: 'https://usmankhizar.com',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Search Marketer | Usman Khizar',
-    description: 'A search marketer helping founders and businesses build search visibility across Google, ChatGPT, Perplexity, and AI Overviews.',
+    title: 'SEO Specialist & GEO Consultant | Usman Khizar',
+    description: 'SEO specialist and GEO consultant for founders, agencies, and local businesses. I optimise websites, GMB, content and SearchAtlas campaigns using GSC, Analytics, Ahrefs, Screaming Frog and modern SEO systems.',
   },
   alternates: { canonical: 'https://usmankhizar.com' },
 }
@@ -132,9 +132,9 @@ export default function HomePage() {
                   <p className="hero-llm-label">Optimised for every AI search surface</p>
                   <div className="hero-llm-logos">
                     {[
-                      { src: '/claud.png', alt: 'Claude' },
-                      { src: '/ChatGPT-Logo.svg.png', alt: 'ChatGPT' },
-                      { src: '/perplexity.png', alt: 'Perplexity' },
+                      { src: '/claude-logo-png_seeklogo-554534.png', alt: 'Claude' },
+                      { src: '/ChatGPT-Logo.svg.webp', alt: 'ChatGPT' },
+                      { src: '/perplexity-logo.png', alt: 'Perplexity' },
                       { src: '/gamini.jpg', alt: 'Gemini' },
                     ].map((logo, index) => (
                       <div key={logo.alt} className="hero-llm-pill" style={{ animationDelay: `${index * 0.15}s` }}>
@@ -159,7 +159,7 @@ export default function HomePage() {
                   }}
                 >
                   <Image src="/upwork-logo-png-transparent.png" alt="Upwork logo" width={24} height={24} style={{ width: 24, height: 24, objectFit: 'contain' }} />
-                  <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '0.875rem', color: '#5C5248' }}>Hire me on Upwork</span>
+                  <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '0.875rem', color: '#5C5248' }}>Work with on Upwork</span>
                 </a>
               </div>
 
@@ -297,6 +297,18 @@ export default function HomePage() {
                   body: "I build digital products using AI-assisted code and market them through SEO and content. The full system, not just the build.",
                   link: 'Learn the approach →',
                   href: '/services#build',
+                },
+                {
+                  icon: <GraphIcon />,
+                  label: 'Local SEO & SearchAtlas',
+                  title: 'Local SEO Specialist',
+                  body: (
+                    <>
+                      I work with top SEO agencies and local SEO gurus to optimise Google Business Profile and GMB categories, descriptions, services, and website service pages. <Link href="/local-seo-specialist" style={{ color: '#C4533A', textDecoration: 'none' }}>Local SEO specialist</Link> and <Link href="/search-atlas-seo-specialist" style={{ color: '#C4533A', textDecoration: 'none' }}>SearchAtlas SEO specialist</Link> pages explain the process.
+                    </>
+                  ),
+                  link: 'Learn local SEO →',
+                  href: '/local-seo-specialist',
                 },
               ].map((card) => (
                 <div key={card.title} className="card-base flex flex-col gap-4">
