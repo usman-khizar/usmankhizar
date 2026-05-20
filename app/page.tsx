@@ -304,11 +304,11 @@ export default function HomePage() {
                   title: 'Local SEO Specialist',
                   body: (
                     <>
-                      I work with top SEO agencies and local SEO gurus to optimise Google Business Profile and GMB categories, descriptions, services, and website service pages. <Link href="/local-seo-specialist" style={{ color: '#C4533A', textDecoration: 'none' }}>Local SEO specialist</Link> and <Link href="/search-atlas-seo-specialist" style={{ color: '#C4533A', textDecoration: 'none' }}>SearchAtlas SEO specialist</Link> pages explain the process.
+                      I work with top SEO agencies and local SEO gurus to optimise Google Business Profile and GMB categories, descriptions, services, and website service pages. <Link href="/services/local-seo-specialist" style={{ color: '#C4533A', textDecoration: 'none' }}>Local SEO specialist</Link> and <Link href="/services/search-atlas-seo-specialist" style={{ color: '#C4533A', textDecoration: 'none' }}>SearchAtlas SEO specialist</Link> pages explain the process.
                     </>
                   ),
                   link: 'Learn local SEO →',
-                  href: '/local-seo-specialist',
+                  href: '/services/local-seo-specialist',
                 },
               ].map((card) => (
                 <div key={card.title} className="card-base flex flex-col gap-4">

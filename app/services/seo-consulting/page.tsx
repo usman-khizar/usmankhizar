@@ -255,6 +255,20 @@ export default function SEOConsultingPage() {
           </div>
         </section>
 
+        <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(40px, 6vw, 80px) 24px' }}>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', marginBottom: '1.25rem' }}>
+              Local SEO and SearchAtlas are part of modern SEO
+            </h2>
+            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.85, marginBottom: '1rem' }}>
+              Local SEO entities are not separate from technical SEO, on-page SEO, or off-page authority. They are the local expression of the same search system: crawlability, service page relevance, and business profile consistency. That is why I link GMB, website services and content strategy into a unified SEO plan.
+            </p>
+            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.85 }}>
+              If you need specialist help with Google Business Profile and local entity optimisation, see <Link href="/services/local-seo-specialist" style={{ color: '#C4533A', textDecoration: 'none' }}>Local SEO Specialist</Link>. If you want to manage your campaign inside SearchAtlas Otto, see <Link href="/services/search-atlas-seo-specialist" style={{ color: '#C4533A', textDecoration: 'none' }}>SearchAtlas SEO Specialist</Link>. These pages explain how the local, technical and campaign layers fit together.
+            </p>
+          </div>
+        </section>
+
         {/* ── FAQ ── */}
         <section style={{ backgroundColor: '#FFFFFF', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
           <div className="max-w-5xl mx-auto">
