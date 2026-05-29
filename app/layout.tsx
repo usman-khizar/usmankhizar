@@ -19,6 +19,7 @@ const dmSans = DM_Sans({
 
 const lora = Lora({
   weight: ['400', '500'],
+  style: ['normal', 'italic'],
   subsets: ['latin'],
   variable: '--font-lora',
   display: 'swap',

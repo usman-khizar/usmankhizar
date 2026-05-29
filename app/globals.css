@@ -76,82 +76,136 @@ li a {
   font-family: var(--font-dm-sans), system-ui, sans-serif;
 }
 
-.hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+/* ── Hero Section ── */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
   overflow: hidden;
+  background: linear-gradient(135deg, #F5EDE0 0%, #F2E8D9 30%, #EBD9C4 60%, #E8D4BC 100%);
+  display: flex;
+  align-items: center;
 }
 
-.hero-blob {
+.hero-photo-bg {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(56px);
-  opacity: 0.55;
-  will-change: transform, opacity;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 25%, black 55%),
+    linear-gradient(to top, transparent 0%, black 20%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 25%, black 55%),
+    linear-gradient(to top, transparent 0%, black 20%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
-.hero-blob-1 {
-  width: 420px;
-  height: 420px;
-  background: rgba(196, 83, 58, 0.24);
-  top: -100px;
-  left: -80px;
-  animation: blobFloat1 18s ease-in-out infinite;
+.hero-float-cards {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
 }
 
-.hero-blob-2 {
-  width: 360px;
-  height: 360px;
-  background: rgba(212, 98, 42, 0.2);
-  top: 80px;
-  right: -140px;
-  animation: blobFloat2 20s ease-in-out infinite;
+.hero-float-card {
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 10px 16px;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1A1A1A;
+  white-space: nowrap;
 }
 
-.hero-blob-3 {
-  width: 340px;
-  height: 340px;
-  background: rgba(245, 240, 232, 0.95);
-  bottom: -120px;
-  left: 18%;
-  animation: blobFloat3 22s ease-in-out infinite;
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 100px 0 80px 80px;
+  width: 52%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-@keyframes blobFloat1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(28px, 24px) scale(1.05); }
+.hero-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 16px;
+  border-radius: 100px;
+  background: #C4533A;
+  color: #FFFFFF;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
 }
 
-@keyframes blobFloat2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-22px, -18px) scale(1.04); }
+.hero-h1 {
+  font-family: var(--font-archivo-black), serif;
+  font-weight: 900;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1.05;
+  color: #1A1A1A;
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes blobFloat3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(16px, -26px) scale(1.03); }
+.hero-h1-black {
+  display: block;
+  color: #1A1A1A;
 }
 
+.hero-h1-italic {
+  display: block;
+  font-family: var(--font-lora), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #C4533A;
+}
+
+.hero-sub {
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-size: 17px;
+  color: #5C5248;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 0 1.75rem 0;
+}
+
+/* ── LLM logos ── */
 .hero-llm-section {
   max-width: 480px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .hero-llm-label {
-  font-family: var(--font-dm-sans);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #5C5248;
+  color: #8A8070;
   margin-bottom: 0.75rem;
 }
 
 .hero-llm-logos {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
   justify-content: flex-start;
 }
 
@@ -159,12 +213,11 @@ li a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 44px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.62);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 8px 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   animation: logoFadeIn 0.5s ease forwards, logoFloat 6s ease-in-out 0.5s infinite;
   opacity: 0;
 }
@@ -174,93 +227,85 @@ li a {
   display: block;
 }
 
-/* Hero layout and photo treatment */
-.hero-animated-section {
-  position: relative;
+/* ── Buttons ── */
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
 }
 
-
-.hero-photo {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 40%;
-  height: 90%;
-  max-width: 900px;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.2) 20%, black 50%);
-  mask-image: linear-gradient(to left, transparent 0%, rgba(0,0,0,0.2) 20%, black 50%);
+.hero-btn {
+  padding: 16px 32px !important;
+  font-size: 1rem !important;
 }
 
-.hero-photo img {
-  transform: translateZ(0);
+/* ── Mobile photo block ── */
+.hero-mobile-photo {
+  display: none;
 }
 
-/* Headline typography adjustments */
-.hero-headline {
-  /* Mobile-first headline sizing */
-  font-size: clamp(36px, 9vw, 52px);
-  line-height: 1.05;
-}
-
-@media (min-width: 768px) {
-  .hero-animated-section {
-    min-height: 100vh;
-  }
-  .hero-headline {
-    font-size: clamp(52px, 5.5vw, 80px);
-  }
-}
-
-/* Floating stat card over photo */
-.hero-stat-card {
-  position: absolute;
-  bottom: 80px;
-  right: 60px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  padding: 12px 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  z-index: 2;
-  max-width: 260px;
-}
-
+/* ── Mobile layout ── */
 @media (max-width: 767px) {
-  .hero-stat-card { display: none; }
-}
+  .hero-section {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+  }
 
-/* Decorative terracotta line beside the eyebrow */
-.hero-decor-line {
-  width: 4px;
-  height: 60px;
-  background-color: #C4533A;
-  display: inline-block;
-  border-radius: 2px;
-}
+  .hero-photo-bg {
+    display: none;
+  }
 
-/* Mobile behaviour: move photo below text */
-@media (max-width: 767px) {
-  .hero-photo {
-    position: static;
+  .hero-float-cards {
+    display: none;
+  }
+
+  .hero-content {
     width: 100%;
-    height: 340px;
+    padding: 80px 24px 32px;
     max-width: none;
-    margin-top: 18px;
-    -webkit-mask-image: none;
-    mask-image: none;
   }
-  .hero-photo::after {
-    content: '';
+
+  .hero-h1 {
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-mobile-photo {
+    display: block;
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .hero-mobile-photo-fade {
     position: absolute;
-    left: 0; right: 0; bottom: 0;
-    height: 120px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(240,232,220,0.45) 60%, rgba(240,232,220,0.95) 100%);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, #F5EDE0, transparent);
+    z-index: 2;
     pointer-events: none;
   }
 }
 
+/* ── Logo animations ── */
 @keyframes logoFadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -273,6 +318,7 @@ li a {
   75% { transform: translateY(8px) rotate(-2deg); opacity: 0.6; }
 }
 
+/* ── Buttons ── */
 .btn-primary {
   display: inline-flex;
   align-items: center;
