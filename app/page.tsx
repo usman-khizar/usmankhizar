@@ -88,7 +88,7 @@ export default function HomePage() {
         <section
           className="hero-animated-section"
           style={{
-            backgroundColor: '#F5F0E8',
+            background: 'radial-gradient(ellipse at 20% 60%, #F0E8DC 0%, #F5F0E8 50%, #EDE5D8 100%)',
             padding: 'clamp(60px, 10vw, 120px) 24px clamp(50px, 6vw, 80px)',
             position: 'relative',
             overflow: 'hidden',
@@ -99,37 +99,60 @@ export default function HomePage() {
             <div className="hero-blob hero-blob-2" />
             <div className="hero-blob hero-blob-3" />
           </div>
+          <div className="hero-photo" aria-hidden="true">
+            <Image
+              src="/usman-photo.png"
+              alt="Usman Khizar"
+              fill
+              style={{ objectFit: 'contain', objectPosition: 'center bottom' }}
+              priority
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
+
+            <div className="hero-stat-card" role="note">
+              <div style={{ fontSize: '1rem', marginBottom: 6 }}>⭐ <strong>Top-Rated on Upwork</strong></div>
+              <div style={{ fontSize: '0.85rem', color: 'var(--color-warm-grey)' }}>Search marketer trusted by founders and agencies</div>
+            </div>
+          </div>
+
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="flex flex-col md:flex-row gap-12 items-center">
               {/* Left 55% */}
               <div style={{ flex: '0 0 55%' }}>
-                <PillTag className="mb-6">SEO · GEO · AEO</PillTag>
+                <div className="hero-eyebrow" style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                  <span className="hero-decor-line" aria-hidden="true" />
+                  <PillTag className="mb-6">SEO · GEO · AEO</PillTag>
+                </div>
+
                 <h1
+                  className="hero-headline"
                   style={{
                     fontFamily: 'var(--font-archivo-black)',
                     fontWeight: 900,
-                    fontSize: 'clamp(2.2rem, 5vw, 3.5rem)',
                     color: '#1A1A1A',
                     lineHeight: 1.05,
-                    marginBottom: '1.5rem',
+                    marginBottom: '1rem',
+                    display: 'block',
                   }}
                 >
-                  The Search Marketer Who Gets You Found — on Google, in AI, and Everywhere In Between.
+                  <span style={{ display: 'block' }}>Grow Your Brand With Search</span>
+                  <span style={{ display: 'block', fontFamily: 'var(--font-lora)', fontStyle: 'italic', color: '#C4533A', fontWeight: 400 }}>AI Actually Cites.</span>
                 </h1>
+
                 <p
                   style={{
-                    fontFamily: 'var(--font-lora)',
-                    fontSize: '1.1rem',
+                    fontFamily: 'var(--font-dm-sans)',
+                    fontSize: '18px',
                     color: '#5C5248',
                     lineHeight: 1.7,
                     marginBottom: '1.5rem',
-                    maxWidth: 520,
+                    maxWidth: 620,
                   }}
                 >
-                  I help founders and businesses build search visibility that compounds — across Google, ChatGPT, Perplexity, and AI Overviews.
+                  Most brands optimise for Google clicks. The ones winning in 2026 show up in ChatGPT, Perplexity, and AI Overviews too. I build visibility across every surface.
                 </p>
                 <div className="hero-llm-section">
-                  <p className="hero-llm-label">Optimised for every AI search surface</p>
+                  <p className="hero-llm-label">MENTIONED ACROSS</p>
                   <div className="hero-llm-logos">
                     {[
                       { src: '/claude-logo-png_seeklogo-554534.png', alt: 'Claude' },
@@ -144,8 +167,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Link href="/contact" className="btn-primary">Work With Me</Link>
-                  <Link href="/blog" className="btn-secondary">Read the Blog</Link>
+                  <Link href="/services" className="btn-primary">Get Found Everywhere →</Link>
+                  <Link href="/services#how-i-help" className="btn-secondary">See How It Works</Link>
                 </div>
                 <a
                   href="https://www.upwork.com/freelancers/~01fad6eab5741b8ac8?mp_source=share"
@@ -165,37 +188,6 @@ export default function HomePage() {
 
               {/* Right 45% */}
               <div style={{ flex: '0 0 45%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
-                <div
-                  style={{
-                    width: 'min(300px, 75vw)',
-                    height: 'min(300px, 75vw)',
-                    maxWidth: 300,
-                    maxHeight: 300,
-                    borderRadius: '50%',
-                    border: '4px solid #C9BCA8',
-                    overflow: 'hidden',
-                    flexShrink: 0,
-                    position: 'relative',
-                    boxShadow: '0 8px 40px rgba(0,0,0,0.12)',
-                  }}
-                >
-                  <a
-                    href="https://www.linkedin.com/in/usmankhizar"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Visit Usman Khizar on LinkedIn"
-                    style={{ display: 'block', width: '100%', height: '100%', position: 'relative' }}
-                  >
-                    <Image
-                      src="/usman-photo.png"
-                      alt="Usman Khizar"
-                      fill
-                      style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                      priority
-                      sizes="(max-width: 768px) 75vw, 300px"
-                    />
-                  </a>
-                </div>
                 <div
                   style={{
                     width: '100%',
