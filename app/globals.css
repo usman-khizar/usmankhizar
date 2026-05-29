@@ -83,7 +83,13 @@ li a {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background: linear-gradient(135deg, #F5EDE0 0%, #F2E8D9 30%, #EBD9C4 60%, #E8D4BC 100%);
+  background: linear-gradient(
+    to right,
+    #F5F0E8 0%,
+    #F5F0E8 42%,
+    #2A2420 55%,
+    #1A1A1A 100%
+  );
   display: flex;
   align-items: center;
 }
@@ -96,14 +102,8 @@ li a {
   height: 100%;
   z-index: 1;
   pointer-events: none;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 25%, black 55%),
-    linear-gradient(to top, transparent 0%, black 20%);
-  mask-image:
-    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 25%, black 55%),
-    linear-gradient(to top, transparent 0%, black 20%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 20%, black 40%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 20%, black 40%);
 }
 
 .hero-float-cards {
@@ -118,23 +118,25 @@ li a {
 
 .hero-float-card {
   position: absolute;
-  background: #FFFFFF;
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   padding: 10px 16px;
   font-family: var(--font-dm-sans), system-ui, sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #1A1A1A;
+  color: #FFFFFF;
   white-space: nowrap;
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
-  padding: 100px 0 80px 80px;
-  width: 52%;
-  max-width: 640px;
+  padding: 0 0 0 80px;
+  width: 50%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -143,24 +145,24 @@ li a {
 .hero-eyebrow-pill {
   display: inline-flex;
   align-items: center;
-  padding: 5px 16px;
+  padding: 6px 16px;
   border-radius: 100px;
   background: #C4533A;
   color: #FFFFFF;
   font-family: var(--font-dm-sans), system-ui, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  margin-bottom: 20px;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
 }
 
 .hero-h1 {
   font-family: var(--font-archivo-black), serif;
   font-weight: 900;
-  font-size: clamp(48px, 6vw, 80px);
+  font-size: clamp(44px, 5.5vw, 72px);
   line-height: 1.05;
   color: #1A1A1A;
-  margin: 0 0 1.25rem 0;
+  margin: 0 0 24px 0;
   display: flex;
   flex-direction: column;
 }
@@ -182,30 +184,31 @@ li a {
   font-family: var(--font-dm-sans), system-ui, sans-serif;
   font-size: 17px;
   color: #5C5248;
-  line-height: 1.6;
-  max-width: 480px;
-  margin: 0 0 1.75rem 0;
+  line-height: 1.65;
+  max-width: 440px;
+  margin: 0 0 32px 0;
 }
 
 /* ── LLM logos ── */
 .hero-llm-section {
-  max-width: 480px;
-  margin-bottom: 1.75rem;
+  max-width: 440px;
+  margin-bottom: 32px;
 }
 
 .hero-llm-label {
   font-family: var(--font-dm-sans), system-ui, sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #8A8070;
-  margin-bottom: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
 
 .hero-llm-logos {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   justify-content: flex-start;
 }
 
@@ -213,11 +216,11 @@ li a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: #FFFFFF;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
   animation: logoFadeIn 0.5s ease forwards, logoFloat 6s ease-in-out 0.5s infinite;
   opacity: 0;
 }
@@ -233,12 +236,6 @@ li a {
   flex-direction: row;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 0;
-}
-
-.hero-btn {
-  padding: 16px 32px !important;
-  font-size: 1rem !important;
 }
 
 /* ── Mobile photo block ── */
@@ -252,6 +249,7 @@ li a {
     flex-direction: column;
     align-items: stretch;
     min-height: auto;
+    background: #F5F0E8;
   }
 
   .hero-photo-bg {
@@ -264,7 +262,7 @@ li a {
 
   .hero-content {
     width: 100%;
-    padding: 80px 24px 32px;
+    padding: 40px 24px 32px;
     max-width: none;
   }
 
@@ -287,21 +285,11 @@ li a {
   .hero-mobile-photo {
     display: block;
     position: relative;
-    height: 400px;
+    height: 420px;
     width: 100%;
     overflow: hidden;
     flex-shrink: 0;
-  }
-
-  .hero-mobile-photo-fade {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    background: linear-gradient(to bottom, #F5EDE0, transparent);
-    z-index: 2;
-    pointer-events: none;
+    background: #1A1A1A;
   }
 }
 

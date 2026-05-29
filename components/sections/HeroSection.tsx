@@ -11,10 +11,10 @@ const logos = [
 export default function HeroSection() {
   return (
     <section className="hero-section">
-      {/* Desktop: full-bleed photo on the right */}
+      {/* Desktop: photo pinned to right, left-edge faded */}
       <div className="hero-photo-bg" aria-hidden="true">
         <Image
-          src="/usman-photo.png"
+          src="/usman_khizar_seo_specialist.png"
           alt=""
           fill
           priority
@@ -23,20 +23,20 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Desktop floating social-proof cards over the photo */}
+      {/* Floating glass cards over the dark photo area */}
       <div className="hero-float-cards" aria-hidden="true">
-        <div className="hero-float-card" style={{ top: '18%', right: '6%' }}>
+        <div className="hero-float-card" style={{ top: '22%', right: '4%' }}>
           11,000+ monthly GEO searches
         </div>
-        <div className="hero-float-card" style={{ top: '50%', right: '3%' }}>
+        <div className="hero-float-card" style={{ top: '45%', right: '2%' }}>
           Perplexity · ChatGPT · AI Overviews
         </div>
-        <div className="hero-float-card" style={{ bottom: '22%', right: '10%' }}>
+        <div className="hero-float-card" style={{ top: '65%', right: '5%' }}>
           SEO · Parasite · LinkedIn
         </div>
       </div>
 
-      {/* Left text content */}
+      {/* Left text content — warm cream side */}
       <div className="hero-content">
         <span className="hero-eyebrow-pill">SEO · GEO · AEO</span>
 
@@ -63,9 +63,9 @@ export default function HeroSection() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={28}
-                  height={28}
-                  style={{ width: 28, height: 28, objectFit: 'contain' }}
+                  width={26}
+                  height={26}
+                  style={{ width: 26, height: 26, objectFit: 'contain' }}
                 />
               </div>
             ))}
@@ -73,10 +73,18 @@ export default function HeroSection() {
         </div>
 
         <div className="hero-buttons">
-          <Link href="/services" className="btn-primary hero-btn">
+          <Link
+            href="/services"
+            className="btn-primary"
+            style={{ padding: '14px 28px', fontSize: '15px' }}
+          >
             Get Found Everywhere →
           </Link>
-          <Link href="/services" className="btn-secondary hero-btn">
+          <Link
+            href="/services"
+            className="btn-secondary"
+            style={{ padding: '14px 28px', fontSize: '15px' }}
+          >
             See How It Works
           </Link>
         </div>
@@ -86,20 +94,20 @@ export default function HeroSection() {
           target="_blank"
           rel="noopener noreferrer"
           className="upwork-logo-link"
-          style={{ marginTop: '1.25rem', textDecoration: 'none' }}
+          style={{ marginTop: '20px', textDecoration: 'none' }}
         >
           <Image
             src="/upwork-logo-png-transparent.png"
             alt="Upwork"
             width={60}
-            height={20}
-            style={{ height: 20, width: 'auto', objectFit: 'contain' }}
+            height={18}
+            style={{ height: 18, width: 'auto', objectFit: 'contain' }}
           />
           <span
             style={{
               fontFamily: 'var(--font-dm-sans)',
-              fontSize: '14px',
-              color: '#5C5248',
+              fontSize: '13px',
+              color: '#8A8070',
             }}
           >
             Available on Upwork
@@ -107,11 +115,10 @@ export default function HeroSection() {
         </a>
       </div>
 
-      {/* Mobile: photo below text */}
+      {/* Mobile: photo block below content, dark background */}
       <div className="hero-mobile-photo">
-        <div className="hero-mobile-photo-fade" aria-hidden="true" />
         <Image
-          src="/usman-photo.png"
+          src="/usman_khizar_seo_specialist.png"
           alt="Usman Khizar"
           fill
           sizes="100vw"
