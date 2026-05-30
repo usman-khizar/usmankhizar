@@ -83,8 +83,8 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <Navbar />
-      <main style={{ paddingTop: 64 }}>
+      <Navbar transparent={true} />
+      <main style={{ paddingTop: 0 }}>
         {/* ── Hero ── */}
         <HeroSection />
 
