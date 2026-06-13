@@ -13,6 +13,8 @@ export default function HeroSection() {
     <section className="hero-section">
       {/* Dark gradient background */}
       <div className="hero-bg" aria-hidden="true" />
+      {/* Background image (Gamini) — fills the hero behind content */}
+      <div className="hero-bg-image" aria-hidden="true" />
       <div className="hero-grid" aria-hidden="true" />
       {/* Terracotta glow orb behind the photo */}
       <div className="hero-glow" aria-hidden="true" />
