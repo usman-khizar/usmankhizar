@@ -15,6 +15,8 @@ export default function HeroSection() {
       <div className="hero-bg" aria-hidden="true" />
       {/* Background image (Gamini) — fills the hero behind content */}
       <div className="hero-bg-image" aria-hidden="true" />
+      {/* Semi-opaque overlay to control darkness (via --hero-overlay-opacity) */}
+      <div className="hero-bg-overlay" aria-hidden="true" />
       <div className="hero-grid" aria-hidden="true" />
       {/* Terracotta glow orb behind the photo */}
       <div className="hero-glow" aria-hidden="true" />
