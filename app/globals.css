@@ -93,9 +93,9 @@ li a {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse at 70% 40%, rgba(196,83,58,0.28) 0%, transparent 55%),
-    radial-gradient(ellipse at 30% 80%, rgba(184,134,11,0.12) 0%, transparent 50%),
-    linear-gradient(160deg, rgba(26,18,8,0.65) 0%, rgba(26,18,8,0.40) 30%, rgba(13,10,6,0.30) 60%, rgba(13,10,6,0.55) 100%);
+    radial-gradient(at 70% 40%, #c4533a59 0%, #0000 55%),
+    radial-gradient(at 30% 80%, #b8860b26 0%, #0000 50%),
+    linear-gradient(160deg, #1a1208 0%, #2a1810 30%, #1a0e08 60%, #0d0a06 100%);
 }
 
 
