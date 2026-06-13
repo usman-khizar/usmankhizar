@@ -5,7 +5,7 @@ const logos = [
   { src: '/claude-logo-png_seeklogo-554534.png', alt: 'Claude' },
   { src: '/ChatGPT-Logo.svg.webp', alt: 'ChatGPT' },
   { src: '/perplexity-logo.png', alt: 'Perplexity' },
-  { src: '/gamini-bg-removed.png', alt: 'Gemini' },
+  { src: '/gamini.jpg', alt: 'Gemini' },
 ]
 
 export default function HeroSection() {
@@ -13,10 +13,6 @@ export default function HeroSection() {
     <section className="hero-section">
       {/* Dark gradient background */}
       <div className="hero-bg" aria-hidden="true" />
-      {/* Background image (Gamini) — fills the hero behind content */}
-      <div className="hero-bg-image" aria-hidden="true" />
-      {/* Semi-opaque overlay to control darkness (via --hero-overlay-opacity) */}
-      <div className="hero-bg-overlay" aria-hidden="true" />
       <div className="hero-grid" aria-hidden="true" />
       {/* Terracotta glow orb behind the photo */}
       <div className="hero-glow" aria-hidden="true" />

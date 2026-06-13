@@ -27,10 +27,6 @@ html {
 }
 
 body {
-  /* Hero background controls (override these variables to adjust) */
-  --hero-bg-position: right center;
-  --hero-bg-size: cover;
-  --hero-overlay-opacity: 0.18;
   background-color: #F5F0E8;
   color: #1A1A1A;
   font-family: var(--font-dm-sans), system-ui, sans-serif;
@@ -102,27 +98,6 @@ li a {
     linear-gradient(160deg, rgba(26,18,8,0.65) 0%, rgba(26,18,8,0.40) 30%, rgba(13,10,6,0.30) 60%, rgba(13,10,6,0.55) 100%);
 }
 
-/* Background image using the uploaded Gamini asset */
-.hero-bg-image {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image: url('/gamini-bg-removed.png');
-  background-repeat: no-repeat;
-  background-size: var(--hero-bg-size, cover);
-  background-position: var(--hero-bg-position, right center);
-  filter: saturate(0.95) contrast(0.95) brightness(0.92);
-}
-
-/* Semi-opaque overlay between background image and grid/overlays
-   Change --hero-overlay-opacity to control darkness (0.0 - 1.0) */
-.hero-bg-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: rgba(0,0,0,var(--hero-overlay-opacity, 0.18));
-  pointer-events: none;
-}
 
 /* Subtle grid overlay */
 .hero-grid {
