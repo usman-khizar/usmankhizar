@@ -5,7 +5,7 @@ const logos = [
   { src: '/claude-logo-png_seeklogo-554534.png', alt: 'Claude' },
   { src: '/ChatGPT-Logo.svg.webp', alt: 'ChatGPT' },
   { src: '/perplexity-logo.png', alt: 'Perplexity' },
-  { src: '/gamini.jpg', alt: 'Gemini' },
+  { src: '/gamini-bg-removed.png', alt: 'Gemini' },
 ]
 
 export default function HeroSection() {
