@@ -99,7 +99,6 @@ export default function HomePage() {
         {/* ── Hero ── */}
         <HeroSection />
 
-
         {/* ── How I Help ── */}
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
           <div className="max-w-6xl mx-auto">
