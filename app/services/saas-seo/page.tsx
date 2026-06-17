@@ -169,6 +169,7 @@ export default function SaasSeoSpecialistPage() {
             </p>
             <Link
               href="/contact"
+              className="service-cta-btn"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -183,8 +184,6 @@ export default function SaasSeoSpecialistPage() {
                 textDecoration: 'none',
                 transition: 'background 0.2s, transform 0.15s',
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = '#D4622A'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = '#C4533A'; }}
             >
               Get a SaaS SEO audit
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
