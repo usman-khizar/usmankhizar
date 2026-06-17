@@ -126,14 +126,36 @@ li a {
 /* Person photo (desktop) */
 .hero-photo-wrap {
   position: absolute;
-  right: 8%;
-  bottom: 0;
-  height: 92%;
-  width: clamp(300px, 42%, 580px);
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 55%;
   z-index: 3;
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 12%, black 30%);
-  mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,0.5) 12%, black 30%);
+  overflow: hidden;
+}
+
+/* Gradient overlays: left-to-right brown fade + bottom vignette */
+.hero-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to right,
+      rgba(60, 33, 23, 1) 0%,
+      rgba(60, 33, 23, 0.80) 10%,
+      rgba(60, 33, 23, 0.35) 26%,
+      rgba(60, 33, 23, 0) 40%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.35) 0%,
+      transparent 15%
+    );
 }
 
 /* Top-left description */
