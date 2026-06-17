@@ -5,7 +5,7 @@ const logos = [
   { src: '/claude-logo-png_seeklogo-554534.png', alt: 'Claude' },
   { src: '/ChatGPT-Logo.svg.webp', alt: 'ChatGPT' },
   { src: '/perplexity-logo.png', alt: 'Perplexity' },
-  { src: '/gamini-bg-removed.png', alt: 'Gemini' },
+  { src: '/gamini.jpg', alt: 'Gemini' },
 ]
 
 export default function HeroSection() {
@@ -25,7 +25,7 @@ export default function HeroSection() {
           fill
           priority
           sizes="(max-width: 768px) 0px, 55vw"
-          style={{ objectFit: 'cover', objectPosition: 'top center' }}
+          style={{ objectFit: 'cover', objectPosition: 'center right' }}
         />
       </div>
 
@@ -53,14 +53,13 @@ export default function HeroSection() {
         <span className="hero-eyebrow-pill">SEO · GEO · AEO</span>
 
         <h1 className="hero-h1">
-          <span className="hero-h1-line">Grow Your Brand</span>
-          <em className="hero-h1-italic">With SEO + GEO</em>
-          <span className="hero-h1-line">AI Actually Cites.</span>
+          <span className="hero-h1-line">The SEO & GEO Specialist</span>
+          <em className="hero-h1-italic">AI Search Actually Cites.</em>
+          <span className="hero-h1-line"></span>
         </h1>
 
         <p className="hero-sub">
-          Most brands optimise for Google clicks. The ones winning in 2026 show up in
-          ChatGPT, Perplexity, and AI Overviews too. I build visibility across every surface.
+          I'm an SEO specialist and GEO consultant helping founders and agencies build visibility across Google, ChatGPT, Perplexity, and AI Overviews — not just 2019 Google. The ones winning in 2026 show up in ChatGPT, Perplexity, and AI Overviews too. I build visibility across every surface.
         </p>
 
         <div className="hero-cta-row">

@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     default: 'Usman Khizar | SEO, GEO & AEO Specialist',
     template: '%s | Usman Khizar',
   },
-  description: 'Usman Khizar is a search marketer specialising in SEO, Generative Engine Optimisation (GEO), and Answer Engine Optimisation (AEO) for founders and businesses.',
+  description: 'SEO specialist and GEO consultant helping brands rank on Google and get cited by AI. I build search visibility across every modern search surface.',
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -67,11 +67,21 @@ const personSchema = {
   '@type': 'Person',
   name: 'Usman Khizar',
   jobTitle: 'SEO, GEO & AEO Specialist',
-  description: 'Search marketer specialising in SEO, Generative Engine Optimisation, and Answer Engine Optimisation',
+  description: 'SEO specialist and GEO consultant helping brands rank on Google and get cited by ChatGPT, Perplexity, and AI Overviews.',
   url: 'https://usmankhizar.com',
   sameAs: [
     'https://www.linkedin.com/in/usmankhizar',
     'https://twitter.com/usmankhizar',
+  ],
+  knowsAbout: [
+    'SEO',
+    'GEO',
+    'Generative Engine Optimisation',
+    'Answer Engine Optimisation',
+    'Parasite SEO',
+    'LinkedIn Growth',
+    'AI search visibility',
+    'LLM citation optimisation',
   ],
 }
 

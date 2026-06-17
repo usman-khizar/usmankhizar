@@ -11,10 +11,10 @@ import SEOWorkflowDiagram from '@/components/SEOWorkflowDiagram'
 
 export const metadata: Metadata = {
   title: 'SEO Specialist & GEO Consultant | Usman Khizar',
-  description: 'SEO specialist and GEO consultant for founders, agencies, and local businesses. I optimise websites, GMB, content and SearchAtlas campaigns using GSC, Analytics, Ahrefs, Screaming Frog and modern SEO systems.',
+  description: 'SEO specialist and GEO consultant helping brands rank on Google and get cited by AI. I build search visibility across every modern search surface.',
   openGraph: {
     title: 'SEO Specialist & GEO Consultant | Usman Khizar',
-    description: 'SEO specialist and GEO consultant for founders, agencies, and local businesses. I optimise websites, GMB, content and SearchAtlas campaigns using GSC, Analytics, Ahrefs, Screaming Frog and modern SEO systems.',
+    description: 'SEO specialist and GEO consultant helping brands rank on Google and get cited by AI. I build search visibility across every modern search surface.',
     url: 'https://usmankhizar.com',
     type: 'website',
   },
@@ -63,6 +63,17 @@ const personSchema = {
     'https://www.linkedin.com/in/usmankhizar',
     'https://twitter.com/usmankhizar',
   ],
+  description: 'SEO specialist and GEO consultant helping brands rank on Google and get cited by ChatGPT, Perplexity, and AI Overviews.',
+  knowsAbout: [
+    'SEO',
+    'GEO',
+    'Generative Engine Optimisation',
+    'Answer Engine Optimisation',
+    'Parasite SEO',
+    'LinkedIn Growth',
+    'AI search visibility',
+    'LLM citation optimisation',
+  ],
 }
 
 const breadcrumbSchema = {
@@ -88,11 +99,13 @@ export default function HomePage() {
         {/* ── Hero ── */}
         <HeroSection />
 
+        <p style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">Usman Khizar is an SEO specialist and GEO consultant helping brands rank on Google and get cited by AI assistants including ChatGPT, Perplexity, Google AI Overviews, and Gemini. He provides search engine optimisation, generative engine optimisation, answer engine optimisation, parasite SEO, and LinkedIn growth services.</p>
+
         {/* ── How I Help ── */}
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
           <div className="max-w-6xl mx-auto">
             <h2 className="section-title text-center mb-12" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)' }}>
-              How I Help
+              SEO, GEO & LinkedIn Growth Services
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
@@ -109,20 +122,20 @@ export default function HomePage() {
                   href: '/services',
                 },
                 {
-                  icon: <GraphIcon />,
-                  label: 'LinkedIn Growth',
-                  title: 'LinkedIn & Personal Brand',
-                  body: "Grow an audience of the right people. Turn followers into leads. I teach the exact LinkedIn system I use to attract consulting clients.",
-                  link: 'See how it works →',
-                  href: '/services#linkedin',
+                  icon: <SearchIcon />,
+                  label: 'SaaS SEO',
+                  title: 'SaaS SEO Specialist',
+                  body: "I help SaaS companies build topical authority, rank for high-intent product keywords, and get cited in AI-powered buying decisions. From content strategy to technical SEO foundations.",
+                  link: 'Explore SaaS SEO →',
+                  href: '/services/saas-seo',
                 },
                 {
-                  icon: <CodeIcon />,
-                  label: 'Vibe Code Products',
-                  title: 'Build & Market',
-                  body: "I build digital products using AI-assisted code and market them through SEO and content. The full system, not just the build.",
-                  link: 'Learn the approach →',
-                  href: '/services#build',
+                  icon: <SearchIcon />,
+                  label: 'E-commerce SEO',
+                  title: 'E-commerce SEO Specialist',
+                  body: "I help e-commerce brands rank product and category pages, fix crawlability issues, and build the authority needed to outrank established competitors on Google and AI search.",
+                  link: 'Explore E-commerce SEO →',
+                  href: '/services/ecommerce-seo',
                 },
                 {
                   icon: <GraphIcon />,
@@ -135,6 +148,22 @@ export default function HomePage() {
                   ),
                   link: 'Learn local SEO →',
                   href: '/services/local-seo-specialist',
+                },
+                {
+                  icon: <CodeIcon />,
+                  label: 'Vibe Code Products',
+                  title: 'Build & Market',
+                  body: "I build digital products using AI-assisted code and market them through SEO and content. The full system, not just the build.",
+                  link: 'Learn the approach →',
+                  href: '/services#build',
+                },
+                {
+                  icon: <GraphIcon />,
+                  label: 'LinkedIn Growth',
+                  title: 'LinkedIn & Personal Brand',
+                  body: "Grow an audience of the right people. Turn followers into leads. I teach the exact LinkedIn system I use to attract consulting clients.",
+                  link: 'See how it works →',
+                  href: '/services#linkedin',
                 },
               ].map((card) => (
                 <div key={card.title} className="card-base flex flex-col gap-4">
