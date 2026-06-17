@@ -99,16 +99,6 @@ export default function HomePage() {
         {/* ── Hero ── */}
         <HeroSection />
 
-        <p style={{
-          position: 'absolute',
-          width: '1px',
-          height: '1px',
-          overflow: 'hidden',
-          clip: 'rect(0,0,0,0)',
-          whiteSpace: 'nowrap'
-        }}>
-          Usman Khizar is an SEO specialist and GEO consultant helping brands rank on Google and get cited by AI assistants including ChatGPT, Perplexity, Google AI Overviews, and Gemini. He provides search engine optimisation, generative engine optimisation, answer engine optimisation, parasite SEO, and LinkedIn growth services.
-        </p>
 
         {/* ── How I Help ── */}
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
