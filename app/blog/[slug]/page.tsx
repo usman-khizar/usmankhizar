@@ -31,31 +31,74 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const geoPostContent = {
-  intro: `Generative Engine Optimisation (GEO) is the discipline of structuring your content so that AI-powered search systems — ChatGPT, Perplexity, Google AI Overviews, and their successors — reference and cite your pages when answering user queries.`,
-  sections: [
-    {
-      heading: 'Why GEO Is Different From Traditional SEO',
-      body: `Traditional SEO is fundamentally about signals: backlinks, on-page keywords, Core Web Vitals. You're optimising for a ranking algorithm that scores and sorts pages. GEO is different. You're optimising for an AI system that synthesises information from multiple sources and constructs a new answer. The AI doesn't just rank your page — it decides whether your content is worth citing at all.`,
-    },
-    {
-      heading: 'The Three Pillars of GEO',
-      body: `The core of GEO sits on three pillars. First: information density. AI systems prefer content that is specific, factual, and citable — not vague overviews. Second: structure. Direct answers, clear headings, definition-style formatting, and FAQ sections all make it easier for AI to extract and attribute your content. Third: authority signals. AI systems are trained to cite sources that appear credible — this means real expertise, verifiable facts, and a recognisable brand presence across the web.`,
-    },
-    {
-      heading: 'How to Audit Your Content for GEO Readiness',
-      body: `Start by asking three questions about each key page. Does the page answer a specific question directly, in the first 150 words? Does it contain statistics, named sources, or unique data that makes it worth citing? Is the author and brand clearly established, with evidence of expertise? If you answer no to any of these, you have a GEO gap.`,
-    },
-    {
-      heading: 'GEO Is Not Optional in 2026',
-      body: `AI Overviews now appear on a significant percentage of Google searches. Perplexity and ChatGPT are processing hundreds of millions of queries per month. The brands that get cited in these answers capture a disproportionate share of mindshare — even when users don't click through. GEO is brand awareness at search scale.`,
-    },
-  ],
-  faqs: [
-    { q: 'What is Generative Engine Optimisation?', a: 'GEO is the practice of structuring and optimising content so that AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews cite it when answering user queries.' },
-    { q: 'How is GEO different from SEO?', a: 'SEO optimises for ranking algorithms that score and sort pages. GEO optimises for AI systems that synthesise answers from multiple sources — the goal is citation, not just ranking.' },
-    { q: 'How do I know if my content is GEO-ready?', a: 'Check whether your key pages answer specific questions directly, contain verifiable statistics or unique data, and clearly establish the author as an expert. If not, you have GEO gaps to address.' },
-  ],
+type RichPostContent = {
+  statValue: string
+  statLabel: string
+  intro: string
+  sections: { heading: string; body: string }[]
+  quote: string
+  faqs: { q: string; a: string }[]
+}
+
+const richPostsContent: Record<string, RichPostContent> = {
+  'what-is-generative-engine-optimization': {
+    statValue: '~40%',
+    statLabel: 'of Google searches now trigger an AI Overview — and that number is growing every month.',
+    intro: `Generative Engine Optimisation (GEO) is the discipline of structuring your content so that AI-powered search systems — ChatGPT, Perplexity, Google AI Overviews, and their successors — reference and cite your pages when answering user queries.`,
+    sections: [
+      {
+        heading: 'Why GEO Is Different From Traditional SEO',
+        body: `Traditional SEO is fundamentally about signals: backlinks, on-page keywords, Core Web Vitals. You're optimising for a ranking algorithm that scores and sorts pages. GEO is different. You're optimising for an AI system that synthesises information from multiple sources and constructs a new answer. The AI doesn't just rank your page — it decides whether your content is worth citing at all.`,
+      },
+      {
+        heading: 'The Three Pillars of GEO',
+        body: `The core of GEO sits on three pillars. First: information density. AI systems prefer content that is specific, factual, and citable — not vague overviews. Second: structure. Direct answers, clear headings, definition-style formatting, and FAQ sections all make it easier for AI to extract and attribute your content. Third: authority signals. AI systems are trained to cite sources that appear credible — this means real expertise, verifiable facts, and a recognisable brand presence across the web.`,
+      },
+      {
+        heading: 'How to Audit Your Content for GEO Readiness',
+        body: `Start by asking three questions about each key page. Does the page answer a specific question directly, in the first 150 words? Does it contain statistics, named sources, or unique data that makes it worth citing? Is the author and brand clearly established, with evidence of expertise? If you answer no to any of these, you have a GEO gap.`,
+      },
+      {
+        heading: 'GEO Is Not Optional in 2026',
+        body: `AI Overviews now appear on a significant percentage of Google searches. Perplexity and ChatGPT are processing hundreds of millions of queries per month. The brands that get cited in these answers capture a disproportionate share of mindshare — even when users don't click through. GEO is brand awareness at search scale.`,
+      },
+    ],
+    quote: `The brands that appear in AI answers don't just get clicks — they build trust at scale. That's the compounding effect of GEO done right.`,
+    faqs: [
+      { q: 'What is Generative Engine Optimisation?', a: 'GEO is the practice of structuring and optimising content so that AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews cite it when answering user queries.' },
+      { q: 'How is GEO different from SEO?', a: 'SEO optimises for ranking algorithms that score and sort pages. GEO optimises for AI systems that synthesise answers from multiple sources — the goal is citation, not just ranking.' },
+      { q: 'How do I know if my content is GEO-ready?', a: 'Check whether your key pages answer specific questions directly, contain verifiable statistics or unique data, and clearly establish the author as an expert. If not, you have GEO gaps to address.' },
+    ],
+  },
+  'answer-engine-optimisation': {
+    statValue: '~60%',
+    statLabel: 'of searches now end without a click — the answer engine already gave the reader what they needed.',
+    intro: `Answer Engine Optimisation (AEO) is the practice of structuring content so that answer engines — Google's featured snippets and AI Overviews, voice assistants, ChatGPT, Perplexity — can extract a direct, complete answer and serve it without a click. Search is no longer just a ranked list of blue links. Increasingly, it's a single synthesised answer pulled straight from whichever page did the structuring work in advance.`,
+    sections: [
+      {
+        heading: 'Why Answer Engines Change the Search Game',
+        body: `Featured snippets, People Also Ask, Google AI Overviews, and conversational assistants like ChatGPT and Perplexity all work the same way: they pull from structured, authoritative content and present it as a direct answer. AI Overviews alone now appear on a large share of Google searches, voice search is inherently question-based, and zero-click results keep growing every quarter. Being the source an answer engine extracts from is a visibility channel of its own now, separate from where you rank.`,
+      },
+      {
+        heading: 'The Core Signals Answer Engines Look For',
+        body: `Five signals do most of the work. Answer-first structure: the direct, complete answer sits in the first 100 words, since AI systems weight the opening paragraph more heavily than anything below it. Question-based headings: H2s and H3s phrased the way people actually ask, "What is X" before you explain X. FAQPage schema: JSON-LD markup so Google and AI systems can parse question-and-answer pairs directly, rather than guessing at structure. Factual specificity: named examples, real data, and direct definitions, because vague content doesn't get extracted or cited. Entity clarity: Person and About schema stating who wrote the page and why they're qualified to answer.`,
+      },
+      {
+        heading: 'AEO vs SEO vs GEO',
+        body: `The three disciplines overlap but aren't identical. SEO optimises for ranking position. GEO optimises for citation inside AI-generated answers. AEO optimises for direct-answer extraction, regardless of whether that answer appears in a featured snippet, a voice response, or a chat interface. In practice, a well-structured page tends to satisfy all three at once, because the same underlying signals — authority, structure, specificity — are what each discipline rewards.`,
+      },
+      {
+        heading: 'A 5-Step AEO Readiness Audit',
+        body: `Run every key page through the same checklist. Does the first paragraph contain a direct, complete answer? Are the H2s and H3s phrased as real questions? Is FAQPage schema implemented on the page? Are specific facts, stats, and named examples present, rather than generalities? Is Person or About schema in place, identifying the author and their expertise? A page that fails two or more of these is being skipped by answer engines regardless of how well it ranks.`,
+      },
+    ],
+    quote: `If your page can't state the answer in the first two sentences, an answer engine will find one that can.`,
+    faqs: [
+      { q: 'What is Answer Engine Optimisation?', a: 'AEO is the practice of structuring content — answer-first paragraphs, question-based headings, FAQPage schema, specific facts, and clear author signals — so that featured snippets, AI Overviews, and voice assistants can extract a direct answer from the page.' },
+      { q: 'How is AEO different from SEO and GEO?', a: 'SEO optimises for ranking position, GEO optimises for citation inside AI-generated answers, and AEO optimises for direct-answer extraction. The same authority and structure signals tend to support all three at once.' },
+      { q: 'How do I audit a page for AEO readiness?', a: "Check whether the first paragraph answers the question directly, whether headings are phrased as questions, whether FAQPage schema is implemented, whether specific facts and named examples are present, and whether Person or About schema identifies the author's expertise." },
+    ],
+  },
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -63,7 +106,7 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
-  const isGeoPost = slug === 'what-is-generative-engine-optimization'
+  const richContent = richPostsContent[slug]
   const related = allPosts.filter((p) => p.slug !== slug).slice(0, 3)
 
   const blogPostingSchema = {
@@ -76,11 +119,11 @@ export default async function BlogPostPage({ params }: Props) {
     url: `https://usmankhizar.com/blog/${slug}`,
   }
 
-  const faqSchema = isGeoPost
+  const faqSchema = richContent
     ? {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        mainEntity: geoPostContent.faqs.map((faq) => ({
+        mainEntity: richContent.faqs.map((faq) => ({
           '@type': 'Question',
           name: faq.q,
           acceptedAnswer: { '@type': 'Answer', text: faq.a },
@@ -129,19 +172,19 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
             {/* Body */}
             <article style={{ flex: 1, maxWidth: 680 }}>
-              {isGeoPost ? (
+              {richContent ? (
                 <>
                   {/* Stat callout */}
                   <div style={{ backgroundColor: '#F5F0E8', borderLeft: '3px solid #C4533A', padding: '16px 20px', borderRadius: '0 8px 8px 0', marginBottom: '2rem' }}>
-                    <span style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '1.5rem', color: '#C4533A', fontWeight: 700 }}>~40%</span>
-                    <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '0.9rem', color: '#5C5248', marginTop: '0.25rem' }}>of Google searches now trigger an AI Overview — and that number is growing every month.</p>
+                    <span style={{ fontFamily: 'var(--font-jetbrains-mono)', fontSize: '1.5rem', color: '#C4533A', fontWeight: 700 }}>{richContent.statValue}</span>
+                    <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '0.9rem', color: '#5C5248', marginTop: '0.25rem' }}>{richContent.statLabel}</p>
                   </div>
 
                   <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.8, marginBottom: '2rem' }}>
-                    {geoPostContent.intro}
+                    {richContent.intro}
                   </p>
 
-                  {geoPostContent.sections.map((section) => (
+                  {richContent.sections.map((section) => (
                     <div key={section.heading} style={{ marginBottom: '2.5rem' }}>
                       <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.25rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>
                         {section.heading}
@@ -161,7 +204,7 @@ export default async function BlogPostPage({ params }: Props) {
                     }}
                   >
                     <p style={{ fontFamily: 'var(--font-lora)', fontStyle: 'italic', fontSize: '1.15rem', color: '#1A1A1A', lineHeight: 1.7 }}>
-                      "The brands that appear in AI answers don't just get clicks — they build trust at scale. That's the compounding effect of GEO done right."
+                      "{richContent.quote}"
                     </p>
                     <footer style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '0.85rem', color: '#5C5248', marginTop: '0.5rem' }}>
                       — Usman Khizar
@@ -174,7 +217,7 @@ export default async function BlogPostPage({ params }: Props) {
                       Frequently Asked Questions
                     </h2>
                     <div className="flex flex-col gap-5">
-                      {geoPostContent.faqs.map((faq) => (
+                      {richContent.faqs.map((faq) => (
                         <div key={faq.q}>
                           <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.95rem', color: '#1A1A1A', marginBottom: '0.4rem' }}>
                             {faq.q}
@@ -203,13 +246,13 @@ export default async function BlogPostPage({ params }: Props) {
             >
               <div style={{ position: 'sticky', top: 88, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 {/* TOC */}
-                {isGeoPost && (
+                {richContent && (
                   <div className="card-base" style={{ padding: 20 }}>
                     <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.75rem', letterSpacing: '0.08em', color: '#5C5248', textTransform: 'uppercase', marginBottom: '1rem' }}>
                       Contents
                     </p>
                     <div className="flex flex-col gap-2">
-                      {geoPostContent.sections.map((s) => (
+                      {richContent.sections.map((s) => (
                         <p key={s.heading} style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '0.82rem', color: '#5C5248', lineHeight: 1.4, cursor: 'pointer' }}>
                           {s.heading}
                         </p>

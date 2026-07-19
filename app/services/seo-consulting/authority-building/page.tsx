@@ -167,6 +167,9 @@ export default function AuthorityBuildingPage() {
             <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.85, marginBottom: '1rem' }}>
               Authority building works best alongside strong <Link href="/services/seo-consulting/technical-seo" style={{ color: '#C4533A', textDecoration: 'none' }}>technical SEO foundations</Link> and a tight <Link href="/services/seo-consulting/on-page-seo" style={{ color: '#C4533A', textDecoration: 'none' }}>on-page SEO optimisation</Link> strategy.
             </p>
+            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.85, marginBottom: '1rem' }}>
+              For the hands-on placement work itself, see my dedicated <Link href="/services/link-building" style={{ color: '#C4533A', textDecoration: 'none' }}>link building</Link> service, or work directly with me as your <Link href="/services/seo-backlink-expert" style={{ color: '#C4533A', textDecoration: 'none' }}>SEO backlink expert</Link> for direct-to-admin outreach at below-marketplace pricing.
+            </p>
             <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.85 }}>
               Together they create the kind of SEO consulting services that can scale visibility, traffic, and long-term brand authority.
             </p>
