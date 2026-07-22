@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -282,36 +283,29 @@ export default function ServicesPage() {
         <EmailCapture />
       </main>
       <Footer />
+      <Script src="https://link.readyondemand.com/js/form_embed.js" strategy="afterInteractive" />
     </>
   )
 }
 
 function EnquiryForm() {
   return (
-    <form action="/api/enquiry" method="POST" className="flex flex-col gap-4">
-      <input
-        type="text"
-        name="name"
-        placeholder="Your name"
-        required
-        style={{ padding: '12px 16px', borderRadius: 8, border: '1px solid #C9BCA8', backgroundColor: '#FAF8F4', fontFamily: 'var(--font-dm-sans)', fontSize: '0.95rem', color: '#1A1A1A', outline: 'none' }}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="your@email.com"
-        required
-        style={{ padding: '12px 16px', borderRadius: 8, border: '1px solid #C9BCA8', backgroundColor: '#FAF8F4', fontFamily: 'var(--font-dm-sans)', fontSize: '0.95rem', color: '#1A1A1A', outline: 'none' }}
-      />
-      <textarea
-        name="message"
-        placeholder="What are you working on?"
-        rows={4}
-        style={{ padding: '12px 16px', borderRadius: 8, border: '1px solid #C9BCA8', backgroundColor: '#FAF8F4', fontFamily: 'var(--font-dm-sans)', fontSize: '0.95rem', color: '#1A1A1A', outline: 'none', resize: 'vertical' }}
-      />
-      <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-start' }}>
-        Send Enquiry
-      </button>
-    </form>
+    <iframe
+      src="https://link.readyondemand.com/widget/form/4pJtCDndQtutaGWLDgEr"
+      style={{ width: '100%', height: '525px', border: 'none', borderRadius: '8px' }}
+      id="inline-4pJtCDndQtutaGWLDgEr"
+      data-layout="{'id':'INLINE'}"
+      data-trigger-type="alwaysShow"
+      data-trigger-value=""
+      data-activation-type="alwaysActivated"
+      data-activation-value=""
+      data-deactivation-type="neverDeactivate"
+      data-deactivation-value=""
+      data-form-name="Send Enquiry"
+      data-height="525"
+      data-layout-iframe-id="inline-4pJtCDndQtutaGWLDgEr"
+      data-form-id="4pJtCDndQtutaGWLDgEr"
+      title="Send Enquiry"
+    />
   )
 }
