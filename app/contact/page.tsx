@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import Script from 'next/script'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import PageHeroSection from '@/components/sections/PageHeroSection'
@@ -8,15 +8,6 @@ import { ContactVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 
 export default function ContactPage() {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setStatus('loading')
-    await new Promise((r) => setTimeout(r, 800))
-    setStatus('success')
-  }
 
   return (
     <>
@@ -51,81 +42,30 @@ export default function ContactPage() {
 
             {/* Form */}
             <div style={{ flex: 1 }}>
-              <div className="card-base">
-                {status === 'success' ? (
-                  <div className="text-center" style={{ padding: '2rem 0' }}>
-                    <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>✓</div>
-                    <h2 style={{ fontFamily: 'var(--font-archivo-black)', fontSize: '1.4rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>
-                      Got it. Thank you.
-                    </h2>
-                    <p style={{ fontFamily: 'var(--font-lora)', color: '#5C5248', fontSize: '0.95rem', lineHeight: 1.65 }}>
-                      I'll be in touch within 48 hours. In the meantime, feel free to read the blog.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                    <div>
-                      <label style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.82rem', color: '#1A1A1A', display: 'block', marginBottom: '0.4rem' }}>
-                        Your name
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Jane Smith"
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        style={{ width: '100%', padding: '12px 16px', borderRadius: 8, border: '1px solid #C9BCA8', backgroundColor: '#FAF8F4', fontFamily: 'var(--font-dm-sans)', fontSize: '0.95rem', color: '#1A1A1A', outline: 'none' }}
-                        onFocus={(e) => (e.target.style.borderColor = '#C4533A')}
-                        onBlur={(e) => (e.target.style.borderColor = '#C9BCA8')}
-                      />
-                    </div>
-                    <div>
-                      <label style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.82rem', color: '#1A1A1A', display: 'block', marginBottom: '0.4rem' }}>
-                        Email address
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="jane@company.com"
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        style={{ width: '100%', padding: '12px 16px', borderRadius: 8, border: '1px solid #C9BCA8', backgroundColor: '#FAF8F4', fontFamily: 'var(--font-dm-sans)', fontSize: '0.95rem', color: '#1A1A1A', outline: 'none' }}
-                        onFocus={(e) => (e.target.style.borderColor = '#C4533A')}
-                        onBlur={(e) => (e.target.style.borderColor = '#C9BCA8')}
-                      />
-                    </div>
-                    <div>
-                      <label style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.82rem', color: '#1A1A1A', display: 'block', marginBottom: '0.4rem' }}>
-                        What are you working on?
-                      </label>
-                      <textarea
-                        required
-                        rows={5}
-                        placeholder="Tell me about your project, goals, and where you're getting stuck..."
-                        value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
-                        style={{ width: '100%', padding: '12px 16px', borderRadius: 8, border: '1px solid #C9BCA8', backgroundColor: '#FAF8F4', fontFamily: 'var(--font-dm-sans)', fontSize: '0.95rem', color: '#1A1A1A', outline: 'none', resize: 'vertical' }}
-                        onFocus={(e) => (e.target.style.borderColor = '#C4533A')}
-                        onBlur={(e) => (e.target.style.borderColor = '#C9BCA8')}
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      disabled={status === 'loading'}
-                      className="btn-primary"
-                      style={{ alignSelf: 'flex-start' }}
-                    >
-                      {status === 'loading' ? 'Sending…' : 'Send Enquiry →'}
-                    </button>
-                  </form>
-                )}
-              </div>
+              <iframe
+                src="https://link.readyondemand.com/widget/form/4pJtCDndQtutaGWLDgEr"
+                style={{ width: '100%', height: '525px', border: 'none', borderRadius: '8px' }}
+                id="inline-4pJtCDndQtutaGWLDgEr"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Send Enquiry"
+                data-height="525"
+                data-layout-iframe-id="inline-4pJtCDndQtutaGWLDgEr"
+                data-form-id="4pJtCDndQtutaGWLDgEr"
+                title="Send Enquiry"
+              />
             </div>
           </div>
           <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
         </section>
       </main>
       <Footer />
+      <Script src="https://link.readyondemand.com/js/form_embed.js" strategy="afterInteractive" />
     </>
   )
 }
