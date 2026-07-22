@@ -4,7 +4,9 @@ import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
 import PostCard from '@/components/blog/PostCard'
 import FeaturedPost from '@/components/blog/FeaturedPost'
+import PageHeroSection from '@/components/sections/PageHeroSection'
 import PillTag from '@/components/ui/PillTag'
+import { BlogVisual } from '@/components/sections/HeroVisuals'
 import Link from 'next/link'
 import { allPosts } from '@/lib/posts'
 
@@ -29,28 +31,13 @@ export default function BlogPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        {/* Hero */}
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(50px, 7vw, 90px) 24px', position: 'relative' }}>
-          <div className="max-w-5xl mx-auto text-center">
-            <PillTag className="mb-5">The Blog</PillTag>
-            <h1
-              style={{
-                fontFamily: 'var(--font-archivo-black)',
-                fontWeight: 900,
-                fontSize: 'clamp(2rem, 4.5vw, 3.2rem)',
-                color: '#1A1A1A',
-                lineHeight: 1.1,
-                marginBottom: '1rem',
-              }}
-            >
-              Practical. Specific. No Fluff.
-            </h1>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.7 }}>
-              Everything I write here I've tested on real projects. SEO, GEO, AEO, Parasite SEO, and LinkedIn — the stuff that's actually working right now.
-            </p>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="The Blog"
+          title="Practical. Specific. No Fluff."
+          subtitle="Everything I write here I've tested on real projects. SEO, GEO, AEO, Parasite SEO, and LinkedIn — the stuff that's actually working right now."
+          primaryCta={{ text: 'Read Articles', href: '#featured' }}
+          visualElement={<BlogVisual />}
+        />
 
         {/* Category filter tabs */}
         <section style={{ backgroundColor: '#FAF8F4', borderBottom: '1px solid #C9BCA8', padding: '0 24px' }}>

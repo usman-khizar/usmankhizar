@@ -113,10 +113,10 @@ export default function Footer() {
                 <span>Upwork</span>
               </a>
               <a
-                href="mailto:enquiries@usmankhizar.com"
+                href="mailto:hello@usmankhizar.com"
                 style={{ fontFamily: 'var(--font-dm-sans)', color: '#C9BCA8', fontSize: '0.9rem', textDecoration: 'none' }}
               >
-                enquiries@usmankhizar.com
+                hello@usmankhizar.com
               </a>
             </div>
           </div>

@@ -1,0 +1,3 @@
+export default function SectionCard({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return <div className={`section-card ${className}`}>{children}</div>
+}

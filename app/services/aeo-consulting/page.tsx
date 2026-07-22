@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import PageHeroSection from '@/components/sections/PageHeroSection'
+import { AEOVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
@@ -104,19 +106,13 @@ export default function AEOConsultingPage() {
       <Navbar />
       <main style={{ paddingTop: 64 }}>
 
-        {/* ── Hero ── */}
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
-          <div className="max-w-4xl mx-auto">
-            <PillTag className="mb-5">AEO Consulting</PillTag>
-            <h1 style={{ fontFamily: 'var(--font-archivo-black)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', lineHeight: 1.1, marginBottom: '1.25rem' }}>
-              AEO Consulting: Be the Answer, Not Just a Result
-            </h1>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.1rem', color: '#5C5248', lineHeight: 1.7, maxWidth: 620 }}>
-              Search is moving from ten blue links to direct answers. AEO is the practice of structuring content so that search engines — and AI — pull it as the definitive answer to a question.
-            </p>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="AEO Consulting"
+          title="AEO Consulting: Be the Answer, Not Just a Result"
+          subtitle="Search is moving from ten blue links to direct answers. AEO is the practice of structuring content so that search engines — and AI — pull it as the definitive answer to a question."
+          primaryCta={{ text: 'Get Started', href: '/contact' }}
+          visualElement={<AEOVisual />}
+        />
 
         {/* ── Service cards + sub-page nav ── */}
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>

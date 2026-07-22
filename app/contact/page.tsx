@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import PageHeroSection from '@/components/sections/PageHeroSection'
+import { ContactVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 
 export default function ContactPage() {
@@ -20,32 +22,22 @@ export default function ContactPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 64 }}>
+        <PageHeroSection
+          eyebrow="Work With Me"
+          title="Let's Build Something Worth Finding."
+          subtitle="Tell me what you're working on. I'll come back within 48 hours with honest thoughts on whether I can help — and how. Limited availability for select projects."
+          visualElement={<ContactVisual />}
+        />
+
         <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
             {/* Left */}
             <div style={{ flex: 1 }}>
-              <PillTag className="mb-5">Work With Me</PillTag>
-              <h1
-                style={{
-                  fontFamily: 'var(--font-archivo-black)',
-                  fontWeight: 900,
-                  fontSize: 'clamp(2rem, 4.5vw, 3rem)',
-                  color: '#1A1A1A',
-                  lineHeight: 1.1,
-                  marginBottom: '1.25rem',
-                }}
-              >
-                Let's Build Something Worth Finding.
-              </h1>
-              <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.75, marginBottom: '2rem' }}>
-                Tell me what you're working on. I'll come back within 48 hours with honest thoughts on whether I can help — and how.
-              </p>
-
               <div className="flex flex-col gap-4">
                 {[
                   { label: 'Response time', value: 'Within 48 hours' },
                   { label: 'Availability', value: 'Limited — a few projects at a time' },
-                  { label: 'Email', value: 'enquiries@usmankhizar.com' },
+                  { label: 'Email', value: 'hello@usmankhizar.com' },
                 ].map((item) => (
                   <div key={item.label} style={{ borderBottom: '1px solid #C9BCA8', paddingBottom: '0.75rem' }}>
                     <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.75rem', color: '#5C5248', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.2rem' }}>

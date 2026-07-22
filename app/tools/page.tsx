@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
+import PageHeroSection from '@/components/sections/PageHeroSection'
+import { ToolsVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 import Link from 'next/link'
 
@@ -56,29 +58,15 @@ export default function ToolsPage() {
     <>
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <PillTag className="mb-5">Free Tools</PillTag>
-            <h1
-              style={{
-                fontFamily: 'var(--font-archivo-black)',
-                fontWeight: 900,
-                fontSize: 'clamp(2rem, 4.5vw, 3.2rem)',
-                color: '#1A1A1A',
-                lineHeight: 1.1,
-                marginBottom: '1.25rem',
-              }}
-            >
-              Tools That Do the Thinking For You
-            </h1>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.7 }}>
-              Free utilities I've built to make SEO, GEO, and LinkedIn optimisation faster. No sign-up required for most.
-            </p>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="Free Tools"
+          title="Tools That Do the Thinking For You"
+          subtitle="Free utilities I've built to make SEO, GEO, and LinkedIn optimisation faster. No sign-up required for most — just paste and get your answer."
+          primaryCta={{ text: 'Explore Tools', href: '#tools' }}
+          visualElement={<ToolsVisual />}
+        />
 
-        <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
+        <section id="tools" style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
             {tools.map((tool) => (
               <div

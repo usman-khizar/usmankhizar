@@ -4,8 +4,10 @@ import Image from 'next/image'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
+import PageHeroSection from '@/components/sections/PageHeroSection'
 import PillTag from '@/components/ui/PillTag'
 import SEOWorkflowDiagram from '@/components/SEOWorkflowDiagram'
+import { AboutVisual } from '@/components/sections/HeroVisuals'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -37,47 +39,14 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        {/* Hero */}
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-            <div
-              style={{
-                width: 'min(260px, 70vw)',
-                height: 'min(260px, 70vw)',
-                maxWidth: 260,
-                maxHeight: 260,
-                borderRadius: '50%',
-                border: '4px solid #C9BCA8',
-                flexShrink: 0,
-                overflow: 'hidden',
-                position: 'relative',
-                boxShadow: '0 8px 40px rgba(0,0,0,0.12)',
-              }}
-            >
-              <Image
-                src="/usman-photo.png"
-                alt="Usman Khizar"
-                fill
-                style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                priority
-                sizes="(max-width: 768px) 70vw, 260px"
-              />
-            </div>
-            <div>
-              <PillTag className="mb-5">About Me</PillTag>
-              <h1 style={{ fontFamily: 'var(--font-archivo-black)', fontWeight: 900, fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', color: '#1A1A1A', lineHeight: 1.05, marginBottom: '1rem' }}>
-                Usman Khizar
-              </h1>
-              <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 500, fontSize: '1.05rem', color: '#C4533A', marginBottom: '0.75rem' }}>
-                SEO, GEO & AEO Specialist
-              </p>
-              <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.75 }}>
-                I help founders and businesses get found everywhere that matters in modern search — Google, ChatGPT, Perplexity, and AI Overviews.
-              </p>
-            </div>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="About Me"
+          title="Usman Khizar"
+          subtitle="I help founders and businesses get found everywhere that matters in modern search — Google, ChatGPT, Perplexity, and AI Overviews. SEO, GEO & AEO specialist with 5+ years of proven experience."
+          primaryCta={{ text: 'Start Project', href: '/contact' }}
+          secondaryCta={{ text: 'LinkedIn', href: 'https://linkedin.com' }}
+          visualElement={<AboutVisual />}
+        />
 
         {/* Short version */}
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>

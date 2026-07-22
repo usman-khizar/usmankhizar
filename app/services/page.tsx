@@ -3,7 +3,9 @@ import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
+import PageHeroSection from '@/components/sections/PageHeroSection'
 import PillTag from '@/components/ui/PillTag'
+import { ServicesVisual } from '@/components/sections/HeroVisuals'
 
 export const metadata: Metadata = {
   title: 'Full-Stack Search Marketing | Usman Khizar',
@@ -57,31 +59,14 @@ export default function ServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        {/* Hero */}
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <PillTag className="mb-6">What I Do</PillTag>
-            <h1
-              style={{
-                fontFamily: 'var(--font-archivo-black)',
-                fontWeight: 900,
-                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                color: '#1A1A1A',
-                lineHeight: 1.1,
-                marginBottom: '1.25rem',
-              }}
-            >
-              Full-Stack Search Marketing: Visibility Built to Last
-            </h1>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.1rem', color: '#5C5248', lineHeight: 1.7, maxWidth: 600, margin: '0 auto' }}>
-              I work with founders and businesses who want to rank on every modern search surface — not just Google, but ChatGPT, Perplexity, and AI Overviews too.
-            </p>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.75, maxWidth: 600, margin: '1.5rem auto 0' }}>
-              For modern search visibility, combine <Link href="/services/seo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>SEO consulting</Link>, <Link href="/services/aeo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>AEO consulting</Link>, and <Link href="/services/geo-consulting" style={{ color: '#C4533A', textDecoration: 'none' }}>GEO services</Link>.
-            </p>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="What I Do"
+          title="Full-Stack Search Marketing: Visibility Built to Last"
+          subtitle="I work with founders and businesses who want to rank on every modern search surface — not just Google, but ChatGPT, Perplexity, and AI Overviews too. For modern search visibility, combine SEO consulting, AEO consulting, and GEO services."
+          primaryCta={{ text: 'Explore Services', href: '#seo' }}
+          secondaryCta={{ text: 'Get Audit', href: '/contact' }}
+          visualElement={<ServicesVisual />}
+        />
 
         {/* Service 1: Full-Stack Search */}
         <section id="seo" style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>

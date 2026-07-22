@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import PageHeroSection from '@/components/sections/PageHeroSection'
+import { ToolsVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 
 export const metadata: Metadata = {
@@ -78,18 +80,13 @@ export default function SearchAtlasSeoSpecialistPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
-          <div className="max-w-4xl mx-auto">
-            <PillTag className="mb-5">SearchAtlas SEO Specialist</PillTag>
-            <h1 style={{ fontFamily: 'var(--font-archivo-black)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', lineHeight: 1.1, marginBottom: '1.25rem' }}>
-              SearchAtlas Otto SEO Specialist for Agencies and Business Growth
-            </h1>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.75, maxWidth: 760 }}>
-              I help agencies and businesses use SearchAtlas Otto as a full campaign platform: connect your website with pixel code, sync Google Search Console, Google Analytics and Google Business Profile, and manage SEO from one dashboard.
-            </p>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="SearchAtlas SEO Specialist"
+          title="SearchAtlas Otto SEO Specialist for Agencies and Business Growth"
+          subtitle="I help agencies and businesses use SearchAtlas Otto as a full campaign platform: connect your website with pixel code, sync Google Search Console, Google Analytics and Google Business Profile, and manage SEO from one dashboard."
+          primaryCta={{ text: 'Setup SearchAtlas', href: '/contact' }}
+          visualElement={<ToolsVisual />}
+        />
 
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">

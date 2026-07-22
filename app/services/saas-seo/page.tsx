@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import PageHeroSection from '@/components/sections/PageHeroSection'
+import { SEOVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 
 export const metadata: Metadata = {
@@ -78,18 +80,13 @@ export default function SaasSeoSpecialistPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
-          <div className="max-w-4xl mx-auto">
-            <PillTag className="mb-5">SaaS SEO Specialist</PillTag>
-            <h1 style={{ fontFamily: 'var(--font-archivo-black)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', lineHeight: 1.1, marginBottom: '1.25rem' }}>
-              SaaS SEO Specialist
-            </h1>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.75, maxWidth: 760 }}>
-              SaaS companies face a unique SEO challenge — high competition, long sales cycles, and buyers who now start their research in ChatGPT and Perplexity, not just Google. I build SEO strategies that work across both.
-            </p>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="SaaS SEO Specialist"
+          title="SaaS SEO Specialist"
+          subtitle="SaaS companies face a unique SEO challenge — high competition, long sales cycles, and buyers who now start their research in ChatGPT and Perplexity, not just Google. I build SEO strategies that work across both."
+          primaryCta={{ text: 'Build Strategy', href: '/contact' }}
+          visualElement={<SEOVisual />}
+        />
 
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">

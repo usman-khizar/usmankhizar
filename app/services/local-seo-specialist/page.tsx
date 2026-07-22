@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import PageHeroSection from '@/components/sections/PageHeroSection'
+import { SEOVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 
 export const metadata: Metadata = {
@@ -78,18 +80,13 @@ export default function LocalSeoSpecialistPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <main style={{ paddingTop: 64 }}>
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
-          <div className="max-w-4xl mx-auto">
-            <PillTag className="mb-5">Local SEO Specialist</PillTag>
-            <h1 style={{ fontFamily: 'var(--font-archivo-black)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', lineHeight: 1.1, marginBottom: '1.25rem' }}>
-              Local SEO Specialist for Agencies, Multi-Location Brands and Small Business Growth
-            </h1>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.75, maxWidth: 760 }}>
-              I bring agency-level local SEO expertise and local SEO guru know-how to Google Business Profile optimisation, website quality audits, and content alignment. My process combines GMB category, description and services audits with website audits powered by GSC, Analytics, Ahrefs and Screaming Frog.
-            </p>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="Local SEO Specialist"
+          title="Local SEO Specialist for Agencies, Multi-Location Brands and Small Business Growth"
+          subtitle="I bring agency-level local SEO expertise and local SEO guru know-how to Google Business Profile optimisation, website quality audits, and content alignment. My process combines GMB category, description and services audits with website audits powered by GSC, Analytics, Ahrefs and Screaming Frog."
+          primaryCta={{ text: 'Optimize GMB', href: '/contact' }}
+          visualElement={<SEOVisual />}
+        />
 
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">

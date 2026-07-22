@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import PageHeroSection from '@/components/sections/PageHeroSection'
+import { SEOVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
@@ -104,19 +106,13 @@ export default function SEOConsultingPage() {
       <Navbar />
       <main style={{ paddingTop: 64 }}>
 
-        {/* ── Hero ── */}
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
-          <div className="max-w-4xl mx-auto">
-            <PillTag className="mb-5">SEO Consulting</PillTag>
-            <h1 style={{ fontFamily: 'var(--font-archivo-black)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', lineHeight: 1.1, marginBottom: '1.25rem' }}>
-              SEO Consulting for Founders & Growing Businesses
-            </h1>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.1rem', color: '#5C5248', lineHeight: 1.7, maxWidth: 620 }}>
-              Google organic traffic compounds. Paid ads stop the moment you stop paying. I help you build the kind of search presence that works while you sleep — through technical excellence, smart content, and earned authority.
-            </p>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="SEO Consulting"
+          title="SEO Consulting for Founders & Growing Businesses"
+          subtitle="Google organic traffic compounds. Paid ads stop the moment you stop paying. I help you build the kind of search presence that works while you sleep — through technical excellence, smart content, and earned authority."
+          primaryCta={{ text: 'Start Project', href: '/contact' }}
+          visualElement={<SEOVisual />}
+        />
 
         {/* ── Feature cards + sub-page nav ── */}
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>

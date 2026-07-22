@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import PageHeroSection from '@/components/sections/PageHeroSection'
+import { GEOVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
@@ -104,19 +106,13 @@ export default function GEOConsultingPage() {
       <Navbar />
       <main style={{ paddingTop: 64 }}>
 
-        {/* ── Hero ── */}
-        <section style={{ backgroundColor: '#F5F0E8', padding: 'clamp(60px, 8vw, 100px) 24px', position: 'relative' }}>
-          <div className="max-w-4xl mx-auto">
-            <PillTag className="mb-5">GEO Consulting</PillTag>
-            <h1 style={{ fontFamily: 'var(--font-archivo-black)', fontWeight: 900, fontSize: 'clamp(2rem, 4vw, 3rem)', color: '#1A1A1A', lineHeight: 1.1, marginBottom: '1.25rem' }}>
-              GEO Consulting: Get Cited by ChatGPT, Perplexity & AI Overviews
-            </h1>
-            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.1rem', color: '#5C5248', lineHeight: 1.7, maxWidth: 620 }}>
-              Generative Engine Optimisation (GEO) is the practice of structuring your content so AI systems reference and cite you. As AI-powered search captures a growing share of queries, GEO is no longer optional — it's the next layer of search strategy.
-            </p>
-          </div>
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 8, backgroundColor: '#C4533A' }} />
-        </section>
+        <PageHeroSection
+          eyebrow="GEO Consulting"
+          title="GEO Consulting: Get Cited by ChatGPT, Perplexity & AI Overviews"
+          subtitle="Generative Engine Optimisation (GEO) is the practice of structuring your content so AI systems reference and cite you. As AI-powered search captures a growing share of queries, GEO is no longer optional — it's the next layer of search strategy."
+          primaryCta={{ text: 'Start with a GEO Audit', href: '/contact' }}
+          visualElement={<GEOVisual />}
+        />
 
         {/* ── What GEO Consulting Includes ── */}
         <section style={{ backgroundColor: '#FAF8F4', padding: 'clamp(60px, 8vw, 100px) 24px' }}>
