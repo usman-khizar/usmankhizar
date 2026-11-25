@@ -6,9 +6,11 @@ const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 export async function POST(req: NextRequest) {
   let email = ''
   let trap = ''
+  let list = ''
   try {
     const data = await req.json()
     email = typeof data?.email === 'string' ? data.email.trim().toLowerCase() : ''
+    list = typeof data?.list === 'string' ? data.list : ''
     trap = typeof data?.company === 'string' ? data.company : ''
   } catch {
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
@@ -25,7 +27,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    await saveSubscriber(email)
+    await saveSubscriber(email, list === 'growth-checklist' ? ['website-newsletter', 'growth-checklist'] : ['website-newsletter'])
     return NextResponse.json({ ok: true })
   } catch (err) {
     console.error('[subscribe] not saved:', err instanceof Error ? err.message : err)

@@ -7,6 +7,14 @@ import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
 import HeroSection from '@/components/sections/HeroSection'
 import PostCard, { Post } from '@/components/blog/PostCard'
+import ConnectedSystem from '@/components/home/ConnectedSystem'
+import LeakCalculator from '@/components/home/LeakCalculator'
+import SkillDrum from '@/components/home/SkillDrum'
+import StackScene from '@/components/home/StackScene'
+import TiltCard from '@/components/home/TiltCard'
+import { LeadMagnetButton } from '@/components/lead/LeadMagnet'
+import { checkCount } from '@/lib/checklist'
+import './home.css'
 
 const title = 'Brand Strategist & Fractional Marketer | Usman Khizar'
 const description = 'Usman Khizar is a marketing consultant, brand strategist, and fractional full-stack marketer covering positioning, websites, search, CRM, automation, and social.'
@@ -94,25 +102,44 @@ const steps = [
 
 const skills = ['SEO and AI search', 'GoHighLevel', 'Website design and development', 'AI automation', 'Social media marketing', 'Digital marketing']
 
+const faqs = [
+  { q: 'What does a fractional marketer do?', a: 'I act as your part-time marketing lead. I own the plan and priorities, do hands-on work across brand, website, search, CRM, automation, and social, and report on it. You get senior direction without a full-time hire.' },
+  { q: 'Do you plan the work or do it?', a: 'Both. Some clients want a plan their team can run. Others want me to build it. We agree which parts I do before we start.' },
+  { q: 'Can you work with my existing team or agency?', a: 'Yes. I can set direction, fill the gaps, and make sure each part connects to the next.' },
+  { q: 'Can you set up GoHighLevel for me?', a: 'Yes. That includes pipelines, forms, calendars, and follow-up workflows, connected to your website so enquiries are answered and tracked.' },
+  { q: 'How soon will I hear back?', a: 'Within 48 hours of your message. I take a limited number of projects at a time, so I will tell you plainly if I am not the right fit.' },
+  { q: 'Do you teach?', a: 'I am planning live online classes in SEO and AI search, GoHighLevel, websites, AI automation, social media, and digital marketing. Email me the skill you want and I will send details when enrolment opens.' },
+]
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+}
+
+const deckColors = ['#FFFFFF', '#FBF3E6', '#F6E8D3', '#F0DDBF']
+
 const learnMail = `mailto:hello@usmankhizar.com?subject=${encodeURIComponent('I want to learn with you')}&body=${encodeURIComponent('Hi Usman, I would like to learn: ')}`
 
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar transparent={true} />
       <main>
         <HeroSection />
+        <ConnectedSystem />
 
         <section className="home-section">
           <div className="home-wrap">
             <h2>Three ways to work together</h2>
-            <div className="home-ways">
+            <div className="home-ways rise">
               {ways.map((w) => (
-                <div key={w.title}>
+                <TiltCard key={w.title}>
                   <h3>{w.title}</h3>
                   <p className="home-fit">{w.fit}</p>
                   <p>{w.body}</p>
-                </div>
+                </TiltCard>
               ))}
             </div>
             <Link href="/contact" className="home-btn">Tell Me What You Need</Link>
@@ -123,35 +150,42 @@ export default function HomePage() {
           <div className="home-wrap">
             <h2>The whole stack, one person accountable</h2>
             <p className="home-lead">Most growth problems sit between channels. I work across all of them, so each part supports the next.</p>
-            <dl className="home-stack">
-              {stack.map((row) => (
-                <div key={row.name}>
-                  <dt>{row.name}</dt>
-                  <dd>
-                    <p>{row.body}</p>
-                    {row.links.length > 0 && (
-                      <p className="home-links">
-                        {row.links.map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}
-                      </p>
-                    )}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <StackScene layers={stack} />
+          </div>
+        </section>
+
+        <section className="home-section home-dark">
+          <div className="home-wrap">
+            <h2>What is your website leaving behind?</h2>
+            <p className="home-lead">Put in your own numbers and see what a better lead rate would be worth.</p>
+            <LeakCalculator />
           </div>
         </section>
 
         <section id="process" className="home-section">
           <div className="home-wrap">
             <h2>How an engagement runs</h2>
-            <ol className="home-steps">
-              {steps.map((s) => (
-                <li key={s.title}>
-                  <h3>{s.title}</h3>
-                  <p>{s.body}</p>
+            <ol className="deck">
+              {steps.map((step, i) => (
+                <li key={step.title} style={{ '--i': i, '--deck': deckColors[i] } as React.CSSProperties}>
+                  <div>
+                    <h3>{step.title}</h3>
+                    <p>{step.body}</p>
+                  </div>
                 </li>
               ))}
             </ol>
+          </div>
+        </section>
+
+        <section className="band">
+          <div className="home-wrap">
+            <div className="rise">
+              <h2>Not sure where your leads are going?</h2>
+              <p>Run the Growth Checklist: {checkCount} checks across brand, website, search, CRM, automation, and social. Free, about ten minutes.</p>
+              <LeadMagnetButton>Get the Checklist</LeadMagnetButton>
+            </div>
+            <div className="lead-sheets" aria-hidden="true"><i /><i /><i><b /><b /><b /><b /></i></div>
           </div>
         </section>
 
@@ -166,16 +200,14 @@ export default function HomePage() {
               <a href={learnMail} className="home-btn">Email Me Your Skill</a>
               <p className="home-mail">hello@usmankhizar.com</p>
             </div>
-            <ul>
-              {skills.map((s) => <li key={s}>{s}</li>)}
-            </ul>
+            <SkillDrum skills={skills} />
           </div>
         </section>
 
         <section className="home-section">
-          <div className="home-wrap home-about">
+          <div className="home-wrap home-about rise">
             <div className="home-about-photo">
-              <Image src="/usman-photo.png" alt="Usman Khizar" fill sizes="(max-width: 860px) 80vw, 360px" />
+              <Image src="/usman-khizar.jpg" alt="Usman Khizar" fill sizes="(max-width: 860px) 80vw, 360px" />
             </div>
             <div>
               <h2>You work with me, not an account team</h2>
@@ -187,6 +219,20 @@ export default function HomePage() {
                 I work directly with founders and small teams, and I take a limited number of projects at a time.
               </p>
               <Link href="/about" className="home-text-link">Read my story</Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="home-section">
+          <div className="home-wrap">
+            <h2>Questions people ask first</h2>
+            <div className="faq">
+              {faqs.map((f) => (
+                <details key={f.q} name="faq">
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
+              ))}
             </div>
           </div>
         </section>

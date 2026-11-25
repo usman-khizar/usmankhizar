@@ -1,19 +1,22 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import seated from '@/public/usman-seated.webp'
+import HeroScroll from './HeroScroll'
+import poster from '@/public/hero/poster.webp'
 
 const UPWORK = 'https://www.upwork.com/freelancers/~01fad6eab5741b8ac8?mp_source=share'
 
 export default function HeroSection() {
   return (
-    <section className="home-hero">
-      <div className="home-hero-beam" aria-hidden="true" />
-      <p className="home-hero-word" aria-hidden="true">Growth</p>
-
-      <div className="home-hero-figure">
-        <Image src={seated} alt="Usman Khizar sitting in a lounge chair, facing the camera" preload sizes="(max-width: 860px) 100vw, 760px" />
-      </div>
-
+    <HeroScroll
+      poster={
+        <Image
+          src={poster}
+          alt="Usman Khizar sitting in a lounge chair with a laptop, facing the camera"
+          preload
+          sizes="(max-width: 860px) 125vw, 900px"
+        />
+      }
+    >
       <div className="home-wrap home-hero-panel">
         <div>
           <h1>
@@ -36,6 +39,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-    </section>
+    </HeroScroll>
   )
 }

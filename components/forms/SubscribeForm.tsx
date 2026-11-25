@@ -7,9 +7,14 @@ import { trackLead } from '@/lib/track'
 interface SubscribeFormProps {
   compact?: boolean
   buttonColor?: string
+  buttonLabel?: string
+  /** Which signup this is. Adds a matching tag in GHL. */
+  list?: 'growth-checklist'
+  /** Replaces the default success message. */
+  children?: React.ReactNode
 }
 
-export default function SubscribeForm({ compact = false, buttonColor = '#C4533A' }: SubscribeFormProps) {
+export default function SubscribeForm({ compact = false, buttonColor = '#C4533A', buttonLabel = 'Sign Up', list, children }: SubscribeFormProps) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -20,7 +25,7 @@ export default function SubscribeForm({ compact = false, buttonColor = '#C4533A'
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: form.get('email'), company: form.get('company') }),
+        body: JSON.stringify({ email: form.get('email'), company: form.get('company'), list }),
       })
       if (!res.ok) throw new Error()
     } catch {
@@ -28,11 +33,12 @@ export default function SubscribeForm({ compact = false, buttonColor = '#C4533A'
       return
     }
     setStatus('success')
-    trackLead('email-signup')
+    trackLead(list ?? 'email-signup')
   }
 
   const fontSize = compact ? '0.85rem' : '0.95rem'
 
+  if (status === 'success' && children) return <div role="status">{children}</div>
   if (status === 'success') {
     return (
       <p role="status" style={{ color: '#FAF8F4', fontFamily: 'var(--font-dm-sans)', fontSize }}>
@@ -61,7 +67,7 @@ export default function SubscribeForm({ compact = false, buttonColor = '#C4533A'
         disabled={status === 'loading'}
         style={{ padding: compact ? '8px 16px' : '12px 24px', backgroundColor: buttonColor, color: '#FAF8F4', borderRadius: 8, border: 'none', fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize, cursor: 'pointer', whiteSpace: 'nowrap' }}
       >
-        {status === 'loading' ? 'Sending…' : 'Sign Up'}
+        {status === 'loading' ? 'Sending…' : buttonLabel}
       </button>
       {status === 'error' && (
         <p role="alert" className="w-full" style={{ color: '#FAF8F4', fontFamily: 'var(--font-dm-sans)', fontSize: '0.85rem' }}>

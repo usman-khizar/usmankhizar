@@ -287,7 +287,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="max-w-3xl mx-auto">
             <div className="card-base flex flex-col sm:flex-row gap-5 items-start">
               <div style={{ width: 64, height: 64, borderRadius: '50%', border: '2px solid #C9BCA8', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
-                <Image src="/usman-photo.png" alt="Usman Khizar" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="64px" />
+                <Image src="/usman-khizar.jpg" alt="Usman Khizar" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="64px" />
               </div>
               <div>
                 <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1rem', color: '#1A1A1A', marginBottom: '0.3rem' }}>Usman Khizar</p>
