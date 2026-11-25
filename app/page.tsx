@@ -9,6 +9,7 @@ import HeroSection from '@/components/sections/HeroSection'
 import PostCard, { Post } from '@/components/blog/PostCard'
 import GrowthGlobe from '@/components/home/GrowthGlobe'
 import LeakCalculator from '@/components/home/LeakCalculator'
+import Proof from '@/components/home/Proof'
 import SkillDrum from '@/components/home/SkillDrum'
 import StackScene from '@/components/home/StackScene'
 import TiltCard from '@/components/home/TiltCard'
@@ -54,21 +55,31 @@ const featuredPosts: Post[] = [
   },
 ]
 
+const thoughts = [
+  'We get traffic. We just don\'t get customers from it.',
+  'I pay three freelancers, and they have never spoken to each other.',
+  'Leads come in on WhatsApp, email, and Instagram. Some never get a reply.',
+  'I have no idea which part of our marketing is working.',
+]
+
 const ways = [
   {
     title: 'Marketing consulting',
-    fit: 'You have a team and need clear direction.',
-    body: 'I review what you are doing, find what is holding it back, and give you a prioritised plan your team can run.',
-  },
-  {
-    title: 'Brand strategy',
-    fit: 'People do not quickly understand why to choose you.',
-    body: 'We define who you serve, what you stand for, and how you say it, then carry that through your site, profiles, and content.',
+    fit: '"Just tell me what to fix first."',
+    body: 'You have the people. What\'s missing is the decision. I find what is holding growth back and hand you an order of attack.',
+    gets: ['A review of all six areas', 'Fixes ranked by impact and effort', 'A plan your team can start straight away'],
   },
   {
     title: 'Fractional marketing',
-    fit: 'You need a marketing lead, but not a full-time hire.',
-    body: 'I join part-time, own the plan and priorities, do the hands-on work, and report on it in plain English.',
+    fit: '"I need someone to own this."',
+    body: 'A marketing lead without the full-time salary. I set the plan, do the hands-on work, and report in plain English.',
+    gets: ['Strategy and execution from one person', 'Your channels, CRM, and follow-up connected', 'One person to call when something matters'],
+  },
+  {
+    title: 'Brand strategy',
+    fit: '"People don\'t get why we\'re different."',
+    body: 'If buyers compare you on price, your message isn\'t doing its job. We fix what you say before you spend more on saying it.',
+    gets: ['Who you\'re for, and why they choose you', 'A message your whole team can repeat', 'Carried through your site, profiles, and content'],
   },
 ]
 
@@ -94,21 +105,22 @@ const stack = [
 ]
 
 const steps = [
-  { title: 'Discovery', body: 'We go through your business, audience, numbers, and what you have already tried.' },
-  { title: 'Strategy', body: 'You get a focused plan: positioning, channels, priorities, and what to leave alone.' },
-  { title: 'Build', body: 'I build it or guide your team: pages, content, campaigns, CRM, and automations.' },
-  { title: 'Measure', body: 'We look at real leads and revenue, then change what is not working.' },
+  { title: 'We find the leak', body: 'We go through your business, buyers, numbers, and everything you have already tried. No pitch deck. Just what is true.' },
+  { title: 'You get the plan', body: 'What to fix, in what order, and what to stop paying for. You know what happens next and why.' },
+  { title: 'I build it with you', body: 'Pages, content, CRM, and automations get made and connected. You are not handed a document and wished good luck.' },
+  { title: 'We keep what earns', body: 'We look at real leads and real sales. What works gets more. What doesn\'t gets cut.' },
 ]
 
-const skills = ['SEO and AI search', 'GoHighLevel', 'Website design and development', 'AI automation', 'Social media marketing', 'Digital marketing']
+const skills = ['Brand strategy', 'SEO and AI search', 'Website design and development', 'GoHighLevel and CRM', 'AI automation', 'Social media marketing']
 
 const faqs = [
+  { q: 'What does it cost?', a: 'It depends on how much you want taken off your plate. After we talk, you get the scope and the price in writing, either one-time or monthly, before any work starts.' },
+  { q: 'I have been burned by an agency. Why is this different?', a: 'You deal with me, not an account manager. You see the plan before you commit to the work, and if I am not the right fit, I will tell you plainly.' },
+  { q: 'How long until I see results?', a: 'Follow-up and page fixes can show up quickly, because the leads are already there. Search and brand take longer to build. I will tell you which is which for your business, and I will not promise a number I do not control.' },
   { q: 'What does a fractional marketer do?', a: 'I act as your part-time marketing lead. I own the plan and priorities, do hands-on work across brand, website, search, CRM, automation, and social, and report on it. You get senior direction without a full-time hire.' },
-  { q: 'Do you plan the work or do it?', a: 'Both. Some clients want a plan their team can run. Others want me to build it. We agree which parts I do before we start.' },
   { q: 'Can you work with my existing team or agency?', a: 'Yes. I can set direction, fill the gaps, and make sure each part connects to the next.' },
   { q: 'Can you set up GoHighLevel for me?', a: 'Yes. That includes pipelines, forms, calendars, and follow-up workflows, connected to your website so enquiries are answered and tracked.' },
-  { q: 'How soon will I hear back?', a: 'Within 48 hours of your message. I take a limited number of projects at a time, so I will tell you plainly if I am not the right fit.' },
-  { q: 'Do you teach?', a: 'I am planning live online classes in SEO and AI search, GoHighLevel, websites, AI automation, social media, and digital marketing. Email me the skill you want and I will send details when enrolment opens.' },
+  { q: 'What happens after I apply?', a: 'I read it myself and reply within 48 hours. I take a limited number of projects at a time, so I will be direct about whether and when I can help.' },
 ]
 
 const faqSchema = {
@@ -119,8 +131,6 @@ const faqSchema = {
 
 const deckColors = ['#FFFFFF', '#FBF3E6', '#F6E8D3', '#F0DDBF']
 
-const learnMail = `mailto:hello@usmankhizar.com?subject=${encodeURIComponent('I want to learn with you')}&body=${encodeURIComponent('Hi Usman, I would like to learn: ')}`
-
 export default function HomePage() {
   return (
     <>
@@ -128,43 +138,60 @@ export default function HomePage() {
       <Navbar transparent={true} />
       <main>
         <HeroSection />
-        <GrowthGlobe />
-
         <section className="home-section">
           <div className="home-wrap">
-            <h2>Three ways to work together</h2>
+            <h2>Which one did you say to yourself this month?</h2>
+            <ul className="pain rise">
+              {thoughts.map((t) => <li key={t}>{t}</li>)}
+            </ul>
+            <p className="home-lead">
+              Each one looks like a separate problem. They&apos;re usually the same one: good parts, and nobody responsible for how
+              they fit together.
+            </p>
+          </div>
+        </section>
+
+        <GrowthGlobe />
+
+        <section id="offers" className="home-section">
+          <div className="home-wrap">
+            <h2>How much of this do you want off your plate?</h2>
             <div className="home-ways rise">
               {ways.map((w) => (
                 <TiltCard key={w.title}>
                   <h3>{w.title}</h3>
                   <p className="home-fit">{w.fit}</p>
                   <p>{w.body}</p>
+                  <ul className="ticks">{w.gets.map((g) => <li key={g}>{g}</li>)}</ul>
                 </TiltCard>
               ))}
             </div>
-            <Link href="/contact" className="home-btn">Tell Me What You Need</Link>
+            <div className="cta-line">
+              <Link href="/contact" className="home-btn">Apply to Work With Me</Link>
+              <p>A limited number of projects at a time. I reply within 48 hours.</p>
+            </div>
           </div>
         </section>
 
         <section id="what-i-do" className="home-section home-tint">
           <div className="home-wrap">
-            <h2>The whole stack, one person accountable</h2>
-            <p className="home-lead">Most growth problems sit between channels. I work across all of them, so each part supports the next.</p>
+            <h2>Six jobs you&apos;d normally hire six people for</h2>
+            <p className="home-lead">Growth gets lost in the gaps between them. When one person works across all six, there are no gaps to fall into.</p>
             <StackScene layers={stack} />
           </div>
         </section>
 
         <section className="home-section home-dark">
           <div className="home-wrap">
-            <h2>What is your website leaving behind?</h2>
-            <p className="home-lead">Put in your own numbers and see what a better lead rate would be worth.</p>
+            <h2>You may not need more traffic. You may need less waste.</h2>
+            <p className="home-lead">Move the sliders to your own numbers. See what the same visitors are worth when more of them become leads.</p>
             <LeakCalculator />
           </div>
         </section>
 
         <section id="process" className="home-section">
           <div className="home-wrap">
-            <h2>How an engagement runs</h2>
+            <h2>What happens after you say yes</h2>
             <ol className="deck">
               {steps.map((step, i) => (
                 <li key={step.title} style={{ '--i': i, '--deck': deckColors[i] } as React.CSSProperties}>
@@ -181,24 +208,24 @@ export default function HomePage() {
         <section className="band">
           <div className="home-wrap">
             <div className="rise">
-              <h2>Not sure where your leads are going?</h2>
-              <p>Run the Growth Checklist: {checkCount} checks across brand, website, search, CRM, automation, and social. Free, about ten minutes.</p>
+              <h2>Find the leak before you pay for more traffic.</h2>
+              <p>The Growth Checklist: {checkCount} yes-or-no checks across your whole marketing. Ten minutes, free, and you&apos;ll know which area to fix first.</p>
               <LeadMagnetButton>Get the Checklist</LeadMagnetButton>
             </div>
             <div className="lead-sheets" aria-hidden="true"><i /><i /><i><b /><b /><b /><b /></i></div>
           </div>
         </section>
 
-        <section id="learn" className="home-section home-dark">
+        <section id="skills" className="home-section home-dark">
           <div className="home-wrap home-learn">
             <div>
-              <h2>Want to learn these skills?</h2>
+              <h2>Hire one person. Get six skill sets.</h2>
               <p className="home-lead">
-                I&apos;m planning live online classes for students and career starters. Tell me which skill you want, and
-                I&apos;ll send you the details when enrolment opens.
+                A strategist who can&apos;t build leaves you with slides. A builder with no strategy leaves you with the wrong thing,
+                finished. I do both, so the plan and the work come from the same head.
               </p>
-              <a href={learnMail} className="home-btn">Email Me Your Skill</a>
-              <p className="home-mail">hello@usmankhizar.com</p>
+              <Link href="/contact" className="home-btn">Apply to Work With Me</Link>
+              <p className="home-mail"><Link href="/services" className="home-text-link">See every service</Link></p>
             </div>
             <SkillDrum skills={skills} />
           </div>
@@ -210,22 +237,25 @@ export default function HomePage() {
               <Image src="/usman-khizar.jpg" alt="Usman Khizar" fill sizes="(max-width: 860px) 80vw, 360px" />
             </div>
             <div>
-              <h2>You work with me, not an account team</h2>
+              <h2>I started in search. Then I saw what rankings couldn&apos;t fix.</h2>
               <p>
-                I came up through search: keyword research, content, technical audits, and link building. Over time the work
-                grew into everything around it, because good rankings can&apos;t fix an unclear brand or a lead nobody follows up.
+                Keyword research, content, technical audits, link building. I came up through all of it. But a first-page ranking
+                can&apos;t rescue a message nobody understands, and more traffic can&apos;t help a lead nobody calls back.
               </p>
               <p>
-                I work directly with founders and small teams, and I take a limited number of projects at a time.
+                So I learned the rest. Today I work directly with founders and small teams across the whole path, from the first
+                search to the signed customer. If your marketing has good parts and no owner, that&apos;s the job I do.
               </p>
               <Link href="/about" className="home-text-link">Read my story</Link>
             </div>
           </div>
         </section>
 
+        <Proof />
+
         <section className="home-section">
           <div className="home-wrap">
-            <h2>Questions people ask first</h2>
+            <h2>What you&apos;re probably wondering</h2>
             <div className="faq">
               {faqs.map((f) => (
                 <details key={f.q} name="faq">
@@ -234,6 +264,14 @@ export default function HomePage() {
                 </details>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="closer">
+          <div className="home-wrap rise">
+            <h2>In six months you can have more pieces. Or one system.</h2>
+            <p>Tell me what you&apos;re working on. I&apos;ll come back within 48 hours with honest thoughts on whether I can help, and how.</p>
+            <Link href="/contact" className="home-btn">Apply to Work With Me</Link>
           </div>
         </section>
 

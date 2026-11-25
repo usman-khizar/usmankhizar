@@ -20,8 +20,8 @@ export default function HeroSection() {
       <div className="home-wrap home-hero-panel">
         <div>
           <h1>
-            Brand strategist and fractional marketer
-            <em>for founders who need it all connected.</em>
+            You don&apos;t have a marketing problem. You have six.
+            <em>Hire one brand strategist and fractional marketer to own them all.</em>
           </h1>
           <ul className="home-proof">
             <li><a href={UPWORK} target="_blank" rel="noopener noreferrer">Top Rated on Upwork</a></li>
@@ -30,12 +30,12 @@ export default function HeroSection() {
         </div>
         <div>
           <p className="home-hero-sub">
-            I&apos;m Usman Khizar, a full-stack marketing consultant. I set your positioning, choose the channels, and build
-            what runs them: website, search, CRM, automation, and social.
+            A website here. SEO there. Leads on WhatsApp that nobody answers. I&apos;m Usman Khizar, and I turn the pieces
+            into one system that brings in customers.
           </p>
           <div className="home-actions">
-            <Link href="/contact" className="home-btn">Work With Me</Link>
-            <Link href="#what-i-do" className="home-btn home-btn-ghost">See What I Do</Link>
+            <Link href="/contact" className="home-btn">Apply to Work With Me</Link>
+            <Link href="#what-i-do" className="home-btn home-btn-ghost">See How</Link>
           </div>
         </div>
       </div>

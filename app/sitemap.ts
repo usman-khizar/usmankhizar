@@ -28,6 +28,7 @@ const pages = [
   '/services/saas-seo',
   '/services/ecommerce-seo',
   '/services/search-atlas-seo-specialist',
+  '/training',
   '/blog',
   '/about',
   '/tools',

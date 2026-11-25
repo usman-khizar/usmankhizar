@@ -58,7 +58,7 @@ export default function Navbar({ transparent = false }: { transparent?: boolean 
         <div className="hidden md:flex items-center gap-8">
           {[
             { label: 'Services', href: '/services' },
-            { label: 'Learn', href: '/#learn' },
+            { label: 'Training', href: '/training' },
             { label: 'Blog', href: '/blog' },
             { label: 'About', href: '/about' },
             { label: 'Tools', href: '/tools' },
@@ -113,7 +113,7 @@ export default function Navbar({ transparent = false }: { transparent?: boolean 
         >
           {[
             { label: 'Services', href: '/services' },
-            { label: 'Learn', href: '/#learn' },
+            { label: 'Training', href: '/training' },
             { label: 'Blog', href: '/blog' },
             { label: 'About', href: '/about' },
             { label: 'Tools', href: '/tools' },
