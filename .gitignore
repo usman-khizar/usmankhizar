@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# private, keep local only
+shibu_messages_clickup_document_pdf.md
