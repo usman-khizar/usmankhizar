@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'AI Citation Monitoring | Usman Khizar',
+  title: 'AI Citation Monitoring',
   description: 'Track whether your brand is cited by ChatGPT, Perplexity, and Google AI Overviews. AI citation monitoring as part of a GEO strategy.',
   openGraph: {
+    images: ogImages,
     title: 'AI Citation Monitoring | Usman Khizar',
     description: 'Track whether your brand appears in AI-generated answers across ChatGPT, Perplexity, and Google AI Overviews.',
     url: 'https://usmankhizar.com/services/geo-consulting/citation-monitoring',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -7,7 +8,9 @@ import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
 import PillTag from '@/components/ui/PillTag'
 import PostCard from '@/components/blog/PostCard'
-import { allPosts, getPostBySlug } from '@/lib/posts'
+import SubscribeForm from '@/components/forms/SubscribeForm'
+import { isGhlConfigured } from '@/lib/ghl'
+import { allPosts, getPostBySlug, isPublished, publishedPosts } from '@/lib/posts'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -23,11 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description: post.teaser,
     openGraph: {
+    images: ogImages,
       title: `${post.title} | Usman Khizar`,
       description: post.teaser,
       url: `https://usmankhizar.com/blog/${slug}`,
     },
     alternates: { canonical: `https://usmankhizar.com/blog/${slug}` },
+    ...(isPublished(slug) ? {} : { robots: { index: false, follow: true } }),
   }
 }
 
@@ -107,7 +112,7 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound()
 
   const richContent = richPostsContent[slug]
-  const related = allPosts.filter((p) => p.slug !== slug).slice(0, 3)
+  const related = publishedPosts.filter((p) => p.slug !== slug).slice(0, 3)
 
   const blogPostingSchema = {
     '@context': 'https://schema.org',
@@ -230,6 +235,8 @@ export default async function BlogPostPage({ params }: Props) {
                     </div>
                   </div>
                 </>
+              ) : post.content ? (
+                <PostBody content={post.content} />
               ) : (
                 <div>
                   <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.8, marginBottom: '2rem' }}>
@@ -261,16 +268,15 @@ export default async function BlogPostPage({ params }: Props) {
                   </div>
                 )}
                 {/* Mini email capture */}
-                <div style={{ backgroundColor: '#141210', borderRadius: 14, padding: 20 }}>
-                  <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '0.9rem', color: '#FAF8F4', marginBottom: '0.5rem' }}>Get the playbook</p>
-                  <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.82rem', color: '#C9BCA8', marginBottom: '1rem', lineHeight: 1.5 }}>
-                    SEO + GEO + AEO in one system. Free.
-                  </p>
-                  <form action="/api/subscribe" method="POST" className="flex flex-col gap-2">
-                    <input type="email" name="email" placeholder="your@email.com" style={{ padding: '8px 12px', borderRadius: 6, border: 'none', fontFamily: 'var(--font-dm-sans)', fontSize: '0.85rem', color: '#1A1A1A', backgroundColor: '#FAF8F4' }} />
-                    <button type="submit" className="btn-primary" style={{ padding: '8px 16px', fontSize: '0.85rem' }}>Send It</button>
-                  </form>
-                </div>
+                {isGhlConfigured() && (
+                  <div style={{ backgroundColor: '#141210', borderRadius: 14, padding: 20 }}>
+                    <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '0.9rem', color: '#FAF8F4', marginBottom: '0.5rem' }}>Get my marketing notes</p>
+                    <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.82rem', color: '#C9BCA8', marginBottom: '1rem', lineHeight: 1.5 }}>
+                      Brand, search, and automation. Free.
+                    </p>
+                    <SubscribeForm compact />
+                  </div>
+                )}
               </div>
             </aside>
           </div>
@@ -313,4 +319,23 @@ export default async function BlogPostPage({ params }: Props) {
       <Footer />
     </>
   )
+}
+
+/** Renders the plain-text posts in lib/posts.ts: blank lines split blocks, "## " starts a heading. */
+function PostBody({ content }: { content: string }) {
+  return content.split(/\n\s*\n/).map((block, i) => {
+    const text = block.trim()
+    if (text.startsWith('## ')) {
+      return (
+        <h2 key={i} style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.25rem', color: '#1A1A1A', margin: '2.5rem 0 0.75rem' }}>
+          {text.slice(3)}
+        </h2>
+      )
+    }
+    return (
+      <p key={i} style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.8, marginBottom: '1.25rem', whiteSpace: 'pre-line' }}>
+        {text}
+      </p>
+    )
+  })
 }

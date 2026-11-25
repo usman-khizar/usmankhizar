@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Content Strategy | Usman Khizar',
+  title: 'Content Strategy',
   description: 'SEO content strategy that turns keyword research and topical relevance into pages that rank for the right search intent.',
   openGraph: {
+    images: ogImages,
     title: 'Content Strategy | Usman Khizar',
     description: 'SEO content strategy that turns keyword research and topical relevance into pages that rank.',
     url: 'https://usmankhizar.com/services/seo-consulting/content-strategy',

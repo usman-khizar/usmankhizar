@@ -17,7 +17,7 @@ export default function Footer() {
               <span style={{ color: '#C4533A', fontSize: '1.4rem' }}>.</span>
             </div>
             <p style={{ fontFamily: 'var(--font-lora)', color: '#C9BCA8', fontSize: '0.9rem', lineHeight: 1.7 }}>
-              Search marketer helping founders and businesses get found on Google, in AI, and everywhere in between.
+              Marketing consultant, brand strategist, and fractional marketer for founders and small teams.
             </p>
           </div>
 
@@ -33,6 +33,8 @@ export default function Footer() {
                 { label: 'About', href: '/about' },
                 { label: 'Tools', href: '/tools' },
                 { label: 'Contact', href: '/contact' },
+                { label: 'Privacy', href: '/privacy' },
+                { label: 'Terms', href: '/terms' },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -65,6 +67,9 @@ export default function Footer() {
                 { label: '— Question Content', href: '/services/aeo-consulting/question-based-content' },
                 { label: '— Voice Search', href: '/services/aeo-consulting/voice-and-conversational-search' },
                 { label: 'GEO Consulting', href: '/services/geo-consulting' },
+                { label: 'Local SEO', href: '/services/local-seo-specialist' },
+                { label: 'SaaS SEO', href: '/services/saas-seo' },
+                { label: 'E-commerce SEO', href: '/services/ecommerce-seo' },
               ].map((item) => (
                 <Link
                   key={item.href}
@@ -124,7 +129,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid #1E1A18', paddingTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'var(--font-dm-sans)', color: '#5C5248', fontSize: '0.8rem' }}>
+          <p style={{ fontFamily: 'var(--font-dm-sans)', color: '#A2968A', fontSize: '0.8rem' }}>
             © {new Date().getFullYear()} Usman Khizar. All rights reserved.
           </p>
         </div>

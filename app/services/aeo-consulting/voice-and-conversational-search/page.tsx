@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Voice & Conversational Search | Usman Khizar',
+  title: 'Voice & Conversational Search',
   description: 'Voice and conversational search optimisation for answer engines, smart speakers, and AI assistants. Adapt your AEO strategy for natural-language queries.',
   openGraph: {
+    images: ogImages,
     title: 'Voice & Conversational Search | Usman Khizar',
     description: 'Voice and conversational search optimisation for answer engines, smart speakers, and AI assistants.',
     url: 'https://usmankhizar.com/services/aeo-consulting/voice-and-conversational-search',

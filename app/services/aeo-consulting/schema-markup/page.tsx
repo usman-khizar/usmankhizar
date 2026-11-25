@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Schema Markup | Usman Khizar',
+  title: 'Schema Markup',
   description: 'Schema markup consulting for AEO and SEO. Implement FAQ, HowTo, Article and Person schema to improve visibility in search results and AI answer engines.',
   openGraph: {
+    images: ogImages,
     title: 'Schema Markup | Usman Khizar',
     description: 'Schema markup consulting for AEO and SEO. Improve visibility in search and AI answer engines with structured data.',
     url: 'https://usmankhizar.com/services/aeo-consulting/schema-markup',

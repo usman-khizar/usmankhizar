@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -7,9 +8,10 @@ import { SEOVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 
 export const metadata: Metadata = {
-  title: 'Local SEO Specialist | Usman Khizar',
+  title: 'Local SEO Specialist',
   description: 'Local SEO specialist with experience working at top SEO agencies and with local SEO gurus. GMB optimisation, local service page sync, website audits and data-driven SEO for Google Business Profile visibility.',
   openGraph: {
+    images: ogImages,
     title: 'Local SEO Specialist | Usman Khizar',
     description: 'Local SEO specialist with experience working at top SEO agencies and local SEO gurus. GMB optimisation, local service page sync, website audits and data-driven SEO for Google Business Profile visibility.',
     url: 'https://usmankhizar.com/services/local-seo-specialist',

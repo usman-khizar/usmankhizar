@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -7,9 +8,10 @@ import { SEOVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 
 export const metadata: Metadata = {
-  title: 'E-commerce SEO Specialist | Usman Khizar',
+  title: 'E-commerce SEO Specialist',
   description: 'E-commerce SEO specialist helping online stores rank product and category pages, fix crawlability issues, and outrank competitors on Google and AI search.',
   openGraph: {
+    images: ogImages,
     title: 'E-commerce SEO Specialist | Usman Khizar',
     description: 'E-commerce SEO specialist helping online stores rank product and category pages, fix crawlability issues, and outrank competitors on Google and AI search.',
     url: 'https://usmankhizar.com/services/ecommerce-seo',

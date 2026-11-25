@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
+import { ogImages } from '@/lib/og'
+import GhlForm from '@/components/forms/GhlForm'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -9,9 +10,10 @@ import PillTag from '@/components/ui/PillTag'
 import { ServicesVisual } from '@/components/sections/HeroVisuals'
 
 export const metadata: Metadata = {
-  title: 'Full-Stack Search Marketing | Usman Khizar',
+  title: 'Full-Stack Search Marketing',
   description: 'Full-stack search marketing services covering SEO consulting, GEO, and AEO. Get ranked on Google, ChatGPT, Perplexity, and AI Overviews.',
   openGraph: {
+    images: ogImages,
     title: 'Full-Stack Search Marketing | Usman Khizar',
     description: 'Full-stack search marketing services covering SEO consulting, GEO, and AEO. Get ranked on Google, ChatGPT, Perplexity, and AI Overviews.',
     url: 'https://usmankhizar.com/services',
@@ -275,7 +277,7 @@ export default function ServicesPage() {
               <p style={{ fontFamily: 'var(--font-lora)', color: '#5C5248', fontSize: '0.95rem', marginBottom: '2rem', lineHeight: 1.65 }}>
                 Tell me what you're working on and I'll come back to you within 48 hours.
               </p>
-              <EnquiryForm />
+              <GhlForm />
             </div>
           </div>
         </section>
@@ -283,29 +285,6 @@ export default function ServicesPage() {
         <EmailCapture />
       </main>
       <Footer />
-      <Script src="https://link.readyondemand.com/js/form_embed.js" strategy="afterInteractive" />
     </>
-  )
-}
-
-function EnquiryForm() {
-  return (
-    <iframe
-      src="https://link.readyondemand.com/widget/form/4pJtCDndQtutaGWLDgEr"
-      style={{ width: '100%', height: '525px', border: 'none', borderRadius: '8px' }}
-      id="inline-4pJtCDndQtutaGWLDgEr"
-      data-layout="{'id':'INLINE'}"
-      data-trigger-type="alwaysShow"
-      data-trigger-value=""
-      data-activation-type="alwaysActivated"
-      data-activation-value=""
-      data-deactivation-type="neverDeactivate"
-      data-deactivation-value=""
-      data-form-name="Send Enquiry"
-      data-height="525"
-      data-layout-iframe-id="inline-4pJtCDndQtutaGWLDgEr"
-      data-form-id="4pJtCDndQtutaGWLDgEr"
-      title="Send Enquiry"
-    />
   )
 }

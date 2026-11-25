@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
@@ -9,10 +10,11 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Free SEO & GEO Tools',
-  description: 'Free tools for SEO, GEO, and AEO. Check your page\'s AI-citability, generate schema markup, analyse LinkedIn hooks, and more.',
+  description: 'Free tools for SEO, GEO, and AEO. Check your page\'s AI-citability, generate schema markup, and analyse LinkedIn hooks.',
   openGraph: {
+    images: ogImages,
     title: 'Free Tools | Usman Khizar',
-    description: 'Free tools to improve your search visibility — GEO readiness checker, schema generator, hook analyser, and citation tracker.',
+    description: 'Free tools to improve your search visibility — GEO readiness checker, schema generator, and hook analyser.',
     url: 'https://usmankhizar.com/tools',
   },
   alternates: { canonical: 'https://usmankhizar.com/tools' },
@@ -21,16 +23,16 @@ export const metadata: Metadata = {
 const tools = [
   {
     name: 'GEO Readiness Checker',
-    desc: 'Is your page AI-citable? Check in 30 seconds.',
-    detail: 'Paste a URL and get an instant assessment of how likely your page is to be cited by ChatGPT, Perplexity, and Google AI Overviews.',
+    desc: 'Is your page structured for AI search?',
+    detail: 'Paste your page and get nine structure checks, with a fix for each one that fails.',
     cta: 'Try it free →',
     available: true,
     href: '/tools/geo-checker',
   },
   {
     name: 'Hook Analyser',
-    desc: 'Score your LinkedIn hook against proven formats.',
-    detail: 'Paste your LinkedIn opening line and get a score based on the patterns that actually stop the scroll — with specific suggestions to improve it.',
+    desc: 'Check your LinkedIn hook against common patterns.',
+    detail: 'Paste your opening lines and get seven checks with specific suggestions to improve them.',
     cta: 'Try it free →',
     available: true,
     href: '/tools/hook-analyser',
@@ -47,7 +49,7 @@ const tools = [
     name: 'Citation Tracker',
     desc: 'See if your brand appears in AI answers.',
     detail: 'Track whether your brand, products, or content are being cited by major AI systems. Know your GEO visibility at a glance.',
-    cta: 'Join waitlist →',
+    cta: 'Ask about it →',
     available: false,
     href: '#',
   },
@@ -61,7 +63,7 @@ export default function ToolsPage() {
         <PageHeroSection
           eyebrow="Free Tools"
           title="Tools That Do the Thinking For You"
-          subtitle="Free utilities I've built to make SEO, GEO, and LinkedIn optimisation faster. No sign-up required for most — just paste and get your answer."
+          subtitle="Free utilities I've built to make SEO, GEO, and LinkedIn optimisation faster. No sign-up required. Just paste and get your answer."
           primaryCta={{ text: 'Explore Tools', href: '#tools' }}
           visualElement={<ToolsVisual />}
         />

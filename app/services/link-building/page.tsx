@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -13,9 +14,10 @@ import TrustStrip from '@/components/services/TrustStrip'
 import { SearchIcon, LinkIcon, PeopleIcon, ChecklistIcon, StarIcon, QuestionIcon } from '@/components/services/icons'
 
 export const metadata: Metadata = {
-  title: 'Link Building Expert & Specialist | Link Building Service | Usman Khizar',
+  title: 'Link Building Expert & Specialist | Link Building Service',
   description: 'Hire a link building expert for high-quality backlinks, outreach, and ranking growth. Link building specialist offering a white-hat link building service for SEO visibility.',
   openGraph: {
+    images: ogImages,
     title: 'Link Building Expert & Specialist | Link Building Service | Usman Khizar',
     description: 'Hire a link building expert for high-quality backlinks, outreach, and ranking growth. Link building specialist offering a white-hat link building service for SEO visibility.',
     url: 'https://usmankhizar.com/services/link-building',

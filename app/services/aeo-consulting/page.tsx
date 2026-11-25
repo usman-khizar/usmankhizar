@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -8,9 +9,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'AEO Consulting | Usman Khizar',
+  title: 'AEO Consulting',
   description: 'AEO consulting for featured snippets, AI Overviews, and zero-click results. Answer Engine Optimisation to structure content for direct answers.',
   openGraph: {
+    images: ogImages,
     title: 'AEO Consulting | Usman Khizar',
     description: 'AEO consulting for featured snippets, AI Overviews, and zero-click results. Answer Engine Optimisation.',
     url: 'https://usmankhizar.com/services/aeo-consulting',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
@@ -8,12 +9,13 @@ import PageHeroSection from '@/components/sections/PageHeroSection'
 import PillTag from '@/components/ui/PillTag'
 import { BlogVisual } from '@/components/sections/HeroVisuals'
 import Link from 'next/link'
-import { allPosts } from '@/lib/posts'
+import { publishedPosts } from '@/lib/posts'
 
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Practical writing on SEO, GEO, AEO, Parasite SEO, and LinkedIn growth. No fluff — only what actually works in modern search.',
   openGraph: {
+    images: ogImages,
     title: 'Blog | Usman Khizar',
     description: 'Practical. Specific. No fluff. SEO, GEO, AEO and LinkedIn growth from someone who does it.',
     url: 'https://usmankhizar.com/blog',
@@ -23,8 +25,8 @@ export const metadata: Metadata = {
 
 const categories = ['All', 'SEO/GEO/AEO', 'Parasite SEO', 'LinkedIn', 'Copywriting', 'Tools']
 
-const featured = allPosts[0]
-const rest = allPosts.slice(1)
+const featured = publishedPosts[0]
+const rest = publishedPosts.slice(1)
 
 export default function BlogPage() {
   return (
@@ -85,7 +87,7 @@ export default function BlogPage() {
         </section>
 
         {/* Mid-page email capture strip */}
-        <EmailCapture variant="terracotta" heading="Get the Search Stack Playbook" subheading="SEO + GEO + AEO in one actionable system. Free to subscribers." />
+        <EmailCapture variant="terracotta" />
 
         <section style={{ backgroundColor: '#FAF8F4', padding: '40px 24px 60px' }}>
           <div className="max-w-5xl mx-auto text-center">

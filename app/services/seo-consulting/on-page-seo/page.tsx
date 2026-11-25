@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'On-Page SEO Specialist | Usman Khizar',
+  title: 'On-Page SEO Specialist',
   description: 'Turn underperforming pages into ranking pages with on-page SEO strategy, heading hierarchy, and internal linking that reinforces topical relevance.',
   openGraph: {
+    images: ogImages,
     title: 'On-Page SEO Specialist | Usman Khizar',
     description: 'Turn underperforming pages into ranking pages with on-page SEO strategy, heading hierarchy, and internal linking.',
     url: 'https://usmankhizar.com/services/seo-consulting/on-page-seo',

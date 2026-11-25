@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/layout/Navbar'
@@ -11,10 +12,11 @@ import { AboutVisual } from '@/components/sections/HeroVisuals'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Usman Khizar is a search marketer specialising in SEO, GEO, and AEO. Learn about his background, philosophy, and approach to modern search marketing.',
+  description: 'Usman Khizar is a marketing consultant, brand strategist, and fractional marketer with a search background. Read his story and approach.',
   openGraph: {
+    images: ogImages,
     title: 'About | Usman Khizar',
-    description: 'SEO, GEO & AEO specialist. The story, the philosophy, and the work.',
+    description: 'Marketing consultant, brand strategist, and fractional marketer. The story and the work.',
     url: 'https://usmankhizar.com/about',
   },
   alternates: { canonical: 'https://usmankhizar.com/about' },
@@ -24,8 +26,8 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Usman Khizar',
-  jobTitle: 'SEO, GEO & AEO Specialist',
-  description: 'Search marketer specialising in SEO, Generative Engine Optimisation, and Answer Engine Optimisation.',
+  jobTitle: 'Marketing Consultant, Brand Strategist & Fractional Marketer',
+  description: 'Marketing consultant, brand strategist, and fractional marketer with a background in SEO, GEO, and AEO.',
   url: 'https://usmankhizar.com',
   sameAs: [
     'https://www.linkedin.com/in/usmankhizar',
@@ -42,9 +44,9 @@ export default function AboutPage() {
         <PageHeroSection
           eyebrow="About Me"
           title="Usman Khizar"
-          subtitle="I help founders and businesses get found everywhere that matters in modern search — Google, ChatGPT, Perplexity, and AI Overviews. SEO, GEO & AEO specialist with 5+ years of proven experience."
+          subtitle="Marketing consultant, brand strategist, and fractional marketer. I come from search, with 5+ years in it, and now work across the full stack: brand, website, search, CRM, automation, and social."
           primaryCta={{ text: 'Start Project', href: '/contact' }}
-          secondaryCta={{ text: 'LinkedIn', href: 'https://linkedin.com' }}
+          secondaryCta={{ text: 'LinkedIn', href: 'https://www.linkedin.com/in/usmankhizar' }}
           visualElement={<AboutVisual />}
         />
 
@@ -56,8 +58,8 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col gap-5">
               {[
-                "I'm a search marketer who got obsessed with the gap between how most businesses approach SEO and what's actually happening in search right now.",
-                "I specialise in the full modern search stack — traditional organic SEO, Generative Engine Optimisation (GEO) for AI citation, and Answer Engine Optimisation (AEO) for zero-click and featured results.",
+                "I'm a full-stack marketer. I started in search and got obsessed with the gap between how most businesses market themselves and how people actually find and choose them.",
+                "Today I work as a consultant, brand strategist, and fractional marketer. Search is still my deepest skill: SEO, Generative Engine Optimisation (GEO), and Answer Engine Optimisation (AEO).",
                 "Every strategy I recommend, I've already tested on my own projects. No theory. No fluff.",
               ].map((text, i) => (
                 <p key={i} style={{ fontFamily: 'var(--font-lora)', fontSize: '1.1rem', color: '#5C5248', lineHeight: 1.8 }}>
@@ -109,7 +111,7 @@ export default function AboutPage() {
                 Alongside consulting, I build digital products using AI-assisted code and market them through the same search systems I teach. I write about everything publicly on the blog — the wins, the failures, and the things that surprised me.
               </p>
               <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.8 }}>
-                If you're a founder who wants to stop paying for ads that disappear the moment you pause them, and start building search presence that compounds — let's talk.
+                If you're a founder who wants to stop paying for ads that disappear the moment you pause them, and start building a brand and search presence that compounds — let's talk.
               </p>
             </div>
           </div>
@@ -151,7 +153,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="section-title mb-4" style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)' }}>Ready to Work Together?</h2>
             <p style={{ fontFamily: 'var(--font-lora)', color: '#5C5248', fontSize: '1rem', marginBottom: '2rem', lineHeight: 1.7 }}>
-              I take a limited number of clients at a time. If you want search visibility that compounds, let's talk.
+              I take a limited number of clients at a time. If you want marketing that compounds, let's talk.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link href="/contact" className="btn-primary">Work With Me →</Link>

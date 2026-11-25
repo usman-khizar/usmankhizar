@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -8,9 +9,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'SEO Consulting | Usman Khizar',
+  title: 'SEO Consulting',
   description: 'SEO consulting for founders and businesses. Technical SEO, content strategy, and authority building to rank on Google and build sustainable organic traffic.',
   openGraph: {
+    images: ogImages,
     title: 'SEO Consulting | Usman Khizar',
     description: 'SEO consulting for founders and businesses. Technical SEO, content strategy, and authority building to rank on Google.',
     url: 'https://usmankhizar.com/services/seo-consulting',

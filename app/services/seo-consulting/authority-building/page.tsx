@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Authority Building | Usman Khizar',
+  title: 'Authority Building',
   description: 'Authority building and backlink strategy for SEO growth, featured snippets, and trust signals that make search engines value your pages.',
   openGraph: {
+    images: ogImages,
     title: 'Authority Building | Usman Khizar',
     description: 'Authority building and backlink strategy for SEO growth, featured snippets, and trust signals.',
     url: 'https://usmankhizar.com/services/seo-consulting/authority-building',

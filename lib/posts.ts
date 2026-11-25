@@ -142,7 +142,7 @@ Avoid thin content. Don't over-optimise. Link aggressively.
 
 Parasite SEO is fast but not permanent. Use it to build topical signals while your main domain compounds.
 
-Want more tactics? Download the Search Stack Playbook.`,
+Want help with this? Get in touch.`,
   },
   {
     slug: 'how-to-get-cited-by-perplexity',
@@ -200,7 +200,7 @@ Most get wrong: stuffing keywords without context, ignoring featured section, us
 
 Optimised profile generates inbound. Unoptimised is dead end.
 
-Want to grow on LinkedIn? Get the Search Stack Playbook.`,
+Want to grow on LinkedIn? Get in touch.`,
   },
   {
     slug: 'answer-engine-optimisation',
@@ -254,4 +254,13 @@ Need AEO help? Book AEO consulting.`,
 
 export function getPostBySlug(slug: string): FullPost | undefined {
   return allPosts.find((p) => p.slug === slug)
+}
+
+/** Announced but not written yet. Kept out of listings, the sitemap, and search. */
+const unwritten = new Set(['how-to-get-cited-by-perplexity'])
+
+export const publishedPosts = allPosts.filter((p) => !unwritten.has(p.slug))
+
+export function isPublished(slug: string) {
+  return !unwritten.has(slug)
 }

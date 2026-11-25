@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Content Restructuring for GEO | Usman Khizar',
+  title: 'Content Restructuring for GEO',
   description: 'Restructure existing content with answer-first formatting, definitions, and direct answers that AI systems cite. GEO content restructuring for ChatGPT and Perplexity visibility.',
   openGraph: {
+    images: ogImages,
     title: 'Content Restructuring for GEO | Usman Khizar',
     description: 'Restructure existing content so AI systems like ChatGPT and Perplexity cite it as a source.',
     url: 'https://usmankhizar.com/services/geo-consulting/content-restructuring',

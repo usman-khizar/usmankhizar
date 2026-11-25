@@ -4,9 +4,9 @@ export function AboutVisual() {
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
-      style={{ maxWidth: '500px', opacity: 0.8 }}
+      style={{ opacity: 0.8 }}
       xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
     >
       {/* Animated gradient */}
       <defs>
@@ -21,7 +21,7 @@ export function AboutVisual() {
       </defs>
 
       {/* Background circles */}
-      <circle cx="320" cy="150" r="120" fill="url(#aboutGrad)" />
+      <circle cx="275" cy="150" r="120" fill="url(#aboutGrad)" />
       <circle cx="200" cy="300" r="100" fill="url(#aboutGrad2)" />
 
       {/* Growth chart lines */}
@@ -83,9 +83,9 @@ export function ServicesVisual() {
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
-      style={{ maxWidth: '500px', opacity: 0.8 }}
+      style={{ opacity: 0.8 }}
       xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <linearGradient id="servicesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -151,9 +151,9 @@ export function BlogVisual() {
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
-      style={{ maxWidth: '500px', opacity: 0.8 }}
+      style={{ opacity: 0.8 }}
       xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <linearGradient id="blogGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -197,9 +197,9 @@ export function ContactVisual() {
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
-      style={{ maxWidth: '500px', opacity: 0.8 }}
+      style={{ opacity: 0.8 }}
       xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <linearGradient id="contactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -249,9 +249,9 @@ export function ToolsVisual() {
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
-      style={{ maxWidth: '500px', opacity: 0.8 }}
+      style={{ opacity: 0.8 }}
       xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <linearGradient id="toolsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -307,9 +307,9 @@ export function SEOVisual() {
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
-      style={{ maxWidth: '500px', opacity: 0.8 }}
+      style={{ opacity: 0.8 }}
       xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <linearGradient id="seoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -371,9 +371,9 @@ export function GEOVisual() {
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
-      style={{ maxWidth: '500px', opacity: 0.8 }}
+      style={{ opacity: 0.8 }}
       xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <linearGradient id="geoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -424,9 +424,9 @@ export function AEOVisual() {
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
-      style={{ maxWidth: '500px', opacity: 0.8 }}
+      style={{ opacity: 0.8 }}
       xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid slice"
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <linearGradient id="aeoGrad" x1="0%" y1="0%" x2="100%" y2="100%">

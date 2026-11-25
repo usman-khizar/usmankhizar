@@ -20,7 +20,7 @@ export default function Navbar({ transparent = false }: { transparent?: boolean 
 
   const navStyle: React.CSSProperties = {
     backgroundColor: isScrolledOpaque
-      ? 'rgba(13,10,8,0.85)'
+      ? 'rgba(27,26,25,0.96)'
       : transparent
       ? 'transparent'
       : '#FAF8F4',
@@ -31,7 +31,7 @@ export default function Navbar({ transparent = false }: { transparent?: boolean 
   }
 
   const logoColor = isDark ? '#F5F0E8' : '#1A1A1A'
-  const linkColor = isDark ? 'rgba(245,240,232,0.70)' : '#5C5248'
+  const linkColor = isDark ? 'rgba(245,240,232,0.85)' : '#5C5248'
   const linkHover = isDark ? '#F5F0E8' : '#C4533A'
   const hamburgerColor = isDark ? '#F5F0E8' : '#1A1A1A'
 
@@ -58,6 +58,7 @@ export default function Navbar({ transparent = false }: { transparent?: boolean 
         <div className="hidden md:flex items-center gap-8">
           {[
             { label: 'Services', href: '/services' },
+            { label: 'Learn', href: '/#learn' },
             { label: 'Blog', href: '/blog' },
             { label: 'About', href: '/about' },
             { label: 'Tools', href: '/tools' },
@@ -93,6 +94,7 @@ export default function Navbar({ transparent = false }: { transparent?: boolean 
           className="md:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           <span style={{ display: 'block', width: 22, height: 2, backgroundColor: hamburgerColor, transition: 'transform 0.2s', transform: open ? 'rotate(45deg) translate(3px, 3px)' : 'none' }} />
           <span style={{ display: 'block', width: 22, height: 2, backgroundColor: hamburgerColor, opacity: open ? 0 : 1, transition: 'opacity 0.2s' }} />
@@ -111,6 +113,7 @@ export default function Navbar({ transparent = false }: { transparent?: boolean 
         >
           {[
             { label: 'Services', href: '/services' },
+            { label: 'Learn', href: '/#learn' },
             { label: 'Blog', href: '/blog' },
             { label: 'About', href: '/about' },
             { label: 'Tools', href: '/tools' },

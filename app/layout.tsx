@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import { Archivo_Black, DM_Sans, Lora, JetBrains_Mono } from 'next/font/google'
+import Tracking from '@/components/Tracking'
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
@@ -35,10 +37,10 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://usmankhizar.com'),
   title: {
-    default: 'Usman Khizar | SEO, GEO & AEO Specialist',
+    default: 'Usman Khizar | Brand Strategist & Fractional Marketer',
     template: '%s | Usman Khizar',
   },
-  description: 'SEO specialist and GEO consultant helping brands rank on Google and get cited by AI. I build search visibility across every modern search surface.',
+  description: 'Marketing consultant, brand strategist, and fractional full-stack marketer for founders and small teams.',
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -47,6 +49,7 @@ export const metadata: Metadata = {
     apple: { url: '/apple-touch-icon.svg', type: 'image/svg+xml' },
   },
   openGraph: {
+    images: ogImages,
     type: 'website',
     locale: 'en_US',
     url: 'https://usmankhizar.com',
@@ -66,14 +69,21 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Usman Khizar',
-  jobTitle: 'SEO, GEO & AEO Specialist',
-  description: 'SEO specialist and GEO consultant helping brands rank on Google and get cited by ChatGPT, Perplexity, and AI Overviews.',
+  jobTitle: 'Marketing Consultant, Brand Strategist & Fractional Marketer',
+  description: 'Marketing consultant, brand strategist, and fractional full-stack marketer covering positioning, websites, search, CRM, automation, and social.',
   url: 'https://usmankhizar.com',
   sameAs: [
     'https://www.linkedin.com/in/usmankhizar',
     'https://twitter.com/usmankhizar',
   ],
   knowsAbout: [
+    'Brand strategy',
+    'Fractional marketing',
+    'Digital marketing',
+    'Social media marketing',
+    'GoHighLevel',
+    'AI automation',
+    'Website design and development',
     'SEO',
     'GEO',
     'Generative Engine Optimisation',
@@ -101,6 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="grain-overlay" aria-hidden="true" />
         {children}
         <Analytics />
+        <Tracking />
       </body>
     </html>
   )

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Technical SEO Consultant | Usman Khizar',
+  title: 'Technical SEO Consultant',
   description: 'Fix the crawlability, Core Web Vitals, and structured data issues blocking your rankings. Technical SEO audit and implementation for founders and growing businesses.',
   openGraph: {
+    images: ogImages,
     title: 'Technical SEO Consultant | Usman Khizar',
     description: 'Fix the crawlability, Core Web Vitals, and structured data issues blocking your rankings.',
     url: 'https://usmankhizar.com/services/seo-consulting/technical-seo',

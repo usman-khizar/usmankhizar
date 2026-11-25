@@ -1,173 +1,47 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
+import { publishedPosts } from '@/lib/posts'
 
-export const dynamic = 'force-static'
+const baseUrl = 'https://usmankhizar.com'
+const lastUpdated = '2026-11-25'
+
+const pages = [
+  '',
+  '/services',
+  '/services/seo-consulting',
+  '/services/seo-consulting/technical-seo',
+  '/services/seo-consulting/on-page-seo',
+  '/services/seo-consulting/content-strategy',
+  '/services/seo-consulting/authority-building',
+  '/services/geo-consulting',
+  '/services/geo-consulting/geo-readiness-audit',
+  '/services/geo-consulting/content-restructuring',
+  '/services/geo-consulting/citation-monitoring',
+  '/services/geo-consulting/entity-building',
+  '/services/aeo-consulting',
+  '/services/aeo-consulting/featured-snippet-optimisation',
+  '/services/aeo-consulting/schema-markup',
+  '/services/aeo-consulting/question-based-content',
+  '/services/aeo-consulting/voice-and-conversational-search',
+  '/services/seo-backlink-expert',
+  '/services/link-building',
+  '/services/local-seo-specialist',
+  '/services/saas-seo',
+  '/services/ecommerce-seo',
+  '/services/search-atlas-seo-specialist',
+  '/blog',
+  '/about',
+  '/tools',
+  '/tools/geo-checker',
+  '/tools/hook-analyser',
+  '/tools/schema-generator',
+  '/contact',
+  '/privacy',
+  '/terms',
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://usmankhizar.com'
-  const lastMod = '2026-05-15'
-
   return [
-    {
-      url: baseUrl,
-      lastModified: lastMod,
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/seo-consulting`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/geo-consulting`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/aeo-consulting`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/services/seo-backlink-expert`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/link-building`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/seo-consulting/technical-seo`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/seo-consulting/on-page-seo`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/seo-consulting/content-strategy`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/seo-consulting/authority-building`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/aeo-consulting/featured-snippet-optimisation`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/aeo-consulting/schema-markup`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/aeo-consulting/question-based-content`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/aeo-consulting/voice-and-conversational-search`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/geo-consulting/geo-readiness-audit`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/geo-consulting/content-restructuring`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/geo-consulting/citation-monitoring`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/geo-consulting/entity-building`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: lastMod,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/parasite-seo-7-platforms`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/geo-vs-seo`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/how-to-optimise-linkedin-profile`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/answer-engine-optimisation`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/tools`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: lastMod,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
+    ...pages.map((path) => ({ url: `${baseUrl}${path}`, lastModified: lastUpdated })),
+    ...publishedPosts.map((post) => ({ url: `${baseUrl}/blog/${post.slug}`, lastModified: post.date })),
   ]
 }

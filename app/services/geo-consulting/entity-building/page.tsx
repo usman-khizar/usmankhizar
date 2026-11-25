@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Entity Building for GEO | Usman Khizar',
+  title: 'Entity Building for GEO',
   description: 'Build entity authority so AI systems like ChatGPT and Perplexity recognise and cite your brand. Entity building as part of a GEO consulting strategy.',
   openGraph: {
+    images: ogImages,
     title: 'Entity Building for GEO | Usman Khizar',
     description: 'Build entity authority so AI systems recognise and cite your brand across AI search surfaces.',
     url: 'https://usmankhizar.com/services/geo-consulting/entity-building',

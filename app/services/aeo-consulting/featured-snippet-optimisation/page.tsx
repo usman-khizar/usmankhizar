@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Featured Snippet Optimisation | Usman Khizar',
+  title: 'Featured Snippet Optimisation',
   description: 'Featured snippet optimisation for zero-click visibility, People Also Ask and AI answer surfaces. AEO consulting that wins position zero on Google and AI overviews.',
   openGraph: {
+    images: ogImages,
     title: 'Featured Snippet Optimisation | Usman Khizar',
     description: 'Featured snippet optimisation for zero-click visibility, People Also Ask and AI answer surfaces.',
     url: 'https://usmankhizar.com/services/aeo-consulting/featured-snippet-optimisation',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -7,9 +8,10 @@ import { ToolsVisual } from '@/components/sections/HeroVisuals'
 import PillTag from '@/components/ui/PillTag'
 
 export const metadata: Metadata = {
-  title: 'SearchAtlas SEO Specialist | Agentic SEO Specialist | Usman Khizar',
+  title: 'SearchAtlas SEO Specialist | Agentic SEO Specialist',
   description: 'SearchAtlas SEO specialist and agentic SEO specialist for agencies and businesses. Expert in SearchAtlas Otto, campaign management, pixel integration, GSC, Analytics and GMB connections.',
   openGraph: {
+    images: ogImages,
     title: 'SearchAtlas SEO Specialist | Agentic SEO Specialist | Usman Khizar',
     description: 'SearchAtlas SEO specialist and agentic SEO specialist for agencies and businesses. Expert in SearchAtlas Otto, campaign management, pixel integration, GSC, Analytics and GMB connections.',
     url: 'https://usmankhizar.com/services/search-atlas-seo-specialist',

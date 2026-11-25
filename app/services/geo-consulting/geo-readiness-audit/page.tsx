@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'GEO Readiness Audit | Usman Khizar',
+  title: 'GEO Readiness Audit',
   description: 'A GEO readiness audit assesses how citable your content is to AI systems like ChatGPT, Perplexity, and Google AI Overviews — and identifies the gaps to fix first.',
   openGraph: {
+    images: ogImages,
     title: 'GEO Readiness Audit | Usman Khizar',
     description: 'Assess how citable your content is to AI systems and identify the gaps limiting your AI search visibility.',
     url: 'https://usmankhizar.com/services/geo-consulting/geo-readiness-audit',

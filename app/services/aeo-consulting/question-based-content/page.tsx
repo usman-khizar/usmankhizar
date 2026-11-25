@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -6,9 +7,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Question-Based Content | Usman Khizar',
+  title: 'Question-Based Content',
   description: 'Question-based content for AEO. Create direct answer pages that satisfy search intent, win People Also Ask, and become AI-ready sources.',
   openGraph: {
+    images: ogImages,
     title: 'Question-Based Content | Usman Khizar',
     description: 'Question-based content for AEO. Create direct answer pages that win People Also Ask and AI answers.',
     url: 'https://usmankhizar.com/services/aeo-consulting/question-based-content',

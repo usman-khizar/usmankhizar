@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ogImages } from '@/lib/og'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -8,9 +9,10 @@ import PillTag from '@/components/ui/PillTag'
 import EmailCapture from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'GEO Consulting | Usman Khizar',
+  title: 'GEO Consulting',
   description: 'GEO consulting services to get your brand cited by ChatGPT, Perplexity, and Google AI Overviews. Generative Engine Optimisation for AI-powered search.',
   openGraph: {
+    images: ogImages,
     title: 'GEO Consulting | Usman Khizar',
     description: 'GEO consulting services to get your brand cited by ChatGPT, Perplexity, and Google AI Overviews. Generative Engine Optimisation.',
     url: 'https://usmankhizar.com/services/geo-consulting',
