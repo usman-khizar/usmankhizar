@@ -18,47 +18,59 @@
   to { opacity: 1; transform: perspective(1100px) translateY(0) rotateX(0); }
 }
 
-/* ── Connected system ── */
-.sys { position: relative; background: #120e0c; color: #F5F0E8; }
-.sys-stage { overflow: hidden; padding-block: clamp(64px, 8vw, 112px); }
-.sys-copy { max-width: 72rem; margin: 0 auto; padding-inline: 24px; display: grid; gap: 2rem; }
-.sys h2 {
+/* ── Growth globe ── */
+.gl { position: relative; background: #120e0c; color: #F5F0E8; }
+.gl-stage { max-width: 72rem; margin: 0 auto; padding: clamp(64px, 8vw, 112px) 24px; display: grid; gap: 2.2rem; }
+.gl-canvas, .gl-tools, .gl-nav { display: none; }
+.gl h2 {
+  max-width: 14ch;
   font-family: var(--font-archivo-black), sans-serif;
   font-weight: 400;
-  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  font-size: clamp(1.9rem, 3.5vw, 3.1rem);
   line-height: 1.08;
   letter-spacing: -0.02em;
   text-wrap: balance;
 }
-.sys p { margin-top: 0.9rem; max-width: 56ch; line-height: 1.65; color: rgba(245, 240, 232, 0.82); }
-.sys-scene { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 720px; margin: 2.5rem auto 0; padding-inline: 24px; }
-.sys-scene svg { display: none; }
-.sys-part, .sys-core {
-  padding: 14px 24px;
-  border-radius: 12px;
+.gl h3 { font-weight: 600; font-size: 1.3rem; color: #F2A27F; }
+.gl-text p { margin-top: 0.4rem; max-width: 40ch; line-height: 1.6; color: rgba(245, 240, 232, 0.85); }
+.gl ul { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; }
+.gl li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  border-radius: 999px;
   font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
   white-space: nowrap;
 }
-.sys-part {
-  border: 1px solid rgba(240, 221, 191, 0.35);
-  background: linear-gradient(160deg, #4a3122, #2a1b13);
-  color: #F0DDBF;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
-}
-.sys-core { background: #C4533A; color: #FFFFFF; box-shadow: 0 0 60px rgba(228, 120, 80, 0.55); }
+.gl li svg { flex: none; }
+.gl li[data-kind='service'] { background: #FBF3E6; color: #2a1b13; }
+.gl li[data-kind='service'] svg { color: #B4462D; }
+.gl li[data-kind='tool'] { background: #1b1310; color: #F5F0E8; border: 1px solid rgba(240, 221, 191, 0.4); }
+.gl-mark { display: grid; place-items: center; min-width: 20px; height: 20px; padding-inline: 3px; border-radius: 6px; background: #C4533A; color: #FFFFFF; font-size: 0.68rem; font-style: normal; font-weight: 600; }
 
-.sys[data-motion] { height: 300vh; height: 300svh; }
-.sys[data-motion] .sys-stage { position: sticky; top: 0; height: 100vh; height: 100svh; padding-block: 0; background: radial-gradient(ellipse 60% 55% at 50% 60%, rgba(120, 66, 36, 0.5), transparent 70%); }
-.sys[data-motion] .sys-copy { position: absolute; inset: clamp(88px, 13svh, 130px) 0 auto; z-index: 400; display: block; text-align: center; }
-.sys[data-motion] .sys-copy > div { position: absolute; inset: 0 24px auto; }
-.sys[data-motion] .sys-copy p { margin-inline: auto; }
-.sys[data-motion] .sys-a { opacity: calc(1 - var(--join, 0) * 2.4); transform: translateY(calc(var(--join, 0) * -40px)); }
-.sys[data-motion] .sys-b { opacity: calc(var(--join, 0) * 2.4 - 1.4); transform: translateY(calc((1 - var(--join, 0)) * 40px)); }
-.sys[data-motion] .sys-scene { position: absolute; inset: 36% 0 4%; display: block; max-width: none; margin: 0; padding: 0; perspective: 1000px; transform-style: preserve-3d; }
-.sys[data-motion] .sys-scene svg { display: block; position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.sys-scene line { stroke: #F0A27F; stroke-width: 1.5; opacity: calc(var(--join, 0) * 0.65); }
-.sys[data-motion] .sys-part, .sys[data-motion] .sys-core { position: absolute; left: 50%; top: 50%; will-change: transform; }
-.sys[data-motion] .sys-core { z-index: 300; transform: translate(-50%, -50%) scale(calc(0.5 + var(--join, 0) * 0.5)); opacity: calc(0.2 + var(--join, 0) * 0.8); }
+.gl[data-motion] { height: 560vh; height: 560svh; }
+.gl[data-motion] .gl-stage { position: sticky; top: 0; display: block; max-width: none; height: 100vh; height: 100svh; min-height: 600px; padding: 0; overflow: hidden; background: radial-gradient(ellipse 60% 70% at 68% 52%, #2b1a12 0%, #17100c 55%, #120e0c 100%); }
+.gl[data-motion] .gl-canvas { display: block; position: absolute; inset: 0; width: 100%; height: 100%; touch-action: pan-y; cursor: grab; }
+.gl[data-motion] .gl-canvas:active { cursor: grabbing; }
+.gl[data-motion] .gl-head { position: absolute; z-index: 220; left: max(24px, calc((100vw - 72rem) / 2 + 24px)); top: 50%; width: min(34vw, 400px); transform: translateY(-58%); pointer-events: none; }
+.gl[data-motion] .gl-nav { display: grid; justify-items: start; gap: 2px; margin-top: 1.6rem; pointer-events: auto; }
+.gl-nav button { padding: 7px 0 7px 16px; border-left: 2px solid rgba(240, 221, 191, 0.22); text-align: left; color: rgba(245, 240, 232, 0.66); cursor: pointer; transition: color 0.3s, border-color 0.3s; }
+.gl-nav button:hover { color: #FFFFFF; }
+.gl-nav button[aria-current] { color: #FFFFFF; font-weight: 600; border-left-color: #E0684B; }
+.gl[data-motion] .gl-group { display: contents; }
+.gl[data-motion] .gl-text { position: absolute; z-index: 220; left: max(24px, calc((100vw - 72rem) / 2 + 24px)); bottom: clamp(28px, 6svh, 64px); width: min(34vw, 400px); opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity 0.35s, transform 0.35s, visibility 0s 0.35s; }
+.gl[data-motion] .is-active .gl-text { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.gl[data-motion] ul { display: contents; }
+.gl[data-motion] li { position: absolute; left: 0; top: 0; visibility: hidden; pointer-events: none; will-change: transform, opacity; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4); }
+.gl-stage[data-filter='service'] li[data-kind='tool'], .gl-stage[data-filter='tool'] li[data-kind='service'] { display: none; }
+.gl[data-motion] .gl-tools { display: flex; align-items: center; gap: 8px; position: absolute; z-index: 220; left: 66.5%; bottom: clamp(16px, 3svh, 30px); transform: translateX(-50%); white-space: nowrap; }
+.gl-tools button { padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(240, 221, 191, 0.35); background: rgba(27, 19, 16, 0.75); color: #F5F0E8; font-size: 0.88rem; cursor: pointer; }
+.gl-tools button:hover { border-color: #F0DDBF; }
+.gl-tools button[aria-pressed='true'] { background: #FBF3E6; color: #2a1b13; border-color: #FBF3E6; }
+.gl-tools span { display: inline-flex; align-items: center; gap: 6px; margin-left: 8px; font-size: 0.85rem; color: rgba(245, 240, 232, 0.72); }
 
 /* ── Tilt cards ── */
 .tilt { perspective: 1000px; }
@@ -210,10 +222,24 @@
   .stack3d-plane.is-next { transform: translateZ(calc(var(--i) * 22px + 34px)); }
   .stack3d-plane span { display: none; }
   .stack3d-list > li { min-height: 46vh; }
-  .sys-part, .sys-core { padding: 10px 15px; font-size: 0.88rem; }
-  .sys[data-motion] .sys-scene { inset: 44% 0 6%; }
+  .gl[data-motion] { height: 480vh; height: 480svh; }
+  .gl[data-motion] .gl-head { top: 84px; right: 24px; width: auto; transform: none; }
+  .gl h2 { max-width: none; font-size: clamp(1.55rem, 6.6vw, 2.1rem); }
+  .gl[data-motion] .gl-nav { display: flex; gap: 8px; margin-top: 1rem; }
+  .gl-nav button { width: 100%; height: 24px; padding: 0; border: 0; font-size: 0; background: linear-gradient(rgba(240, 221, 191, 0.25), rgba(240, 221, 191, 0.25)) center / 100% 3px no-repeat; }
+  .gl-nav button[aria-current] { background-image: linear-gradient(#E0684B, #E0684B); }
+  .gl[data-motion] .gl-text { top: 218px; right: 24px; bottom: auto; width: auto; }
+  .gl[data-motion] li { padding: 7px 11px; font-size: 0.78rem; gap: 6px; }
+  .gl[data-motion] .gl-tools { left: 50%; }
+  .gl-tools span { display: none; }
+  .gl-tools button { padding: 9px 13px; font-size: 0.82rem; }
   .calc-bars { height: 290px; }
   .calc-block { width: 60px; height: calc(var(--h) * 170px); }
   .deck > li { grid-template-columns: minmax(0, 1fr); min-height: 250px; }
   .band .lead-sheets { display: none; }
+}
+@media (max-width: 860px) and (max-height: 720px) {
+  .gl[data-motion] .gl-text { top: 186px; }
+  .gl-text p { display: none; }
+  .gl[data-motion] li { padding: 5px 9px; font-size: 0.72rem; }
 }

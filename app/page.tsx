@@ -7,7 +7,7 @@ import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
 import HeroSection from '@/components/sections/HeroSection'
 import PostCard, { Post } from '@/components/blog/PostCard'
-import ConnectedSystem from '@/components/home/ConnectedSystem'
+import GrowthGlobe from '@/components/home/GrowthGlobe'
 import LeakCalculator from '@/components/home/LeakCalculator'
 import SkillDrum from '@/components/home/SkillDrum'
 import StackScene from '@/components/home/StackScene'
@@ -128,7 +128,7 @@ export default function HomePage() {
       <Navbar transparent={true} />
       <main>
         <HeroSection />
-        <ConnectedSystem />
+        <GrowthGlobe />
 
         <section className="home-section">
           <div className="home-wrap">
