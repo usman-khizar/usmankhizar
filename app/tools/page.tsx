@@ -1,3 +1,5 @@
+import FaqBlock from '@/components/sections/FaqBlock'
+import { toolsFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Navbar from '@/components/layout/Navbar'
@@ -135,6 +137,7 @@ export default function ToolsPage() {
           <Link href="/contact" className="btn-primary">Suggest a Tool →</Link>
         </section>
 
+        <FaqBlock items={toolsFaqs} />
         <EmailCapture />
       </main>
       <Footer />

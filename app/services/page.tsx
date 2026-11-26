@@ -1,3 +1,5 @@
+import FaqBlock from '@/components/sections/FaqBlock'
+import { servicesFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import ContactForm from '@/components/forms/ContactForm'
@@ -282,6 +284,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        <FaqBlock items={servicesFaqs} />
         <EmailCapture />
       </main>
       <Footer />

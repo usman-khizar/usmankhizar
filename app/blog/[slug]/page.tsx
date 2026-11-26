@@ -1,3 +1,4 @@
+import { postFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import { notFound } from 'next/navigation'
@@ -124,11 +125,12 @@ export default async function BlogPostPage({ params }: Props) {
     url: `https://usmankhizar.com/blog/${slug}`,
   }
 
-  const faqSchema = richContent
+  const faqs = richContent?.faqs ?? postFaqs[slug] ?? null
+  const faqSchema = faqs
     ? {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
-        mainEntity: richContent.faqs.map((faq) => ({
+        mainEntity: faqs.map((faq) => ({
           '@type': 'Question',
           name: faq.q,
           acceptedAnswer: { '@type': 'Answer', text: faq.a },
@@ -216,27 +218,13 @@ export default async function BlogPostPage({ params }: Props) {
                     </footer>
                   </blockquote>
 
-                  {/* FAQs */}
-                  <div style={{ marginTop: '3rem', borderTop: '1px solid #C9BCA8', paddingTop: '2.5rem' }}>
-                    <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.25rem', color: '#1A1A1A', marginBottom: '1.5rem' }}>
-                      Frequently Asked Questions
-                    </h2>
-                    <div className="flex flex-col gap-5">
-                      {richContent.faqs.map((faq) => (
-                        <div key={faq.q}>
-                          <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.95rem', color: '#1A1A1A', marginBottom: '0.4rem' }}>
-                            {faq.q}
-                          </h3>
-                          <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.92rem', color: '#5C5248', lineHeight: 1.65 }}>
-                            {faq.a}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <PostFaqs faqs={richContent.faqs} />
                 </>
               ) : post.content ? (
-                <PostBody content={post.content} />
+                <>
+                  <PostBody content={post.content} />
+                  {faqs && <PostFaqs faqs={faqs} />}
+                </>
               ) : (
                 <div>
                   <p style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.8, marginBottom: '2rem' }}>
@@ -338,4 +326,26 @@ function PostBody({ content }: { content: string }) {
       </p>
     )
   })
+}
+
+function PostFaqs({ faqs }: { faqs: { q: string; a: string }[] }) {
+  return (
+    <div style={{ marginTop: '3rem', borderTop: '1px solid #C9BCA8', paddingTop: '2.5rem' }}>
+      <h2 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.25rem', color: '#1A1A1A', marginBottom: '1.5rem' }}>
+        Frequently Asked Questions
+      </h2>
+      <div className="flex flex-col gap-5">
+        {faqs.map((faq) => (
+          <div key={faq.q}>
+            <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 600, fontSize: '0.95rem', color: '#1A1A1A', marginBottom: '0.4rem' }}>
+              {faq.q}
+            </h3>
+            <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.92rem', color: '#5C5248', lineHeight: 1.65 }}>
+              {faq.a}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }

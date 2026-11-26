@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
+import { schemaGeneratorFaqs } from '@/lib/faqs'
 import ToolShell from '@/components/tools/ToolShell'
 import SchemaGenerator from '@/components/tools/SchemaGenerator'
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function SchemaGeneratorPage() {
   return (
-    <ToolShell title="Schema Markup Generator" intro="Fill in the fields to get JSON-LD for an FAQ page, article, or person, ready to paste into your site.">
+    <ToolShell faqs={schemaGeneratorFaqs} title="Schema Markup Generator" intro="Fill in the fields to get JSON-LD for an FAQ page, article, or person, ready to paste into your site.">
       <SchemaGenerator />
     </ToolShell>
   )

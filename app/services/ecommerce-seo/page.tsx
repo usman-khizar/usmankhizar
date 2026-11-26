@@ -1,3 +1,5 @@
+import FaqBlock from '@/components/sections/FaqBlock'
+import { ecommerceSeoExtraFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -74,12 +76,17 @@ const faqSchema = {
   ],
 }
 
+// Shown on the page and output as FAQPage data by FaqBlock.
+const faqs = [
+  ...faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
+  ...ecommerceSeoExtraFaqs,
+]
+
 export default function EcommerceSeoSpecialistPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ecommerceServiceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <main style={{ paddingTop: 64 }}>
         <PageHeroSection
@@ -193,6 +200,7 @@ export default function EcommerceSeoSpecialistPage() {
         </section>
 
         <Footer />
+        <FaqBlock items={faqs} />
       </main>
     </>
   )

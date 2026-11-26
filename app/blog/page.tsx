@@ -1,3 +1,5 @@
+import FaqBlock from '@/components/sections/FaqBlock'
+import { blogFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Navbar from '@/components/layout/Navbar'
@@ -87,6 +89,7 @@ export default function BlogPage() {
         </section>
 
         {/* Mid-page email capture strip */}
+        <FaqBlock items={blogFaqs} />
         <EmailCapture variant="terracotta" />
 
         <section style={{ backgroundColor: '#FAF8F4', padding: '40px 24px 60px' }}>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
+import { hookAnalyserFaqs } from '@/lib/faqs'
 import ToolShell from '@/components/tools/ToolShell'
 import HookAnalyser from '@/components/tools/HookAnalyser'
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function HookAnalyserPage() {
   return (
-    <ToolShell title="LinkedIn Hook Analyser" intro="Paste the opening of your LinkedIn post to check it against seven common hook patterns.">
+    <ToolShell faqs={hookAnalyserFaqs} title="LinkedIn Hook Analyser" intro="Paste the opening of your LinkedIn post to check it against seven common hook patterns.">
       <HookAnalyser />
     </ToolShell>
   )

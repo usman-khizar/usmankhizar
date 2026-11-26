@@ -1,3 +1,5 @@
+import FaqBlock from '@/components/sections/FaqBlock'
+import { localSeoExtraFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -74,12 +76,17 @@ const faqSchema = {
   ],
 }
 
+// Shown on the page and output as FAQPage data by FaqBlock.
+const faqs = [
+  ...faqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
+  ...localSeoExtraFaqs,
+]
+
 export default function LocalSeoSpecialistPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localSeoServiceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar />
       <main style={{ paddingTop: 64 }}>
         <PageHeroSection
@@ -154,6 +161,7 @@ export default function LocalSeoSpecialistPage() {
             <Link href="/contact" className="btn-primary">Work with a local SEO specialist →</Link>
           </div>
         </section>
+        <FaqBlock items={faqs} />
       </main>
       <Footer />
     </>

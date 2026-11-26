@@ -764,3 +764,18 @@ input[type="email"], textarea, input[type="text"] {
 .enq-error a { text-decoration: underline; }
 .enq-done { font-family: var(--font-dm-sans), system-ui, sans-serif; color: #1A1A1A; display: grid; gap: 6px; padding: 24px; border-radius: 12px; background: #FFFFFF; border: 1px solid #C9BCA8; }
 @media (max-width: 560px) { .enq-row { grid-template-columns: minmax(0, 1fr); } .enq .btn-primary { justify-self: stretch; } }
+
+/* Shared FAQ section (questions also output as FAQPage data) */
+.faq-block { background: #FAF8F4; padding: clamp(56px, 8vw, 96px) 24px; border-top: 1px solid #E6DCCB; }
+.faq-block-wrap { max-width: 760px; margin: 0 auto; }
+.faq-block h2 { font-family: var(--font-archivo-black), system-ui, sans-serif; font-size: clamp(1.6rem, 3.4vw, 2.3rem); line-height: 1.15; color: #1A1A1A; margin-bottom: 0.75rem; }
+.faq-block-intro { font-family: var(--font-dm-sans), system-ui, sans-serif; color: #5C5248; font-size: 1.02rem; line-height: 1.6; margin-bottom: 1.25rem; }
+.faq-block-list { margin-top: 1.5rem; border-top: 1px solid #C9BCA8; }
+.faq-block details { border-bottom: 1px solid #C9BCA8; }
+.faq-block summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; }
+.faq-block summary::-webkit-details-marker { display: none; }
+.faq-block summary::after { content: '+'; flex: none; font-family: var(--font-dm-sans), system-ui, sans-serif; font-size: 1.5rem; line-height: 1; color: #C4533A; transition: transform 0.2s ease; }
+.faq-block details[open] summary::after { transform: rotate(45deg); }
+.faq-block summary h3 { font-family: var(--font-dm-sans), system-ui, sans-serif; font-weight: 700; font-size: 1.05rem; line-height: 1.4; color: #1A1A1A; }
+.faq-block summary:focus-visible { outline: 2px solid #C4533A; outline-offset: 4px; border-radius: 4px; }
+.faq-block details p { font-family: var(--font-lora), Georgia, serif; font-size: 1rem; line-height: 1.75; color: #3F3730; padding: 0 0 20px; max-width: 68ch; }

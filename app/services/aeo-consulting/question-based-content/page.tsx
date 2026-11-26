@@ -1,3 +1,4 @@
+import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://usmankhizar.com/services/aeo-consulting/question-based-content' },
 }
 
-const faqSchema = {
+const baseFaqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
@@ -57,6 +58,14 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 4, name: 'Question-Based Content', item: 'https://usmankhizar.com/services/aeo-consulting/question-based-content' },
   ],
 }
+
+// The questions shown on the page. The FAQPage data is built from the same list so the two always match.
+const faqItems = [
+  ...baseFaqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
+  { q: 'How is question-based content different from blog posts?', a: 'Question-based content is structured around direct answers to search queries, making it more likely to win featured snippets and AI citations than a generic blog post.' },
+  { q: 'Should I target long-tail questions or broad topics?', a: 'Start with high-intent questions that match your business goals, then expand into broader topic clusters once the answers establish authority.' },
+]
+const faqSchema = buildFaqSchema(faqItems)
 
 export default function QuestionBasedContentPage() {
   return (
@@ -141,10 +150,7 @@ export default function QuestionBasedContentPage() {
             <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', marginBottom: '1.5rem' }}>
               Frequently Asked Questions
             </h2>
-            {[
-              { q: 'How is question-based content different from blog posts?', a: 'Question-based content is structured around direct answers to search queries, making it more likely to win featured snippets and AI citations than a generic blog post.' },
-              { q: 'Should I target long-tail questions or broad topics?', a: 'Start with high-intent questions that match your business goals, then expand into broader topic clusters once the answers establish authority.' },
-            ].map((faq) => (
+            {faqItems.map((faq) => (
               <div key={faq.q} className="card-base" style={{ marginBottom: '1rem' }}>
                 <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.05rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>{faq.q}</h3>
                 <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.95rem', color: '#5C5248', lineHeight: 1.75 }}>{faq.a}</p>

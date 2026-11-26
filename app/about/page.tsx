@@ -1,3 +1,5 @@
+import FaqBlock from '@/components/sections/FaqBlock'
+import { aboutFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -162,6 +164,7 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <FaqBlock items={aboutFaqs} />
         <EmailCapture />
       </main>
       <Footer />

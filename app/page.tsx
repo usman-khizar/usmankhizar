@@ -66,20 +66,20 @@ const ways = [
   {
     title: 'Marketing consulting',
     fit: '"Just tell me what to fix first."',
-    body: 'You have the people. What\'s missing is the decision. I find what is holding growth back and hand you an order of attack.',
-    gets: ['A review of all six areas', 'Fixes ranked by impact and effort', 'A plan your team can start straight away'],
+    body: "You have a team but no clear priorities. I review all your marketing and tell you exactly what to fix first, and why.",
+    gets: ['A full review of brand, website, SEO, CRM, automation, and social', 'Fixes ranked by impact, biggest wins first', 'A plan your team can start the same week'],
   },
   {
     title: 'Fractional marketing',
     fit: '"I need someone to own this."',
-    body: 'A marketing lead without the full-time salary. I set the plan, do the hands-on work, and report in plain English.',
-    gets: ['Strategy and execution from one person', 'Your channels, CRM, and follow-up connected', 'One person to call when something matters'],
+    body: 'A senior marketing lead for a part-time fee. I make the plan, do the hands-on work, and report results in plain English.',
+    gets: ['Strategy and execution from one person', 'Your website, CRM, and follow-up connected', 'One person responsible for the whole plan'],
   },
   {
     title: 'Brand strategy',
-    fit: '"People don\'t get why we\'re different."',
-    body: 'If buyers compare you on price, your message isn\'t doing its job. We fix what you say before you spend more on saying it.',
-    gets: ['Who you\'re for, and why they choose you', 'A message your whole team can repeat', 'Carried through your site, profiles, and content'],
+    fit: '"Customers only compare us on price."',
+    body: "If buyers can't see why you're different, they pick the cheapest. I sharpen your message so they pick you.",
+    gets: ['Who you serve, and why they should choose you', 'A clear message your whole team can repeat', 'Used across your website, profiles, and content'],
   },
 ]
 
@@ -105,22 +105,23 @@ const stack = [
 ]
 
 const steps = [
-  { title: "We find what's broken", body: 'We go through your business, buyers, numbers, and everything you have already tried. No pitch deck. Just what is true.' },
-  { title: 'You get a clear plan', body: 'What to fix, in what order, and what to stop paying for. You know what happens next and why.' },
-  { title: 'I build it with you', body: 'Pages, content, CRM, and automations get made and connected. You are not handed a document and wished good luck.' },
-  { title: 'We double down on what works', body: 'We look at real leads and real sales. What works gets more. What doesn\'t gets cut.' },
+  { title: "We find what's broken", body: "A close look at your business, customers, numbers, and what you've already tried. No sales pitch, just the facts." },
+  { title: 'You get a clear plan', body: "What to fix, in what order, and what to stop paying for. You'll know exactly what happens next." },
+  { title: 'I build it with you', body: "Pages, content, CRM, and automations get built and connected. You don't just get a report and a handshake." },
+  { title: 'We double down on what works', body: "We track real leads and real sales. What works gets more budget. What doesn't gets cut." },
 ]
 
 const skills = ['Brand strategy', 'SEO and AI search', 'Website design and development', 'GoHighLevel and CRM', 'AI automation', 'Social media marketing']
 
 const faqs = [
-  { q: 'What does it cost?', a: 'It depends on how much you want taken off your plate. After we talk, you get the scope and the price in writing, either one-time or monthly, before any work starts.' },
-  { q: 'I have been burned by an agency. Why is this different?', a: 'You deal with me, not an account manager. You see the plan before you commit to the work, and if I am not the right fit, I will tell you plainly.' },
-  { q: 'How long until I see results?', a: 'Follow-up and page fixes can show up quickly, because the leads are already there. Search and brand take longer to build. I will tell you which is which for your business, and I will not promise a number I do not control.' },
-  { q: 'What does a fractional marketer do?', a: 'I act as your part-time marketing lead. I own the plan and priorities, do hands-on work across brand, website, search, CRM, automation, and social, and report on it. You get senior direction without a full-time hire.' },
-  { q: 'Can you work with my existing team or agency?', a: 'Yes. I can set direction, fill the gaps, and make sure each part connects to the next.' },
-  { q: 'Can you set up GoHighLevel for me?', a: 'Yes. That includes pipelines, forms, calendars, and follow-up workflows, connected to your website so enquiries are answered and tracked.' },
-  { q: 'What happens after I apply?', a: 'I read it myself and reply within 48 hours. I take a limited number of projects at a time, so I will be direct about whether and when I can help.' },
+  { q: 'What does Usman Khizar do?', a: 'Usman Khizar is a marketing consultant, brand strategist, and fractional marketer. Usman helps businesses get more customers by connecting their brand, website, SEO, CRM, automation, and social media into one system, and does the hands-on work too.' },
+  { q: 'What does it cost?', a: 'It depends on how much work you hand over. After a short call, you get the scope and price in writing, as a one-time project or a monthly fee, before any work starts.' },
+  { q: 'What is a fractional marketer?', a: "A fractional marketer is a senior marketing lead you hire part-time instead of full-time. I own your marketing plan, do hands-on work across brand, website, search, CRM, automation, and social, and report on results. You get senior skills without a full-time salary." },
+  { q: 'How is this different from hiring an agency?', a: "You work with me directly, not an account manager. You see the plan before you commit, and if I'm not the right fit, I'll tell you." },
+  { q: 'How long until I see results?', a: "Fixing follow-up and key pages can work quickly, because those leads are already coming in. SEO and brand take months to build. I'll tell you which is which for your business, and I won't promise numbers I don't control." },
+  { q: 'Can you work with my existing team or agency?', a: "Yes. I can set the direction, fill the gaps, and make sure everyone's work connects." },
+  { q: 'Can you set up GoHighLevel for me?', a: 'Yes. I set up pipelines, forms, booking calendars, and follow-up workflows in GoHighLevel, connected to your website so every enquiry gets answered and tracked.' },
+  { q: 'What happens after I get in touch?', a: "I read every message myself and reply within 48 hours. I take on a limited number of clients at a time, so I'll tell you straight away whether and when I can help." },
 ]
 
 const faqSchema = {

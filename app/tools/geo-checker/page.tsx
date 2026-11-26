@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
+import { geoCheckerFaqs } from '@/lib/faqs'
 import ToolShell from '@/components/tools/ToolShell'
 import GeoChecker from '@/components/tools/GeoChecker'
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function GeoCheckerPage() {
   return (
-    <ToolShell title="GEO Readiness Checker" intro="Paste a page to see how well its structure supports being quoted by AI search. You get nine checks and a fix for each one that fails.">
+    <ToolShell faqs={geoCheckerFaqs} title="GEO Readiness Checker" intro="Paste a page to see how well its structure supports being quoted by AI search. You get nine checks and a fix for each one that fails.">
       <GeoChecker />
     </ToolShell>
   )

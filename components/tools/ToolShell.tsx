@@ -2,14 +2,16 @@ import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
+import FaqBlock, { type Faq } from '@/components/sections/FaqBlock'
 
 interface ToolShellProps {
   title: string
   intro: string
   children: React.ReactNode
+  faqs?: Faq[]
 }
 
-export default function ToolShell({ title, intro, children }: ToolShellProps) {
+export default function ToolShell({ title, intro, children, faqs }: ToolShellProps) {
   return (
     <>
       <Navbar />
@@ -24,6 +26,7 @@ export default function ToolShell({ title, intro, children }: ToolShellProps) {
             {children}
           </div>
         </section>
+        {faqs && <FaqBlock items={faqs} />}
         <EmailCapture />
       </main>
       <Footer />
