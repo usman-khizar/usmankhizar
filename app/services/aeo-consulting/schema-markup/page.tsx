@@ -1,3 +1,4 @@
+import { extraFaqs } from '@/lib/faqs-extra'
 import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
@@ -64,6 +65,7 @@ const faqItems = [
   ...baseFaqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
   { q: 'Does schema markup guarantee rich results?', a: 'No, schema markup does not guarantee rich results, but it increases the likelihood that search engines and AI systems will understand and display your content correctly.' },
   { q: 'Should I use FAQ or HowTo schema first?', a: 'Use the schema type that best matches the page’s content and search intent. FAQ schema is ideal for direct questions, while HowTo schema works well for step-by-step guides.' },
+  ...extraFaqs['aeo-consulting/schema-markup'],
 ]
 const faqSchema = buildFaqSchema(faqItems)
 

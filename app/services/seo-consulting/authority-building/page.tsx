@@ -1,3 +1,5 @@
+import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
+import { extraFaqs } from '@/lib/faqs-extra'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -24,45 +26,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://usmankhizar.com/services/seo-consulting/authority-building' },
 }
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is authority building in SEO?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Authority building in SEO is the process of earning backlinks, brand mentions, and trust signals that make search engines view your site as a reliable source.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How does link acquisition support SEO?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Link acquisition supports SEO by passing page authority, increasing topical relevance, and signalling credibility to search engines.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can authority be built without outreach?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes, through strong content, internal linking, and stakeholder amplification. However, proactive outreach accelerates the process and produces higher-value placements.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What role does authority play in featured snippets?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Authority makes your pages more likely to be trusted for featured snippets because search engines prefer reliable sources when selecting direct answers.',
-      },
-    },
-  ],
-}
-
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -73,6 +36,16 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 4, name: 'Authority Building', item: 'https://usmankhizar.com/services/seo-consulting/authority-building' },
   ],
 }
+
+// The questions shown on the page. The FAQPage data is built from the same list.
+const faqItems = [
+  { q: 'What is authority building in SEO?', a: 'Authority building in SEO is the process of earning backlinks, brand mentions, and trust signals that make search engines view your site as a reliable source.' },
+  { q: 'How does link acquisition support SEO?', a: 'Link acquisition supports SEO by passing page authority, increasing topical relevance, and signalling credibility to search engines.' },
+  { q: 'Can authority be built without outreach?', a: 'Yes, through strong content, internal linking, and stakeholder amplification. However, proactive outreach accelerates the process and produces higher-value placements.' },
+  { q: 'What role does authority play in featured snippets?', a: 'Authority makes your pages more likely to be trusted for featured snippets because search engines prefer reliable sources when selecting direct answers.' },
+  ...extraFaqs['seo-consulting/authority-building'],
+]
+const faqSchema = buildFaqSchema(faqItems)
 
 export default function AuthorityBuildingPage() {
   return (
@@ -183,12 +156,7 @@ export default function AuthorityBuildingPage() {
             <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', marginBottom: '1.5rem' }}>
               Frequently Asked Questions
             </h2>
-            {[
-              { q: 'What is authority building in SEO?', a: 'Authority building in SEO is the process of earning backlinks, brand mentions, and trust signals that make search engines view your site as a reliable source.' },
-              { q: 'How does link acquisition support SEO?', a: 'Link acquisition supports SEO by passing page authority, increasing topical relevance, and signalling credibility to search engines.' },
-              { q: 'Can authority be built without outreach?', a: 'Yes, through strong content, internal linking, and stakeholder amplification. However, proactive outreach accelerates the process and produces higher-value placements.' },
-              { q: 'What role does authority play in featured snippets?', a: 'Authority makes your pages more likely to be trusted for featured snippets because search engines prefer reliable sources when selecting direct answers.' },
-            ].map((faq) => (
+            {faqItems.map((faq) => (
               <div key={faq.q} className="card-base" style={{ marginBottom: '1rem' }}>
                 <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.05rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>{faq.q}</h3>
                 <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.95rem', color: '#5C5248', lineHeight: 1.75 }}>{faq.a}</p>

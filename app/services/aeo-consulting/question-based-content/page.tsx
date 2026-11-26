@@ -1,3 +1,4 @@
+import { extraFaqs } from '@/lib/faqs-extra'
 import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
@@ -64,6 +65,7 @@ const faqItems = [
   ...baseFaqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
   { q: 'How is question-based content different from blog posts?', a: 'Question-based content is structured around direct answers to search queries, making it more likely to win featured snippets and AI citations than a generic blog post.' },
   { q: 'Should I target long-tail questions or broad topics?', a: 'Start with high-intent questions that match your business goals, then expand into broader topic clusters once the answers establish authority.' },
+  ...extraFaqs['aeo-consulting/question-based-content'],
 ]
 const faqSchema = buildFaqSchema(faqItems)
 

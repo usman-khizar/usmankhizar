@@ -1,3 +1,5 @@
+import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
+import { extraFaqs } from '@/lib/faqs-extra'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -24,29 +26,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://usmankhizar.com/services/geo-consulting/geo-readiness-audit' },
 }
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What does a GEO readiness audit cover?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A GEO readiness audit reviews your content structure, entity signals, schema markup, answer-first formatting, and topical depth to assess how likely AI systems are to cite your pages.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How long does a GEO readiness audit take?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A GEO readiness audit typically takes 5–7 working days and delivers a prioritised report with specific recommendations for improving AI citation eligibility.',
-      },
-    },
-  ],
-}
-
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -57,6 +36,14 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 4, name: 'GEO Readiness Audit', item: 'https://usmankhizar.com/services/geo-consulting/geo-readiness-audit' },
   ],
 }
+
+// The questions shown on the page. The FAQPage data is built from the same list.
+const faqItems = [
+  { q: 'What does a GEO readiness audit cover?', a: 'A GEO readiness audit reviews your content structure, entity signals, schema markup, answer-first formatting, and topical depth to assess how likely AI systems are to cite your pages.' },
+  { q: 'How long does a GEO readiness audit take?', a: 'A GEO readiness audit typically takes 5–7 working days and delivers a prioritised report with specific recommendations for improving AI citation eligibility.' },
+  ...extraFaqs['geo-consulting/geo-readiness-audit'],
+]
+const faqSchema = buildFaqSchema(faqItems)
 
 export default function GEOReadinessAuditPage() {
   return (
@@ -117,10 +104,7 @@ export default function GEOReadinessAuditPage() {
             <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', marginBottom: '1.5rem' }}>
               Frequently Asked Questions
             </h2>
-            {[
-              { q: 'What does a GEO readiness audit cover?', a: 'A GEO readiness audit reviews your content structure, entity signals, schema markup, answer-first formatting, and topical depth to assess how likely AI systems are to cite your pages.' },
-              { q: 'How long does a GEO readiness audit take?', a: 'A GEO readiness audit typically takes 5–7 working days and delivers a prioritised report with specific recommendations for improving AI citation eligibility.' },
-            ].map((faq) => (
+            {faqItems.map((faq) => (
               <div key={faq.q} className="card-base" style={{ marginBottom: '1rem' }}>
                 <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.05rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>{faq.q}</h3>
                 <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.95rem', color: '#5C5248', lineHeight: 1.75 }}>{faq.a}</p>

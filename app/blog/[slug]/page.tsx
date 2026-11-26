@@ -1,3 +1,4 @@
+import { postExtraFaqs } from '@/lib/faqs-extra'
 import { postFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
@@ -125,7 +126,8 @@ export default async function BlogPostPage({ params }: Props) {
     url: `https://usmankhizar.com/blog/${slug}`,
   }
 
-  const faqs = richContent?.faqs ?? postFaqs[slug] ?? null
+  const baseFaqs = richContent?.faqs ?? postFaqs[slug] ?? null
+  const faqs = baseFaqs ? [...baseFaqs, ...(postExtraFaqs[slug] ?? [])] : null
   const faqSchema = faqs
     ? {
         '@context': 'https://schema.org',
@@ -218,7 +220,7 @@ export default async function BlogPostPage({ params }: Props) {
                     </footer>
                   </blockquote>
 
-                  <PostFaqs faqs={richContent.faqs} />
+                  {faqs && <PostFaqs faqs={faqs} />}
                 </>
               ) : post.content ? (
                 <>

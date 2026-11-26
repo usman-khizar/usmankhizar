@@ -1,3 +1,4 @@
+import { extraFaqs } from '@/lib/faqs-extra'
 import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
@@ -64,6 +65,7 @@ const faqItems = [
   ...baseFaqSchema.mainEntity.map((e) => ({ q: e.name, a: e.acceptedAnswer.text })),
   { q: 'Will voice search traffic convert differently?', a: 'Voice search traffic often comes from high-intent, question-based queries, making conversion optimization important on answer pages.' },
   { q: 'Is conversational search only for smart speakers?', a: 'No, it also includes AI assistants, mobile voice search, and natural-language entry points in search engines and chat interfaces.' },
+  ...extraFaqs['aeo-consulting/voice-and-conversational-search'],
 ]
 const faqSchema = buildFaqSchema(faqItems)
 

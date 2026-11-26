@@ -1,3 +1,5 @@
+import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
+import { extraFaqs } from '@/lib/faqs-extra'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -24,45 +26,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://usmankhizar.com/services/seo-consulting/on-page-seo' },
 }
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is on-page SEO?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'On-page SEO is the practice of optimising individual pages so search engines understand the topic, intent, and relevance of each page — covering title tags, heading structure, content depth, internal links, and keyword placement.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the most important on-page SEO factor?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Search intent alignment. A page can be technically perfect but rank poorly if it targets the wrong intent. Every on-page optimisation starts with understanding what the searcher actually wants to find.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Can on-page SEO be fixed without rewriting content?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes. Most structural improvements — title tags, headings, internal links — do not require touching the core copy. Where content gaps exist, I brief additions rather than full rewrites.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How quickly do on-page changes affect rankings?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Most pages see movement within 4–8 weeks of changes being crawled and indexed.',
-      },
-    },
-  ],
-}
-
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -73,6 +36,16 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 4, name: 'On-Page SEO', item: 'https://usmankhizar.com/services/seo-consulting/on-page-seo' },
   ],
 }
+
+// The questions shown on the page. The FAQPage data is built from the same list.
+const faqItems = [
+  { q: 'What is on-page SEO?', a: 'On-page SEO is the practice of optimising individual pages so search engines understand the topic, intent, and relevance of each page — covering title tags, heading structure, content depth, internal links, and keyword placement.' },
+  { q: 'What is the most important on-page SEO factor?', a: 'Search intent alignment. A page can be technically perfect but rank poorly if it targets the wrong intent. Every on-page optimisation starts with understanding what the searcher actually wants to find.' },
+  { q: 'Can on-page SEO be fixed without rewriting content?', a: 'Yes. Most structural improvements — title tags, headings, internal links — do not require touching the core copy. Where content gaps exist, I brief additions rather than full rewrites.' },
+  { q: 'How quickly do on-page changes affect rankings?', a: 'Most pages see movement within 4–8 weeks of changes being crawled and indexed.' },
+  ...extraFaqs['seo-consulting/on-page-seo'],
+]
+const faqSchema = buildFaqSchema(faqItems)
 
 export default function OnPageSEOPage() {
   return (
@@ -180,12 +153,7 @@ export default function OnPageSEOPage() {
             <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', marginBottom: '1.5rem' }}>
               Frequently Asked Questions
             </h2>
-            {[
-              { q: 'What is on-page SEO?', a: 'On-page SEO is the practice of optimising individual pages so search engines understand the topic, intent, and relevance of each page — covering title tags, heading structure, content depth, internal links, and keyword placement.' },
-              { q: 'What is the most important on-page SEO factor?', a: 'Search intent alignment. A page can be technically perfect but rank poorly if it targets the wrong intent. Every on-page optimisation starts with understanding what the searcher actually wants to find.' },
-              { q: 'Can on-page SEO be fixed without rewriting content?', a: 'Yes. Most structural improvements — title tags, headings, internal links — do not require touching the core copy. Where content gaps exist, I brief additions rather than full rewrites.' },
-              { q: 'How quickly do on-page changes affect rankings?', a: 'Most pages see movement within 4–8 weeks of changes being crawled and indexed.' },
-            ].map((faq) => (
+            {faqItems.map((faq) => (
               <div key={faq.q} className="card-base" style={{ marginBottom: '1rem' }}>
                 <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.05rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>{faq.q}</h3>
                 <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.95rem', color: '#5C5248', lineHeight: 1.75 }}>{faq.a}</p>

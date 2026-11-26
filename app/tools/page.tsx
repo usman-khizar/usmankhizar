@@ -1,3 +1,4 @@
+import { toolsExtraFaqs } from '@/lib/faqs-extra'
 import FaqBlock from '@/components/sections/FaqBlock'
 import { toolsFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
@@ -137,7 +138,7 @@ export default function ToolsPage() {
           <Link href="/contact" className="btn-primary">Suggest a Tool →</Link>
         </section>
 
-        <FaqBlock items={toolsFaqs} />
+        <FaqBlock items={[...toolsFaqs, ...toolsExtraFaqs]} />
         <EmailCapture />
       </main>
       <Footer />

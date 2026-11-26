@@ -1,3 +1,5 @@
+import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
+import { extraFaqs } from '@/lib/faqs-extra'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -60,44 +62,15 @@ const breadcrumbSchema = {
   ],
 }
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is answer engine optimisation?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Answer engine optimisation (AEO) is the practice of structuring content so search engines and AI systems extract and display it as a direct answer — in featured snippets, AI Overviews, voice results, and answer boxes.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the difference between AEO and GEO?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'AEO focuses on winning answer positions in traditional search interfaces — featured snippets, PAA boxes, and AI Overviews. GEO focuses on being cited by conversational AI systems like ChatGPT and Perplexity. The content signals overlap significantly but the target surfaces differ.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Does AEO hurt my click-through rate?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Featured snippets can reduce clicks for simple queries but significantly increase brand visibility and clicks for complex queries where users want more detail. The net effect on qualified traffic is typically positive.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What content changes are needed for AEO?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Answer-first structure, FAQ sections with FAQPage schema, clear H2 and H3 headings framed as questions, direct definitions in the opening paragraph, and HowTo markup for process content.',
-      },
-    },
-  ],
-}
+// The questions shown on the page. The FAQPage data is built from the same list.
+const faqItems = [
+  { q: 'What is answer engine optimisation?', a: 'Answer engine optimisation (AEO) is the practice of structuring content so search engines and AI systems extract and display it as a direct answer — in featured snippets, AI Overviews, voice results, and answer boxes.' },
+  { q: 'What is the difference between AEO and GEO?', a: 'AEO focuses on winning answer positions in traditional search interfaces — featured snippets, PAA boxes, and AI Overviews. GEO focuses on being cited by conversational AI systems like ChatGPT and Perplexity. The content signals overlap significantly but the target surfaces differ.' },
+  { q: 'Does AEO hurt my click-through rate?', a: 'Featured snippets can reduce clicks for simple queries but significantly increase brand visibility and clicks for complex queries where users want more detail. The net effect on qualified traffic is typically positive.' },
+  { q: 'What content changes are needed for AEO?', a: 'Answer-first structure, FAQ sections with FAQPage schema, clear H2 and H3 headings framed as questions, direct definitions in the opening paragraph, and HowTo markup for process content.' },
+  ...extraFaqs['aeo-consulting'],
+]
+const faqSchema = buildFaqSchema(faqItems)
 
 export default function AEOConsultingPage() {
   return (
@@ -205,12 +178,7 @@ export default function AEOConsultingPage() {
             <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', marginBottom: '1.5rem' }}>
               Frequently Asked Questions
             </h2>
-            {[
-              { q: 'What is answer engine optimisation?', a: 'Answer engine optimisation (AEO) is the practice of structuring content so search engines and AI systems extract and display it as a direct answer — in featured snippets, AI Overviews, voice results, and answer boxes.' },
-              { q: 'What is the difference between AEO and GEO?', a: 'AEO focuses on winning answer positions in traditional search interfaces — featured snippets, PAA boxes, and AI Overviews. GEO focuses on being cited by conversational AI systems like ChatGPT and Perplexity. The content signals overlap significantly but the target surfaces differ.' },
-              { q: 'Does AEO hurt my click-through rate?', a: 'Featured snippets can reduce clicks for simple queries but significantly increase brand visibility and clicks for complex queries where users want more detail. The net effect on qualified traffic is typically positive.' },
-              { q: 'What content changes are needed for AEO?', a: 'Answer-first structure, FAQ sections with FAQPage schema, clear H2 and H3 headings framed as questions, direct definitions in the opening paragraph, and HowTo markup for process content.' },
-            ].map((faq) => (
+            {faqItems.map((faq) => (
               <div key={faq.q} className="card-base" style={{ marginBottom: '1rem' }}>
                 <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.05rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>{faq.q}</h3>
                 <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.95rem', color: '#5C5248', lineHeight: 1.75 }}>{faq.a}</p>

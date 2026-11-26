@@ -1,3 +1,4 @@
+import { blogExtraFaqs } from '@/lib/faqs-extra'
 import FaqBlock from '@/components/sections/FaqBlock'
 import { blogFaqs } from '@/lib/faqs'
 import type { Metadata } from 'next'
@@ -89,7 +90,7 @@ export default function BlogPage() {
         </section>
 
         {/* Mid-page email capture strip */}
-        <FaqBlock items={blogFaqs} />
+        <FaqBlock items={[...blogFaqs, ...blogExtraFaqs]} />
         <EmailCapture variant="terracotta" />
 
         <section style={{ backgroundColor: '#FAF8F4', padding: '40px 24px 60px' }}>

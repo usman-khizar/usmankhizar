@@ -1,3 +1,5 @@
+import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
+import { extraFaqs } from '@/lib/faqs-extra'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -24,29 +26,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://usmankhizar.com/services/geo-consulting/entity-building' },
 }
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is entity building in GEO?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Entity building in GEO is the process of establishing consistent, credible mentions of your brand across the web so AI systems recognise you as an authoritative entity on specific topics and cite you in generated answers.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How is entity building different from link building?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Link building targets backlinks for SEO ranking signals. Entity building targets brand mentions, citations, and consistent entity references across authoritative sources — the signals AI systems use to identify citable sources.',
-      },
-    },
-  ],
-}
-
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -57,6 +36,14 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 4, name: 'Entity Building', item: 'https://usmankhizar.com/services/geo-consulting/entity-building' },
   ],
 }
+
+// The questions shown on the page. The FAQPage data is built from the same list.
+const faqItems = [
+  { q: 'What is entity building in GEO?', a: 'Entity building in GEO is the process of establishing consistent, credible mentions of your brand across the web so AI systems recognise you as an authoritative entity on specific topics and cite you in generated answers.' },
+  { q: 'How is entity building different from link building?', a: 'Link building targets backlinks for SEO ranking signals. Entity building targets brand mentions, citations, and consistent entity references across authoritative sources — the signals AI systems use to identify citable sources.' },
+  ...extraFaqs['geo-consulting/entity-building'],
+]
+const faqSchema = buildFaqSchema(faqItems)
 
 export default function EntityBuildingPage() {
   return (
@@ -117,10 +104,7 @@ export default function EntityBuildingPage() {
             <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', marginBottom: '1.5rem' }}>
               Frequently Asked Questions
             </h2>
-            {[
-              { q: 'What is entity building in GEO?', a: 'Entity building in GEO is the process of establishing consistent, credible mentions of your brand across the web so AI systems recognise you as an authoritative entity on specific topics and cite you in generated answers.' },
-              { q: 'How is entity building different from link building?', a: 'Link building targets backlinks for SEO ranking signals. Entity building targets brand mentions, citations, and consistent entity references across authoritative sources — the signals AI systems use to identify citable sources.' },
-            ].map((faq) => (
+            {faqItems.map((faq) => (
               <div key={faq.q} className="card-base" style={{ marginBottom: '1rem' }}>
                 <h3 style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.05rem', color: '#1A1A1A', marginBottom: '0.75rem' }}>{faq.q}</h3>
                 <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.95rem', color: '#5C5248', lineHeight: 1.75 }}>{faq.a}</p>

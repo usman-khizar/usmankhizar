@@ -1,3 +1,4 @@
+import { extraFaqs } from '@/lib/faqs-extra'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -74,6 +75,7 @@ const faqItems = [
     q: 'How do I get started with your link building service?',
     a: "Message me through my contact page, Upwork, or LinkedIn. I'll review what's currently linking to your site and your target industries, flag the highest-impact opportunities for your business, and put together a plan with realistic pricing and timelines before any outreach begins on your behalf.",
   },
+  ...extraFaqs['link-building'],
 ]
 
 const faqSchema = {

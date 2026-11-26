@@ -1,3 +1,4 @@
+import { extraFaqs } from '@/lib/faqs-extra'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Link from 'next/link'
@@ -69,6 +70,7 @@ const faqItems = [
     q: 'How do I get started?',
     a: "Reach out through my contact page or message me directly on Upwork or LinkedIn. I'll review your current backlink profile, identify the highest-impact niches and site types for your business, and put together a placement plan with realistic timelines and pricing before any work begins.",
   },
+  ...extraFaqs['seo-backlink-expert'],
 ]
 
 const faqSchema = {

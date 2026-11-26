@@ -1,3 +1,4 @@
+import { extraFaqs } from '@/lib/faqs-extra'
 import { faqSchema as buildFaqSchema } from '@/components/sections/FaqBlock'
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
@@ -73,6 +74,7 @@ const faqItems = [
   { q: 'What is a featured snippet?', a: 'A featured snippet is the answer box at the top of Google search, often pulled from content with clear structure and concise answers.' },
   { q: 'How fast can I see featured snippet improvements?', a: 'You can often see movement in a few weeks after restructuring the content and updating markup, but results vary depending on competition.' },
   { q: 'Do AI answer engines use featured snippets?', a: 'Yes, AI answer engines often rely on the same concise answers and structured content that win featured snippets.' },
+  ...extraFaqs['aeo-consulting/featured-snippet-optimisation'],
 ]
 const faqSchema = buildFaqSchema(faqItems)
 
