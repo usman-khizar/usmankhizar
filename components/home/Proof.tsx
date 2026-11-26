@@ -9,8 +9,8 @@ export default function Proof() {
   return (
     <section className="home-section home-tint">
       <div className="home-wrap">
-        <h2>Don&apos;t take my word for it. Check.</h2>
-        <p className="home-lead">Anyone can write a nice line about themselves. Here is where you can look me up before you spend a minute on a call.</p>
+        <h2>Don&apos;t take my word for it. Check my reviews.</h2>
+        <p className="home-lead">Anyone can praise themselves on their own website. Here&apos;s where to look me up before we talk.</p>
 
         {testimonials.length > 0 && (
           <div className="quotes rise">

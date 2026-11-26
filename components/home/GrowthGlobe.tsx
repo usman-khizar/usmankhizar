@@ -314,7 +314,7 @@ export default function GrowthGlobe() {
       <div ref={stageRef} className="gl-stage" data-filter={filter}>
         <canvas ref={canvasRef} className="gl-canvas" aria-hidden="true" />
         <div className="gl-head">
-          <h2>Everything your growth runs on, in one place.</h2>
+          <h2>Every service and tool you need to grow, under one roof.</h2>
           <div className="gl-nav" role="group" aria-label="Service areas">
             {chapters.map((c, i) => (
               <button key={c.name} type="button" aria-current={i === active ? 'true' : undefined} onClick={() => goTo(i)}>{c.name}</button>

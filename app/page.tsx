@@ -105,10 +105,10 @@ const stack = [
 ]
 
 const steps = [
-  { title: 'We find the leak', body: 'We go through your business, buyers, numbers, and everything you have already tried. No pitch deck. Just what is true.' },
-  { title: 'You get the plan', body: 'What to fix, in what order, and what to stop paying for. You know what happens next and why.' },
+  { title: "We find what's broken", body: 'We go through your business, buyers, numbers, and everything you have already tried. No pitch deck. Just what is true.' },
+  { title: 'You get a clear plan', body: 'What to fix, in what order, and what to stop paying for. You know what happens next and why.' },
   { title: 'I build it with you', body: 'Pages, content, CRM, and automations get made and connected. You are not handed a document and wished good luck.' },
-  { title: 'We keep what earns', body: 'We look at real leads and real sales. What works gets more. What doesn\'t gets cut.' },
+  { title: 'We double down on what works', body: 'We look at real leads and real sales. What works gets more. What doesn\'t gets cut.' },
 ]
 
 const skills = ['Brand strategy', 'SEO and AI search', 'Website design and development', 'GoHighLevel and CRM', 'AI automation', 'Social media marketing']
@@ -140,13 +140,13 @@ export default function HomePage() {
         <HeroSection />
         <section className="home-section">
           <div className="home-wrap">
-            <h2>Which one did you say to yourself this month?</h2>
+            <h2>Sound familiar?</h2>
             <ul className="pain rise">
               {thoughts.map((t) => <li key={t}>{t}</li>)}
             </ul>
             <p className="home-lead">
-              Each one looks like a separate problem. They&apos;re usually the same one: good parts, and nobody responsible for how
-              they fit together.
+              These look like four problems. They&apos;re one: nobody owns your marketing from start to finish. That&apos;s the job I
+              take on.
             </p>
           </div>
         </section>
@@ -155,7 +155,7 @@ export default function HomePage() {
 
         <section id="offers" className="home-section">
           <div className="home-wrap">
-            <h2>How much of this do you want off your plate?</h2>
+            <h2>Three ways to work with me</h2>
             <div className="home-ways rise">
               {ways.map((w) => (
                 <TiltCard key={w.title}>
@@ -175,23 +175,23 @@ export default function HomePage() {
 
         <section id="what-i-do" className="home-section home-tint">
           <div className="home-wrap">
-            <h2>Six jobs you&apos;d normally hire six people for</h2>
-            <p className="home-lead">Growth gets lost in the gaps between them. When one person works across all six, there are no gaps to fall into.</p>
+            <h2>Six marketing roles. One person.</h2>
+            <p className="home-lead">Most businesses hire a designer, an SEO, a CRM person, and a content writer who never talk to each other. With me, all six jobs work together.</p>
             <StackScene layers={stack} />
           </div>
         </section>
 
         <section className="home-section home-dark">
           <div className="home-wrap">
-            <h2>You may not need more traffic. You may need less waste.</h2>
-            <p className="home-lead">Move the sliders to your own numbers. See what the same visitors are worth when more of them become leads.</p>
+            <h2>More traffic won&apos;t fix a leaky website.</h2>
+            <p className="home-lead">Put in your own numbers. See how many more customers you&apos;d get from the visitors you already have.</p>
             <LeakCalculator />
           </div>
         </section>
 
         <section id="process" className="home-section">
           <div className="home-wrap">
-            <h2>What happens after you say yes</h2>
+            <h2>How we work together, in four steps</h2>
             <ol className="deck">
               {steps.map((step, i) => (
                 <li key={step.title} style={{ '--i': i, '--deck': deckColors[i] } as React.CSSProperties}>
@@ -208,9 +208,9 @@ export default function HomePage() {
         <section className="band">
           <div className="home-wrap">
             <div className="rise">
-              <h2>Find the leak before you pay for more traffic.</h2>
+              <h2>Free: find out why your marketing isn&apos;t bringing in customers.</h2>
               <p>The Growth Checklist: {checkCount} yes-or-no checks across your whole marketing. Ten minutes, free, and you&apos;ll know which area to fix first.</p>
-              <LeadMagnetButton>Get the Checklist</LeadMagnetButton>
+              <LeadMagnetButton>Get the Free Checklist</LeadMagnetButton>
             </div>
             <div className="lead-sheets" aria-hidden="true"><i /><i /><i><b /><b /><b /><b /></i></div>
           </div>
@@ -221,8 +221,8 @@ export default function HomePage() {
             <div>
               <h2>Hire one person. Get six skill sets.</h2>
               <p className="home-lead">
-                A strategist who can&apos;t build leaves you with slides. A builder with no strategy leaves you with the wrong thing,
-                finished. I do both, so the plan and the work come from the same head.
+                Strategy and hands-on work from the same person. No handoffs, no lost details, and no paying two people to explain
+                things to each other.
               </p>
               <Link href="/contact" className="home-btn">Apply to Work With Me</Link>
               <p className="home-mail"><Link href="/services" className="home-text-link">See every service</Link></p>
@@ -237,7 +237,7 @@ export default function HomePage() {
               <Image src="/usman-khizar.jpg" alt="Usman Khizar" fill sizes="(max-width: 860px) 80vw, 360px" />
             </div>
             <div>
-              <h2>I started in search. Then I saw what rankings couldn&apos;t fix.</h2>
+              <h2>I started in SEO. Then I saw why traffic alone doesn&apos;t sell.</h2>
               <p>
                 Keyword research, content, technical audits, link building. I came up through all of it. But a first-page ranking
                 can&apos;t rescue a message nobody understands, and more traffic can&apos;t help a lead nobody calls back.
@@ -255,7 +255,7 @@ export default function HomePage() {
 
         <section className="home-section">
           <div className="home-wrap">
-            <h2>What you&apos;re probably wondering</h2>
+            <h2>Questions before we talk</h2>
             <div className="faq">
               {faqs.map((f) => (
                 <details key={f.q} name="faq">
@@ -269,7 +269,7 @@ export default function HomePage() {
 
         <section className="closer">
           <div className="home-wrap rise">
-            <h2>In six months you can have more pieces. Or one system.</h2>
+            <h2>Ready for marketing that brings in customers?</h2>
             <p>Tell me what you&apos;re working on. I&apos;ll come back within 48 hours with honest thoughts on whether I can help, and how.</p>
             <Link href="/contact" className="home-btn">Apply to Work With Me</Link>
           </div>

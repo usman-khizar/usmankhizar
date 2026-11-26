@@ -60,14 +60,14 @@ export default function TrainingPage() {
         <section className="train-hero">
           <div className="home-wrap train-grid">
             <div>
-              <h1>Stop collecting courses. Start finishing work.</h1>
+              <h1>Learn the marketing skills businesses pay for. Live.</h1>
               <p className="train-sub">
-                Live online training in the marketing skills businesses pay for. You build something real, I tell you what to
-                fix, and you leave with work you can show.
+                Live online classes in SEO, GoHighLevel, websites, AI automation, and social media. You build real projects, get
+                feedback, and finish with work you can show clients or employers.
               </p>
               <div className="home-actions">
-                <a href="#join" className="home-btn">Join the List</a>
-                <a href="#tracks" className="home-btn home-btn-ghost">See the Six Tracks</a>
+                <a href="#join" className="home-btn">Join the Waitlist</a>
+                <a href="#tracks" className="home-btn home-btn-ghost">See the Courses</a>
               </div>
             </div>
             <SkillDrum skills={tracks.map((t) => t.name)} />
@@ -76,18 +76,18 @@ export default function TrainingPage() {
 
         <section className="home-section">
           <div className="home-wrap">
-            <h2>If you&apos;ve thought any of these, you&apos;re in the right place.</h2>
+            <h2>Sound like you?</h2>
             <ul className="pain rise">
               {thoughts.map((t) => <li key={t}>{t}</li>)}
             </ul>
-            <p className="home-lead">You&apos;re not lazy. You&apos;ve been handed information when what you needed was practice, and someone to say &ldquo;not yet, fix this part.&rdquo;</p>
+            <p className="home-lead">You don&apos;t need more videos. You need practice on real work, and someone to tell you what to fix.</p>
           </div>
         </section>
 
         <section id="tracks" className="home-section home-tint">
           <div className="home-wrap">
-            <h2>Pick one skill. Finish it.</h2>
-            <p className="home-lead">Six tracks. Each one ends with a piece of work you made.</p>
+            <h2>Choose your skill</h2>
+            <p className="home-lead">Six courses. Each one ends with a real project for your portfolio.</p>
             <div className="home-ways train-tracks rise">
               {tracks.map((t) => (
                 <TiltCard key={t.slug}>
@@ -103,7 +103,7 @@ export default function TrainingPage() {
 
         <section className="home-section">
           <div className="home-wrap">
-            <h2>How you go from watching to doing</h2>
+            <h2>How the training works</h2>
             <ol className="deck">
               {steps.map((step, i) => (
                 <li key={step.title} style={{ '--i': i, '--deck': deckColors[i] } as React.CSSProperties}>
@@ -123,7 +123,7 @@ export default function TrainingPage() {
               <Image src="/usman-khizar.jpg" alt="Usman Khizar" fill sizes="(max-width: 860px) 80vw, 360px" />
             </div>
             <div>
-              <h2>You learn from someone who does this for clients</h2>
+              <h2>Learn from someone who does this for real clients</h2>
               <p>
                 I&apos;m Usman Khizar, a marketing consultant and fractional marketer, Top Rated on Upwork. What I teach is what
                 I use on client work: search, websites, CRM, automation, and content.
@@ -139,10 +139,10 @@ export default function TrainingPage() {
         <section id="join" className="home-section home-dark">
           <div className="home-wrap home-learn">
             <div>
-              <h2>Get the dates before everyone else.</h2>
+              <h2>Join the waitlist. Get first access.</h2>
               <p className="home-lead">
-                The first live group is being planned now. Tell me the skill you want. People on the list hear the dates and fee
-                first, and your choice helps decide which track opens first.
+                The first live class is being planned now. Pick the skill you want. You&apos;ll hear the dates and price before
+                anyone else, and the most-picked skill opens first.
               </p>
             </div>
             <WaitlistForm canSubscribe={canCaptureLeads()} />
@@ -151,7 +151,7 @@ export default function TrainingPage() {
 
         <section className="home-section">
           <div className="home-wrap">
-            <h2>Before you join</h2>
+            <h2>Common questions</h2>
             <div className="faq">
               {faqs.map((f) => (
                 <details key={f.q} name="faq">

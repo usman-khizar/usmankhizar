@@ -20,8 +20,8 @@ export default function HeroSection() {
       <div className="home-wrap home-hero-panel">
         <div>
           <h1>
-            You don&apos;t have a marketing problem. You have six.
-            <em>Hire one brand strategist and fractional marketer to own them all.</em>
+            Get more customers without hiring a marketing team.
+            <em>One senior marketer for your brand, website, SEO, CRM, and follow-up.</em>
           </h1>
           <ul className="home-proof">
             <li><a href={UPWORK} target="_blank" rel="noopener noreferrer">Top Rated on Upwork</a></li>
@@ -30,12 +30,12 @@ export default function HeroSection() {
         </div>
         <div>
           <p className="home-hero-sub">
-            A website here. SEO there. Leads on WhatsApp that nobody answers. I&apos;m Usman Khizar, and I turn the pieces
-            into one system that brings in customers.
+            Most businesses pay for a website, SEO, and ads, then lose leads in the gaps between them. I&apos;m Usman Khizar.
+            I connect it all, so more of your visitors become paying customers.
           </p>
           <div className="home-actions">
             <Link href="/contact" className="home-btn">Apply to Work With Me</Link>
-            <Link href="#what-i-do" className="home-btn home-btn-ghost">See How</Link>
+            <Link href="#what-i-do" className="home-btn home-btn-ghost">See What I Do</Link>
           </div>
         </div>
       </div>
