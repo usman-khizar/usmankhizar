@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
-import GhlForm from '@/components/forms/GhlForm'
+import ContactForm from '@/components/forms/ContactForm'
 import Link from 'next/link'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -277,7 +277,7 @@ export default function ServicesPage() {
               <p style={{ fontFamily: 'var(--font-lora)', color: '#5C5248', fontSize: '0.95rem', marginBottom: '2rem', lineHeight: 1.65 }}>
                 Tell me what you're working on and I'll come back to you within 48 hours.
               </p>
-              <GhlForm />
+              <ContactForm />
             </div>
           </div>
         </section>

@@ -25,7 +25,7 @@ export default function SubscribeForm({ compact = false, buttonColor = '#C4533A'
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: form.get('email'), company: form.get('company'), list }),
+        body: JSON.stringify({ email: form.get('email'), company: form.get('company'), list, page: window.location.pathname }),
       })
       if (!res.ok) throw new Error()
     } catch {

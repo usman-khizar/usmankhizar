@@ -28,24 +28,35 @@ async function post(path: string, token: string, body: unknown) {
   return res.json()
 }
 
-/** Saves the contact, then tags it. Throws if the contact was not saved. */
-export async function saveSubscriber(email: string, tags: string[]) {
+export interface GhlContact {
+  email: string
+  name?: string | null
+  phone?: string | null
+  tags: string[]
+  source: string
+}
+
+/** Saves the contact, then tags it. Returns the GHL contact id. Throws if the contact was not saved. */
+export async function saveContact(contact: GhlContact): Promise<string> {
   const cfg = config()
   if (!cfg) throw new Error('GHL is not configured')
 
   const saved = await post('/contacts/upsert', cfg.token, {
     locationId: cfg.locationId,
-    email,
-    source: 'usmankhizar.com email signup',
+    email: contact.email,
+    ...(contact.name ? { name: contact.name } : {}),
+    ...(contact.phone ? { phone: contact.phone } : {}),
+    source: contact.source,
   })
   const contactId = saved?.contact?.id
   if (!contactId) throw new Error('GHL upsert returned no contact id')
 
   // Tags go through add-tags because upsert overwrites a contact's existing tags.
   try {
-    await post(`/contacts/${encodeURIComponent(contactId)}/tags`, cfg.token, { tags })
+    await post(`/contacts/${encodeURIComponent(contactId)}/tags`, cfg.token, { tags: contact.tags })
   } catch (err) {
-    // The lead is already saved, so a failed tag should not fail the signup.
-    console.error('[subscribe] contact saved but tagging failed:', err instanceof Error ? err.message : err)
+    // The contact is already saved, so a failed tag should not fail the signup.
+    console.error('[ghl] contact saved but tagging failed:', err instanceof Error ? err.message : err)
   }
+  return String(contactId)
 }

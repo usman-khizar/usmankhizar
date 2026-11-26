@@ -11,7 +11,7 @@ const QUIET_DAYS = 14
 const OPEN_EVENT = 'open-lead-magnet'
 const GHL_FORM = 'https://link.readyondemand.com/widget/form/4pJtCDndQtutaGWLDgEr'
 // Pages where a popup would get in the way of what the visitor came to do.
-const EXCLUDED = ['/contact', '/growth-checklist', '/privacy', '/terms', '/tools/']
+const EXCLUDED = ['/contact', '/growth-checklist', '/privacy', '/terms', '/tools/', '/admin', '/admin/']
 
 function recentlySeen() {
   try {

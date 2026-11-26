@@ -20,7 +20,7 @@ export default function WaitlistForm({ canSubscribe }: { canSubscribe: boolean }
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: form.get('email'), company: form.get('company'), list: 'training', skill }),
+        body: JSON.stringify({ email: form.get('email'), company: form.get('company'), list: 'training', skill, page: window.location.pathname }),
       })
       if (!res.ok) throw new Error()
     } catch {

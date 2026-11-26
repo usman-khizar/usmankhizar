@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import SubscribeForm from '@/components/forms/SubscribeForm'
-import { isGhlConfigured } from '@/lib/ghl'
+import { canCaptureLeads } from '@/lib/crm'
 
 interface EmailCaptureProps {
   variant?: 'dark' | 'terracotta'
@@ -14,8 +14,8 @@ export default function EmailCapture({
   subheading = 'Practical notes on brand, search, and automation in your inbox. Free.',
 }: EmailCaptureProps) {
   const dark = variant === 'dark'
-  // Until GHL is connected there is nowhere to save an email, so don't ask for one.
-  const canSubscribe = isGhlConfigured()
+  // Until the CRM or GHL is connected there is nowhere to save an email, so don't ask for one.
+  const canSubscribe = canCaptureLeads()
 
   return (
     <section style={{ backgroundColor: dark ? '#141210' : '#A8432D', padding: '80px 24px' }}>

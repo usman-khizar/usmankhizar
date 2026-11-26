@@ -748,3 +748,19 @@ input[type="email"], textarea, input[type="text"] {
   transition: border-color 0.2s, background 0.2s;
 }
 .cta-btn-secondary:hover { border-color: rgba(255, 255, 255, 0.7); background: rgba(255, 255, 255, 0.06); }
+
+/* Enquiry form */
+.enq { position: relative; display: grid; gap: 16px; font-family: var(--font-dm-sans), system-ui, sans-serif; }
+.enq > div, .enq-row > div { display: grid; gap: 6px; min-width: 0; }
+.enq-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.enq label { font-weight: 600; font-size: 0.9rem; color: #1A1A1A; }
+.enq label span { font-weight: 400; color: #5C5248; }
+.enq :is(input, select, textarea) { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid #A89A86; background: #FFFFFF; color: #1A1A1A; font: inherit; font-size: 0.95rem; }
+.enq textarea { resize: vertical; min-height: 120px; }
+.enq :is(input, select, textarea):focus-visible { outline: 2px solid #C4533A; outline-offset: 1px; border-color: #C4533A; }
+.enq .btn-primary { justify-self: start; border: none; cursor: pointer; }
+.enq .btn-primary:disabled { opacity: 0.7; cursor: wait; }
+.enq-error { color: #8F2F1C; font-size: 0.9rem; }
+.enq-error a { text-decoration: underline; }
+.enq-done { font-family: var(--font-dm-sans), system-ui, sans-serif; color: #1A1A1A; display: grid; gap: 6px; padding: 24px; border-radius: 12px; background: #FFFFFF; border: 1px solid #C9BCA8; }
+@media (max-width: 560px) { .enq-row { grid-template-columns: minmax(0, 1fr); } .enq .btn-primary { justify-self: stretch; } }

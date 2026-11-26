@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ogImages } from '@/lib/og'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import GhlForm from '@/components/forms/GhlForm'
+import ContactForm from '@/components/forms/ContactForm'
 import PageHeroSection from '@/components/sections/PageHeroSection'
 import { ContactVisual } from '@/components/sections/HeroVisuals'
 
@@ -48,7 +48,7 @@ export default function ContactPage() {
               ))}
             </div>
             <div id="enquiry" className="md:flex-1">
-              <GhlForm />
+              <ContactForm />
             </div>
           </div>
         </section>

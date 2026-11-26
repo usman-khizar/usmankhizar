@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer'
 import WaitlistForm from '@/components/forms/WaitlistForm'
 import SkillDrum from '@/components/home/SkillDrum'
 import TiltCard from '@/components/home/TiltCard'
-import { isGhlConfigured } from '@/lib/ghl'
+import { canCaptureLeads } from '@/lib/crm'
 import { tracks } from '@/lib/tracks'
 import '../home.css'
 
@@ -145,7 +145,7 @@ export default function TrainingPage() {
                 first, and your choice helps decide which track opens first.
               </p>
             </div>
-            <WaitlistForm canSubscribe={isGhlConfigured()} />
+            <WaitlistForm canSubscribe={canCaptureLeads()} />
           </div>
         </section>
 

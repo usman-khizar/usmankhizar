@@ -9,7 +9,7 @@ import EmailCapture from '@/components/sections/EmailCapture'
 import PillTag from '@/components/ui/PillTag'
 import PostCard from '@/components/blog/PostCard'
 import SubscribeForm from '@/components/forms/SubscribeForm'
-import { isGhlConfigured } from '@/lib/ghl'
+import { canCaptureLeads } from '@/lib/crm'
 import { allPosts, getPostBySlug, isPublished, publishedPosts } from '@/lib/posts'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -268,7 +268,7 @@ export default async function BlogPostPage({ params }: Props) {
                   </div>
                 )}
                 {/* Mini email capture */}
-                {isGhlConfigured() && (
+                {canCaptureLeads() && (
                   <div style={{ backgroundColor: '#141210', borderRadius: 14, padding: 20 }}>
                     <p style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '0.9rem', color: '#FAF8F4', marginBottom: '0.5rem' }}>Get my marketing notes</p>
                     <p style={{ fontFamily: 'var(--font-lora)', fontSize: '0.82rem', color: '#C9BCA8', marginBottom: '1rem', lineHeight: 1.5 }}>
