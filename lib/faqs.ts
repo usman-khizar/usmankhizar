@@ -250,6 +250,36 @@ export const searchAtlasExtraFaqs: Faq[] = [
 
 // FAQs for blog posts written as plain text (the long-form posts have their own).
 export const postFaqs: Record<string, Faq[]> = {
+  'best-off-page-seo-checker': [
+    {
+      q: 'What is the best off-page SEO checker?',
+      a: 'Ahrefs is the best all-round off-page SEO checker because it has one of the largest backlink indexes and shows links, referring domains, authority, and lost links for any site. Semrush is a close second and is stronger for link audits and competitor gaps.',
+    },
+    {
+      q: 'Is there a free off-page SEO checker?',
+      a: 'Yes. Google Search Console and Bing Webmaster Tools are completely free. Ahrefs Webmaster Tools is free for sites you verify, and Moz gives 10 free Link Explorer queries a month. Bing also lets you compare your links with competitors for free.',
+    },
+    {
+      q: 'How do I check my website\'s off-page SEO?',
+      a: 'Open the Links report in Google Search Console, then run your domain through a backlink checker like Ahrefs, Semrush, or Moz. Look at referring domains, authority score, anchor text, and new and lost links, then compare them with your top competitors.',
+    },
+    {
+      q: 'Which off-page SEO stats matter most?',
+      a: 'Referring domains, link quality, relevance of the linking sites, anchor text mix, and lost links. For AI search, also track brand mentions: an Ahrefs study of 75,000 brands found web mentions were the factor most strongly linked to appearing in Google AI Overviews.',
+    },
+    {
+      q: 'Can I check on-page SEO for free?',
+      a: 'Yes. Screaming Frog crawls up to 500 URLs for free, Google PageSpeed Insights checks speed, and Seobility and SEOptimer give free single-page reports. To check whether a page is ready for AI search, use the free GEO Readiness Checker on this site.',
+    },
+    {
+      q: 'How often should I check my backlinks?',
+      a: 'Monthly if you are actively building links, so you catch lost links quickly. Otherwise every quarter is enough.',
+    },
+    {
+      q: 'What is the difference between on-page and off-page SEO?',
+      a: 'On-page SEO is everything on your own pages, like content, titles, headings, speed, and structure. Off-page SEO is everything outside your site that builds trust, mainly backlinks and brand mentions.',
+    },
+  ],
   'geo-vs-seo': [
     {
       q: 'Should I focus on GEO or SEO first?',

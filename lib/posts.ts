@@ -1,4 +1,5 @@
 import { Post } from '@/components/blog/PostCard'
+import { offPageSeoCheckers } from './post-content/off-page-seo-checkers'
 
 export interface FullPost extends Post {
   content: string
@@ -6,6 +7,16 @@ export interface FullPost extends Post {
 }
 
 export const allPosts: FullPost[] = [
+  {
+    slug: 'best-off-page-seo-checker',
+    title: '10 Best Off-Page SEO Checkers (Free and Paid) for 2026',
+    teaser: 'The 10 best off-page SEO checkers and tools for backlinks, authority, and brand mentions, with what each one lets you do for free.',
+    category: 'SEO',
+    readTime: '11 min read',
+    date: '2026-11-27',
+    author: 'Usman Khizar',
+    content: offPageSeoCheckers,
+  },
   {
     slug: 'what-is-generative-engine-optimization',
     title: 'What is Generative Engine Optimisation? The 2026 Guide',

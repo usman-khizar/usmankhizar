@@ -10,6 +10,7 @@ import Footer from '@/components/layout/Footer'
 import EmailCapture from '@/components/sections/EmailCapture'
 import PillTag from '@/components/ui/PillTag'
 import PostCard from '@/components/blog/PostCard'
+import PostBody from '@/components/blog/PostBody'
 import SubscribeForm from '@/components/forms/SubscribeForm'
 import { canCaptureLeads } from '@/lib/crm'
 import { allPosts, getPostBySlug, isPublished, publishedPosts } from '@/lib/posts'
@@ -312,23 +313,6 @@ export default async function BlogPostPage({ params }: Props) {
 }
 
 /** Renders the plain-text posts in lib/posts.ts: blank lines split blocks, "## " starts a heading. */
-function PostBody({ content }: { content: string }) {
-  return content.split(/\n\s*\n/).map((block, i) => {
-    const text = block.trim()
-    if (text.startsWith('## ')) {
-      return (
-        <h2 key={i} style={{ fontFamily: 'var(--font-dm-sans)', fontWeight: 700, fontSize: '1.25rem', color: '#1A1A1A', margin: '2.5rem 0 0.75rem' }}>
-          {text.slice(3)}
-        </h2>
-      )
-    }
-    return (
-      <p key={i} style={{ fontFamily: 'var(--font-lora)', fontSize: '1.05rem', color: '#5C5248', lineHeight: 1.8, marginBottom: '1.25rem', whiteSpace: 'pre-line' }}>
-        {text}
-      </p>
-    )
-  })
-}
 
 function PostFaqs({ faqs }: { faqs: { q: string; a: string }[] }) {
   return (
